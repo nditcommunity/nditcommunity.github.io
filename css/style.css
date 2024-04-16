@@ -3,15 +3,44 @@
   /* 1) HTML5 Boilerplate v9.0.0-RC1 | MIT License | html5boilerplate.com */
   /* 2) main.css 3.0.0 | MIT License | github.com/h5bp/main.css#readme */
 
+/* ---------- UTILITY ---------- */
+
+/* root vars */
+
+:root {
+  --arial: 'Arial', sans-serif;
+
+  /* most commonly used brand colors */
+  --black: black;
+  --white: white;
+  --yellow: #E0B645;
+  --pink: #BC69AA;
+  --blue: #32ADC7;
+  --dark-green: #55BF8A;
+
+  /* others colors from logo */
+  --light-green: #8ADF88;
+  --turqiouse: #2DB7A2;
+  --red: #F07877;
+  --dark-orange: #F18B5B;
+  --light-orange: #F69E45;
+  --purple: #9369B3;
+}
+
 /* ---------- RM DEFAULT BASE STYLES ---------- */
 /* (most commented out for now, from template, can circle back) */
 
 /* general */
 
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
+body {
+  font-family: var(--arial);
+  color: var(--white);
+  background-color: var(--black);
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  align-items: center;
+  font-size: 100%;
 }
 
 /* text shadows when selecting */
