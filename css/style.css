@@ -81,6 +81,20 @@ section {
   text-align: left;
 }
 
+/* social icons */
+
+.social-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 45px;
+
+  .social-icon {
+    width: 3rem;
+    padding: 0.25rem;
+  }
+}
+
 /* text shadows when selecting */
 
 /* ::-moz-selection {
