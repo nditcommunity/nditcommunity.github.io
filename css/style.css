@@ -37,10 +37,62 @@ body {
   color: var(--white);
   background-color: var(--black);
   margin: 0;
-  padding: 1rem;
+  padding: 0;
   text-align: center;
   align-items: center;
   font-size: 100%;
+}
+
+section {
+  padding: 0rem 4rem;
+}
+
+/* heading */
+
+.title {
+  padding-top: 2rem;
+  margin: 0;
+  font-size: 3rem;
+  font-weight: bold;
+} 
+
+.tagline {
+  margin: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* content */
+
+.join-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  background-color: var(--blue);
+  color: white; 
+  text-decoration: none;
+  border-radius: 50rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.bio {
+  font-size: 1rem;
+  text-align: left;
+}
+
+/* social icons */
+
+.social-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 45px;
+
+  .social-icon {
+    width: 3rem;
+    padding: 0.25rem;
+  }
 }
 
 /* text shadows when selecting */
