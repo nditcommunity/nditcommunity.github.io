@@ -17,6 +17,7 @@
   --pink: #BC69AA;
   --blue: #32ADC7;
   --dark-green: #55BF8A;
+  --purple: #8772DE;
 
   /* others colors from logo */
   --light-green: #8ADF88;
@@ -24,7 +25,6 @@
   --red: #F07877;
   --dark-orange: #F18B5B;
   --light-orange: #F69E45;
-  --purple: #8772DE;
 }
 
 /* ---------- RM DEFAULT BASE STYLES ---------- */
@@ -34,8 +34,8 @@
 
 body {
   font-family: var(--arial);
-  color: var(--white);
-  background-color: var(--black);
+  color: var(--black);
+  background-color: var(--white);
   margin: 0;
   padding: 0;
   text-align: center;
@@ -55,6 +55,7 @@ article {
   font-size: 3rem;
   font-weight: bold;
   background-color: var(--purple);
+  color: white;
 } 
 
 .navbar {
@@ -64,9 +65,9 @@ article {
   justify-content: center;
   align-items: center;
 
-  .navbar-link {
+  .navbar-item {
     text-decoration: none;
-    color: var(--white);
+    color: white;
     font-weight: bold;
     padding: 0.5rem 2rem;
     margin: 0;
@@ -193,4 +194,11 @@ article {
   position: static;
   white-space: inherit;
   width: auto;
+}
+
+.theme-icon {
+  color: var(--white);
+  font-size: 1.2rem;
+  cursor: pointer;
+  min-width: 0.1rem;
 }
