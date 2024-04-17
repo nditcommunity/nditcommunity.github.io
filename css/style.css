@@ -57,6 +57,22 @@ article {
   background-color: var(--purple);
 } 
 
+.navbar {
+  background-color: var(--dark-green);
+  min-height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .navbar-link {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: bold;
+    padding: 0.5rem 2rem;
+    margin: 0;
+  }
+}
+
 .tagline {
   margin: 1rem;
   font-size: 1.3rem;
