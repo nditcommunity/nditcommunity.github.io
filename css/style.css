@@ -24,7 +24,7 @@
   --red: #F07877;
   --dark-orange: #F18B5B;
   --light-orange: #F69E45;
-  --purple: #9369B3;
+  --purple: #8772DE;
 }
 
 /* ---------- RM DEFAULT BASE STYLES ---------- */
@@ -43,17 +43,18 @@ body {
   font-size: 100%;
 }
 
-section {
+article {
   padding: 0rem 4rem;
 }
 
 /* heading */
 
 .title {
-  padding-top: 2rem;
+  padding: 1rem;
   margin: 0;
   font-size: 3rem;
   font-weight: bold;
+  background-color: var(--purple);
 } 
 
 .tagline {
@@ -81,17 +82,27 @@ section {
   text-align: left;
 }
 
-/* social icons */
+/* footer */
 
-.social-icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 45px;
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  max-height: 69px;
+  background-color: var(--purple);
+  padding: 0.1rem;
 
-  .social-icon {
-    width: 3rem;
-    padding: 0.25rem;
+  .social-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 45px;
+
+    .social-icon {
+      width: 2rem;
+      padding: 0.5rem;
+    }
   }
 }
 
