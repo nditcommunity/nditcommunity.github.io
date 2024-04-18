@@ -17,6 +17,7 @@
   --pink: #BC69AA;
   --blue: #32ADC7;
   --dark-green: #55BF8A;
+  --purple: #8772DE;
 
   /* others colors from logo */
   --light-green: #8ADF88;
@@ -24,7 +25,6 @@
   --red: #F07877;
   --dark-orange: #F18B5B;
   --light-orange: #F69E45;
-  --purple: #9369B3;
 }
 
 /* ---------- RM DEFAULT BASE STYLES ---------- */
@@ -34,8 +34,8 @@
 
 body {
   font-family: var(--arial);
-  color: var(--white);
-  background-color: var(--black);
+  color: var(--black);
+  background-color: var(--white);
   margin: 0;
   padding: 0;
   text-align: center;
@@ -43,18 +43,36 @@ body {
   font-size: 100%;
 }
 
-section {
+article {
   padding: 0rem 4rem;
 }
 
 /* heading */
 
 .title {
-  padding-top: 2rem;
+  padding: 1rem;
   margin: 0;
   font-size: 3rem;
   font-weight: bold;
+  background-color: var(--purple);
+  color: white;
 } 
+
+.navbar {
+  background-color: var(--dark-green);
+  min-height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .navbar-item {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 2rem;
+    margin: 0;
+  }
+}
 
 .tagline {
   margin: 1rem;
@@ -81,17 +99,27 @@ section {
   text-align: left;
 }
 
-/* social icons */
+/* footer */
 
-.social-icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 45px;
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  max-height: 69px;
+  background-color: var(--purple);
+  padding: 0.1rem;
 
-  .social-icon {
-    width: 3rem;
-    padding: 0.25rem;
+  .social-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 45px;
+
+    .social-icon {
+      width: 2rem;
+      padding: 0.5rem;
+    }
   }
 }
 
@@ -166,4 +194,11 @@ section {
   position: static;
   white-space: inherit;
   width: auto;
+}
+
+.theme-icon {
+  color: var(--white);
+  font-size: 1.2rem;
+  cursor: pointer;
+  min-width: 0.1rem;
 }
