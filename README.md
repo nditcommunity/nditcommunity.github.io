@@ -42,9 +42,9 @@ Our general [code of conduct](https://github.com/nditcommunity/ndit-code-of-cond
 
 We try to keep specific discourse in tickets and PRs. We also plan & brainstorm more generally in the [#community-website](https://nd-in-tech.slack.com/archives/C06TM05PNNR) channel in the Neurodiversity In Tech Slack Workspace ([join here](nd-in-tech.org)).
 
-### Can I ask others to help?
+### Can I refer friends or colleagues?
 
-Yes, please. We're open to all of the help that we can get.
+Yes, please. We're open to all minds & labor offered.
 
 ## Open-Source Software (OSS)
 
