@@ -22,7 +22,7 @@ This site is currently made with JavaScript, HTML, & CSS.
 
 ### Where are the tickets?
 
-We use GitHub Project Issues: [ticket board here](https://github.com/orgs/nditcommunity/projects/1).
+We use GitHub Project Issues ([linked here](https://github.com/orgs/nditcommunity/projects/1)).
 
 ### Where is the wireframe?
 
