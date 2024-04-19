@@ -34,6 +34,10 @@ We have in-progress wireframe brainstorming happening on [Penpot](design.penpot.
 
 The owners of the repo are [@hayleyw7](https://github.com/hayleyw7), [@royemosby](https://github.com/royemosby), & [@jmkoni](https://github.com/jmkoni).
 
+### Is there a code of conduct?
+
+Our general [code of conduct](https://github.com/nditcommunity/ndit-code-of-conduct) applies here.
+
 ### Where do meet, ask for help, or chat with the team?
 
 We try to keep specific discourse in tickets and PRs. We also plan & brainstorm more generally in the [#community-website](https://nd-in-tech.slack.com/archives/C06TM05PNNR) channel in the Neurodiversity In Tech Slack Workspace ([join here](nd-in-tech.org)).
