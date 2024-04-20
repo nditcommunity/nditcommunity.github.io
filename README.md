@@ -4,13 +4,30 @@
 
 ### Who is allowed to help?
 
-Anyone can pick up tickets, try their best, and put in a PR. You don't need open-source experience, and you don't need to be neurodivergent.
+Anyone can help! You don't need open-source experience, and you don't need to be neurodivergent to help the cause.
+
+1. Clone the project locally. Don't make a fork.
+2. Choose a ticket from the "To Do" column of [our issue board](https://github.com/orgs/nditcommunity/projects/1) that you think you can complete in under a week.
+3. Assign it to yourself.
+4. Move to the "In Progress" column.
+5. Create a local branch with issue number plus 1-3 words summarizing of ticket, such as `6-favicon` or `18-day-night-toggle`.
+6. Try your best to get it started.
+7. Create a Pull Request (PR) into `main`. It doesn't need to be complete yet; you can create one as soon as you start working on the ticket & keep pushing onto it.
+8. Fill in the automated PR template that will pop up. If it's still in progress, just note that in the description, and ignore everything below the "Type of change" section.
+9. When it's ready for code review or you have a question, assign it to an [owner](https://github.com/nditcommunity/ndit-website) with any questions right in the PR's "Conversation" tab.
+10. Owners and other contributors will check it out when you'd like us to do so.
+11. When it's good to go, owners will merge the ticket into `main`.
+12. Thank you for contributing as a volunteer to this open-source, social-good project!
+
+## Who is allowed to move tickets to "To Do"?
+
+Anyone can move a ticket from "To Do" > "In Progress" > "Code Review" as they work, but we currently only allow only owners to move specifically from "Planning" > "To Do".
 
 ### Who is allowed to review PRs?
 
-Anyone can help with PR code reviews.
+Anyone can help with PR code reviews, but please don't merge into `main`.
 
-### Who is allowed to merge into `main`?
+### Who is allowed to push to or merge into `main`?
 
 Right now, we only allow only owners to merge PRs into `main`.
 
@@ -54,4 +71,4 @@ Absolutely! Once you've had a PR merged into `main`, it's great open-source & vo
 
 ### What's the official licensing?
 
-The website is open-source and licensed under [Creative Commons BY-SA 4.0 DEED](https://creativecommons.org/licenses/by-sa/4.0/deed.en).
+The website is open-source and licensed under an [MIT License](https://github.com/nditcommunity/ndit-website?tab=MIT-1-ov-file#readme).
