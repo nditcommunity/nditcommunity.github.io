@@ -54,4 +54,4 @@ Absolutely! Once you've had a PR merged into `main`, it's great open-source & vo
 
 ### What's the official licensing?
 
-The website is open-source and licensed under [Creative Commons BY-SA 4.0 DEED](https://creativecommons.org/licenses/by-sa/4.0/deed.en).
+The website is open-source and licensed under an [MIT License](https://github.com/nditcommunity/ndit-website?tab=MIT-1-ov-file#readme).
