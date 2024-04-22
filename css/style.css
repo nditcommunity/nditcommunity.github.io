@@ -43,6 +43,11 @@ body {
   font-size: 100%;
 }
 
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 article {
   padding: 0rem 4rem;
 }
@@ -107,7 +112,7 @@ h2,
 .calendar {
   height: 20rem;
   border: 0;
-  width: 60%;
+  width: 100%;
 }
 
 /* footer */
