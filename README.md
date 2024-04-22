@@ -4,7 +4,7 @@
 
 ### Who is allowed to help?
 
-Anyone can help! You don't need open-source experience, and you don't need to be neurodivergent to help the cause.
+Anyone can help! You don't need open-source experience, and you don't need to be neurodivergent (ND) to help the cause. If you ARE ND yourself, you can also [join ND In Tech](nd-in-tech.org) yourself.
 
 ### What's the process?
 
@@ -51,7 +51,7 @@ We have in-progress wireframe brainstorming happening on [Penpot](design.penpot.
 
 ### Who are the owners?
 
-The owners of the repo are [@hayleyw7](https://github.com/hayleyw7), [@royemosby](https://github.com/royemosby), & [@jmkoni](https://github.com/jmkoni).
+The owners of the repo are [@hayleyw7](https://github.com/hayleyw7) & [@royemosby](https://github.com/royemosby).
 
 ### Is there a code of conduct?
 
@@ -59,7 +59,7 @@ Our general [code of conduct](https://github.com/nditcommunity/ndit-code-of-cond
 
 ### Where do meet, ask for help, or chat with the team?
 
-We try to keep specific discourse in tickets and PRs. We also plan & brainstorm more generally in the [#community-website](https://nd-in-tech.slack.com/archives/C06TM05PNNR) channel in the Neurodiversity In Tech Slack Workspace ([join here](nd-in-tech.org)).
+We try to keep specific discourse and questions in tickets, PRs, and the [GitHub Discussions](https://github.com/nditcommunity/ndit-website/discussions) tab. 
 
 ### Can I refer friends or colleagues?
 
