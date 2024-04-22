@@ -95,9 +95,19 @@ h2,
   font-weight: bold;
 }
 
+/* about */
+
 .bio {
   font-size: 1rem;
   text-align: left;
+}
+
+/* events */
+
+.calendar {
+  height: 20rem;
+  border: 0;
+  width: 60%;
 }
 
 /* footer */
