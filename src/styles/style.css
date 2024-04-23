@@ -1,7 +1,7 @@
 /* ---------- CREDIT FOR STARTING TEMPLATE ----------  */
 
-  /* 1) HTML5 Boilerplate v9.0.0-RC1 | MIT License | html5boilerplate.com */
-  /* 2) main.css 3.0.0 | MIT License | github.com/h5bp/main.css#readme */
+/* 1) HTML5 Boilerplate v9.0.0-RC1 | MIT License | html5boilerplate.com */
+/* 2) main.css 3.0.0 | MIT License | github.com/h5bp/main.css#readme */
 
 /* ---------- UTILITY ---------- */
 
@@ -56,7 +56,11 @@ article {
   font-weight: bold;
   background-color: var(--purple);
   color: white;
-} 
+}
+
+.header a {
+  text-decoration: none;
+}
 
 .navbar {
   background-color: var(--dark-green);
@@ -87,7 +91,7 @@ article {
   padding: 1rem 2rem;
   margin: 1rem;
   background-color: var(--blue);
-  color: white; 
+  color: white;
   text-decoration: none;
   border-radius: 50rem;
   font-size: 1.5rem;
