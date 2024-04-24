@@ -34,10 +34,11 @@
       <h1 class="title">Neurodiversity In Tech</h1>
 
       <article class="navbar">
-        <a class="navbar-item" href="" target="_blank">About</a>
-        <a class="navbar-item" href="" target="_blank">Events</a>
-        <a class="navbar-item" href="" target="_blank">Media</a>
-        <a class="navbar-item" href="" target="_blank">Contact</a>
+        <a class="navbar-item" href="#" data-section="home-page">Home</a>
+        <a class="navbar-item" href="#" data-section="about-page">About</a>
+        <a class="navbar-item" href="#" data-section="events-page">Events</a>
+        <a class="navbar-item" href="#" data-section="media-page">Media</a>
+        <a class="navbar-item" href="#" data-section="contact-page">Contact</a>
         <p class="navbar-item theme-icon">
           <span class="sun-icon hidden">☼</span>
           <span class="moon-icon">☾</span>
@@ -45,7 +46,7 @@
       </article>
     </div>
 
-    <section class="home-page">
+    <section class="page home-page">
       <article>
         <p class="tagline">
           Uniting neurodivergent professionals in the tech industry
@@ -55,7 +56,10 @@
       <article>
         <a class="join-btn" href="http://bit.ly/nd-in-tech">Join Our Slack</a>
       </article>
+    </section>
 
+    <section class="page about-page hidden">
+      <h2>About</h2>
       <article>
         <p class="bio">
           <b>Neurodiversity In Tech</b> is an online community dedicated to supporting neurodivergent professionals in the technology industry.
@@ -67,7 +71,28 @@
       </article>
     </section>
 
-    <section class="footer">
+    <section class="events-page hidden">
+      <h2>Events</h2>
+      <article>
+        <iframe class="calendar" src="https://calendar.google.com/calendar/embed?src=nditcommunity%40gmail.com&ctz=America/Denver&mode=AGENDA"></iframe>
+      </article>
+    </section>
+
+    <section class="media-page hidden">
+      <h2>Media</h2>
+      <article>
+        <p>[media page in progress]</p>
+      </article>
+    </section>
+
+    <section class="contact-page hidden">
+      <h2>Contact</h2>
+      <article>
+        <p>[contact page in progress]</p>
+      </article>
+    </section>
+
+    <div class="footer">
       <article class="social-icon-container">
         <a href="https://www.linkedin.com/company/nditcommunity" target="_blank">
           <img src="img/assets/social-icons/linkedin.png" alt="LinkedIn Icon" class="social-icon">
@@ -85,7 +110,7 @@
           <img src="img/assets/social-icons/github.png" alt="GitHub Icon" class="social-icon">
         </a>
       </article>
-    </section>
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/app.js"></script>
   </body>

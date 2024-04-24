@@ -43,6 +43,11 @@ body {
   font-size: 100%;
 }
 
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 article {
   padding: 0rem 4rem;
 }
@@ -74,6 +79,7 @@ article {
   }
 }
 
+h2,
 .tagline {
   margin: 1rem;
   font-size: 1.3rem;
@@ -94,9 +100,19 @@ article {
   font-weight: bold;
 }
 
+/* about */
+
 .bio {
   font-size: 1rem;
   text-align: left;
+}
+
+/* events */
+
+.calendar {
+  height: 20rem;
+  border: 0;
+  width: 100%;
 }
 
 /* footer */
@@ -200,5 +216,5 @@ article {
   color: var(--white);
   font-size: 1.2rem;
   cursor: pointer;
-  min-width: 0.1rem;
+  width: 0.2rem;
 }

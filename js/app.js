@@ -1,6 +1,13 @@
-// theme toggle
-
 $(document).ready(function() {
+
+  // theme toggle
+
+  const updateThemeColors = () => {
+    const isVisible = !$(".sun-icon").hasClass("hidden");
+    const [color1, color2] = isVisible ? ["white", "black"] : ["black", "white"];
+    $(":root").css({"--black": color1, "--white": color2});
+  };
+
   updateThemeColors();
 
   $(".theme-icon").on("click", function() {
@@ -8,8 +15,11 @@ $(document).ready(function() {
     updateThemeColors();
   });
 
-  function updateThemeColors() {
-    const [color1, color2] = $(".sun-icon").is(":visible") ? ["white", "black"] : ["black", "white"];
-    $(":root").css({"--black": color1, "--white": color2});
-  }
+  // show & hide pages
+
+  $(".navbar-item").on("click", function(e) {
+    e.preventDefault();
+    const page = $(this).data("section");
+    $("." + page).removeClass("hidden").siblings('section').addClass("hidden");
+  });
 });
