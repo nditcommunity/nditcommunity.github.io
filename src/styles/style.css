@@ -13,18 +13,18 @@
   /* most commonly used brand colors */
   --black: black;
   --white: white;
-  --yellow: #E0B645;
-  --pink: #BC69AA;
-  --blue: #32ADC7;
-  --dark-green: #55BF8A;
-  --purple: #8772DE;
+  --yellow: #e0b645;
+  --pink: #bc69aa;
+  --blue: #32adc7;
+  --dark-green: #55bf8a;
+  --purple: #8772de;
 
   /* others colors from logo */
-  --light-green: #8ADF88;
-  --turqiouse: #2DB7A2;
-  --red: #F07877;
-  --dark-orange: #F18B5B;
-  --light-orange: #F69E45;
+  --light-green: #8adf88;
+  --turqiouse: #2db7a2;
+  --red: #f07877;
+  --dark-orange: #f18b5b;
+  --light-orange: #f69e45;
 }
 
 /* ---------- RM DEFAULT BASE STYLES ---------- */
