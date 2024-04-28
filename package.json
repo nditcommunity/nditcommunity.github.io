@@ -1,7 +1,7 @@
 {
   "name": "nd-in-tech",
   "version": "0.0.2",
-  "description": "",
+  "description": "Website for Neurodiversity in Tech",
   "private": true,
   "keywords": [
     "website"
@@ -17,8 +17,7 @@
     "clean": "rm -rf _site",
     "debug": "DEBUG=* npx @11ty/eleventy",
     "dev": "npx @11ty/eleventy --serve",
-    "dry-run": "npx @11ty/eleventy --dryrun"
-    "build:eleventy:prod": "ELEVENTY_ENV=production eleventy"
+    "dry-run": "npx @11ty/eleventy --dryrun""build:eleventy:prod": "ELEVENTY_ENV=production eleventy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
