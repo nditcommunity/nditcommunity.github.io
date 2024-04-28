@@ -25,7 +25,7 @@ jobs:
         run: npm install
 
       - name: Run npm build
-        run: npm run build:prod
+        run: npm run build:eleventy:prod
 
       - name: Deploy static site content
         uses: peaceiris/actions-gh-pages@v4
