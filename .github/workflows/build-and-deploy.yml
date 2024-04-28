@@ -22,12 +22,12 @@ jobs:
           cache: 'npm'
 
       - name: Install packages
-        run: npm ci
+        run: npm install
 
       - name: Run npm build
         run: npm run build:prod
 
-      - name: Deploy to gh-pages
+      - name: Deploy static site content
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
