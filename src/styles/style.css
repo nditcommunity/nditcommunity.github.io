@@ -119,9 +119,7 @@ h2,
   width: 100%;
 }
 
-/* footer */
-
-.footer {
+footer {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -221,4 +219,12 @@ h2,
   font-size: 1.2rem;
   cursor: pointer;
   width: 0.2rem;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
 }
