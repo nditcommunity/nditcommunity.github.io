@@ -1,7 +1,7 @@
 /* ---------- CREDIT FOR STARTING TEMPLATE ----------  */
 
-  /* 1) HTML5 Boilerplate v9.0.0-RC1 | MIT License | html5boilerplate.com */
-  /* 2) main.css 3.0.0 | MIT License | github.com/h5bp/main.css#readme */
+/* 1) HTML5 Boilerplate v9.0.0-RC1 | MIT License | html5boilerplate.com */
+/* 2) main.css 3.0.0 | MIT License | github.com/h5bp/main.css#readme */
 
 /* ---------- UTILITY ---------- */
 
@@ -13,18 +13,18 @@
   /* most commonly used brand colors */
   --black: black;
   --white: white;
-  --yellow: #E0B645;
-  --pink: #BC69AA;
-  --blue: #32ADC7;
-  --dark-green: #55BF8A;
-  --purple: #8772DE;
+  --yellow: #e0b645;
+  --pink: #bc69aa;
+  --blue: #32adc7;
+  --dark-green: #55bf8a;
+  --purple: #8772de;
 
   /* others colors from logo */
-  --light-green: #8ADF88;
-  --turqiouse: #2DB7A2;
-  --red: #F07877;
-  --dark-orange: #F18B5B;
-  --light-orange: #F69E45;
+  --light-green: #8adf88;
+  --turqiouse: #2db7a2;
+  --red: #f07877;
+  --dark-orange: #f18b5b;
+  --light-orange: #f69e45;
 }
 
 /* ---------- RM DEFAULT BASE STYLES ---------- */
@@ -43,16 +43,12 @@ body {
   font-size: 100%;
 }
 
-section {
+main {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: auto;
 }
 
-article {
-  padding: 0rem 4rem;
-}
-
-/* heading */
+/* header */
 
 .title {
   padding: 1rem;
@@ -61,39 +57,45 @@ article {
   font-weight: bold;
   background-color: var(--purple);
   color: white;
-} 
+}
 
-.navbar {
+header a {
+  text-decoration: none;
+}
+
+header nav {
   background-color: var(--dark-green);
   min-height: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  .navbar-item {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 0.5rem 2rem;
-    margin: 0;
-  }
 }
 
-h2,
+.nav-item {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+  margin: 0;
+}
+
+/* content */
+
 .tagline {
   margin: 1rem;
   font-size: 1.3rem;
   font-weight: bold;
+  margin-block-start: 1em;
+  margin-block-end: 0.67em;
 }
 
-/* content */
 
 .join-btn {
   display: inline-block;
   padding: 1rem 2rem;
   margin: 1rem;
   background-color: var(--blue);
-  color: white; 
+  color: white;
   text-decoration: none;
   border-radius: 50rem;
   font-size: 1.5rem;
@@ -115,9 +117,7 @@ h2,
   width: 100%;
 }
 
-/* footer */
-
-.footer {
+footer {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -125,17 +125,14 @@ h2,
   max-height: 69px;
   background-color: var(--purple);
   padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 45px;
 
-  .social-icon-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 45px;
-
-    .social-icon {
-      width: 2rem;
-      padding: 0.5rem;
-    }
+  .social-icon {
+    width: 2rem;
+    padding: 0.5rem;
   }
 }
 
@@ -199,6 +196,8 @@ h2,
   width: 1px;
 }
 
+/* ---------- END ACCESSIBILITY ---------- */
+
 /* support keyboard navigatation: drupal.org/node/897638 */
 
 .visually-hidden.focusable:active,
@@ -218,3 +217,15 @@ h2,
   cursor: pointer;
   width: 0.2rem;
 }
+
+/* ---------- UTILITY CLASSES ---------- */
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* ---------- END UTILITY CLASSES ---------- */

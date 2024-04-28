@@ -59,7 +59,7 @@ Our general [code of conduct](https://github.com/nditcommunity/ndit-code-of-cond
 
 ### Where do meet, ask for help, or chat with the team?
 
-We try to keep specific discourse and questions in tickets, PRs, and the [GitHub Discussions](https://github.com/nditcommunity/ndit-website/discussions) tab. 
+We try to keep specific discourse and questions in tickets, PRs, and the [GitHub Discussions](https://github.com/nditcommunity/ndit-website/discussions) tab.
 
 ### Can I refer friends or colleagues?
 
