@@ -71,6 +71,15 @@ header nav {
   align-items: center;
 }
 
+header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .nav-item {
   text-decoration: none;
   color: white;
@@ -88,7 +97,6 @@ header nav {
   margin-block-start: 1em;
   margin-block-end: 0.67em;
 }
-
 
 .join-btn {
   display: inline-block;
