@@ -8,7 +8,8 @@
 /* root vars */
 
 :root {
-  --arial: 'Arial', sans-serif;
+  --font-stack: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
 
   /* most commonly used brand colors */
   --black: black;
@@ -30,33 +31,95 @@
 /* ---------- RM DEFAULT BASE STYLES ---------- */
 /* (most commented out for now, from template, can circle back) */
 
+/* fonts */
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/assets/fonts/Atkinson-Hyperlegible-Regular-102a.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/assets/fonts/Atkinson-Hyperlegible-Italic-102a.woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/assets/fonts/Atkinson-Hyperlegible-Bold-102a.woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102a.woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* general */
 
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  font-family: var(--arial);
+  font-family: var(--font-stack);
   color: var(--black);
   background-color: var(--white);
-  margin: 0;
-  padding: 0;
-  text-align: center;
   align-items: center;
   font-size: 100%;
 }
 
 main {
-  max-width: 1000px;
-  margin: auto;
+  max-width: 33rem; /* Aim for 33–38 rem for readability. 33rem results in around 70 chars per line. */
+  margin-inline: auto;
+}
+
+main p {
+  line-height: 1.618; /* Should be between 1.5 and 2.0. 1.618 is the golden ratio. */
+  margin-bottom: 2em;
+}
+
+main ul {
+  padding-left: 1em;
+}
+
+main ul li {
+  padding-bottom: 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 /* header */
 
 .title {
   padding: 1rem;
-  margin: 0;
   font-size: 3rem;
   font-weight: bold;
   background-color: var(--purple);
   color: white;
+}
+
+header p {
+  text-align: center;
 }
 
 header a {
@@ -71,12 +134,18 @@ header nav {
   align-items: center;
 }
 
+header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+
 .nav-item {
   text-decoration: none;
   color: white;
   font-weight: bold;
   padding: 0.5rem 2rem;
-  margin: 0;
 }
 
 /* content */
@@ -189,7 +258,6 @@ footer {
   height: 1px;
   margin: -1px;
   overflow: hidden;
-  padding: 0;
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -203,7 +271,6 @@ footer {
 .visually-hidden.focusable:focus {
   clip: auto;
   height: auto;
-  margin: 0;
   overflow: visible;
   position: static;
   white-space: inherit;
