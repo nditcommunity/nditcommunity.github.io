@@ -20,7 +20,7 @@ There are situations outside of the control of ND in Tech representatives. We ma
 - Interactions on other online platforms not administered by ND in Tech representatives.
 - In-person meet-ups not sponsored by ND in Tech.
 
-We will consider *any* harassing behavior discovered by ND in Tech representative as a matter that could affect the health of the community and take appropriate actions as listed in the Grievance Review Process.
+We will consider _any_ harassing behavior discovered by ND in Tech representative as a matter that could affect the health of the community and take appropriate actions as listed in the Grievance Review Process.
 
 ## Community Membership/Inclusion
 
