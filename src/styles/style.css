@@ -8,9 +8,8 @@
 /* root vars */
 
 :root {
-  --font-stack: "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont,
-  "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji",
-  "Segoe UI Emoji";
+  --font-stack: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
 
   /* most commonly used brand colors */
   --black: black;
@@ -35,32 +34,32 @@
 /* fonts */
 
 @font-face {
-  font-family: "Atkinson Hyperlegible";
-  src: url("/assets/fonts/Atkinson-Hyperlegible-Regular-102a.woff2");
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/assets/fonts/Atkinson-Hyperlegible-Regular-102a.woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Atkinson Hyperlegible";
-  src: url("/assets/fonts/Atkinson-Hyperlegible-Italic-102a.woff2");
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/assets/fonts/Atkinson-Hyperlegible-Italic-102a.woff2');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Atkinson Hyperlegible";
-  src: url("/assets/fonts/Atkinson-Hyperlegible-Bold-102a.woff2");
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/assets/fonts/Atkinson-Hyperlegible-Bold-102a.woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Atkinson Hyperlegible";
-  src: url("/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102a.woff2");
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102a.woff2');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -87,7 +86,7 @@ main {
 }
 
 main p {
-  line-height: 1.618;  /* Should be between 1.5 and 2.0. 1.618 is the golden ratio. */
+  line-height: 1.618; /* Should be between 1.5 and 2.0. 1.618 is the golden ratio. */
   margin-bottom: 2em;
 }
 
@@ -99,7 +98,12 @@ main ul li {
   padding-bottom: 1em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
