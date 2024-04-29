@@ -4,7 +4,7 @@ title: resources
 description: Neurodiversity in Tech resources
 ---
 
-<h1>Resources</h1>
+# Resources
 
 <!--
 

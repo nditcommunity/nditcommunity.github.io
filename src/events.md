@@ -4,7 +4,8 @@ title: events
 description: press releases and other social highlights of Neurodiversity in Tech
 ---
 
-<h1>Events</h1>
+# Events
+
 <iframe
   class="calendar"
   src="https://calendar.google.com/calendar/embed?src=nditcommunity%40gmail.com&ctz=America/Denver&mode=AGENDA"
