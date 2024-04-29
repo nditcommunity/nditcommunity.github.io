@@ -18,10 +18,13 @@
     "debug": "DEBUG=* npx @11ty/eleventy",
     "dev": "npx @11ty/eleventy --serve",
     "dry-run": "npx @11ty/eleventy --dryrun",
-    "build:eleventy:prod": "ELEVENTY_ENV=production eleventy"
+    "build:eleventy:prod": "ELEVENTY_ENV=production eleventy",
+    "prettier:write": "prettier --write .",
+    "prettier:check": "prettier --check ."
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "@shopify/prettier-plugin-liquid": "^1.4.4",
     "prettier": "^3.2.5"
   }
 }
