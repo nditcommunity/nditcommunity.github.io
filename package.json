@@ -18,7 +18,8 @@
     "debug": "DEBUG=* npx @11ty/eleventy",
     "dev": "npx @11ty/eleventy --serve",
     "dry-run": "npx @11ty/eleventy --dryrun",
-    "build:eleventy:prod": "ELEVENTY_ENV=production eleventy"
+    "build:eleventy:prod": "ELEVENTY_ENV=production eleventy",
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
