@@ -1,0 +1,297 @@
+/* ---------- CREDIT FOR STARTING TEMPLATE ----------  */
+
+/* 1) HTML5 Boilerplate v9.0.0-RC1 | MIT License | html5boilerplate.com */
+/* 2) main.css 3.0.0 | MIT License | github.com/h5bp/main.css#readme */
+
+/* ---------- UTILITY ---------- */
+
+/* root vars */
+
+:root {
+  --font-stack: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+
+  /* most commonly used brand colors */
+  --black: black;
+  --white: white;
+  --yellow: #e0b645;
+  --pink: #bc69aa;
+  --blue: #32adc7;
+  --dark-green: #55bf8a;
+  --purple: #8772de;
+
+  /* others colors from logo */
+  --light-green: #8adf88;
+  --turqiouse: #2db7a2;
+  --red: #f07877;
+  --dark-orange: #f18b5b;
+  --light-orange: #f69e45;
+}
+
+/* ---------- RM DEFAULT BASE STYLES ---------- */
+/* (most commented out for now, from template, can circle back) */
+
+/* fonts */
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/assets/fonts/Atkinson-Hyperlegible-Regular-102a.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/assets/fonts/Atkinson-Hyperlegible-Italic-102a.woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/assets/fonts/Atkinson-Hyperlegible-Bold-102a.woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102a.woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* general */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-stack);
+  color: var(--black);
+  background-color: var(--white);
+  align-items: center;
+  font-size: 100%;
+}
+
+main {
+  max-width: 33rem; /* Aim for 33–38 rem for readability. 33rem results in around 70 chars per line. */
+  margin-inline: auto;
+}
+
+main p {
+  line-height: 1.618; /* Should be between 1.5 and 2.0. 1.618 is the golden ratio. */
+  margin-bottom: 2em;
+}
+
+main ul {
+  padding-left: 1em;
+}
+
+main ul li {
+  padding-bottom: 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* header */
+
+.title {
+  padding: 1rem;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: var(--purple);
+  color: white;
+}
+
+header p {
+  text-align: center;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header nav {
+  background-color: var(--dark-green);
+  min-height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+}
+
+/* content */
+
+.tagline {
+  margin: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-block-start: 1em;
+  margin-block-end: 0.67em;
+}
+
+.join-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  background-color: var(--blue);
+  color: white;
+  text-decoration: none;
+  border-radius: 50rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* about */
+
+.bio {
+  font-size: 1rem;
+  text-align: left;
+}
+
+/* events */
+
+.calendar {
+  height: 20rem;
+  border: 0;
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  max-height: 69px;
+  background-color: var(--purple);
+  padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 45px;
+
+  .social-icon {
+    width: 2rem;
+    padding: 0.5rem;
+  }
+}
+
+/* text shadows when selecting */
+
+/* ::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+} */
+
+/* ::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+} */
+
+/* horizontal rules */
+
+/* hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+} */
+
+/* fieldset */
+
+/* fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+} */
+
+/* ---------- ACCESSIBILITY ---------- */
+
+/* Hide visually AND from screen readers */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/* hide visually AND from screen readers (but still keep layout) */
+
+.invisible {
+  visibility: hidden;
+}
+
+/* hide visually but NOT from screen-readers */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* ---------- END ACCESSIBILITY ---------- */
+
+/* support keyboard navigatation: drupal.org/node/897638 */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+.theme-icon {
+  color: var(--white);
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 0.2rem;
+}
+
+/* ---------- UTILITY CLASSES ---------- */
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* ---------- END UTILITY CLASSES ---------- */
