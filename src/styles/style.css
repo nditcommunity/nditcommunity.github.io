@@ -170,7 +170,7 @@ main ul li {
 
 /* ---------- HEADING ---------- */
 
-/* title bar & footer */
+/* title bar */
 
 .title {
   padding: 1rem;
@@ -178,14 +178,12 @@ main ul li {
   font-weight: bold;
 }
 
-body.dark-mode .title,
-body.dark-mode footer {
+body.dark-mode .title {
   background-color: var(--night-purple);
   color: var(--white);
 }
 
-body.light-mode .title,
-body.light-mode footer {
+body.light-mode .title {
   background-color: var(--day-purple);
   color: var(--black);
 }
@@ -194,24 +192,6 @@ header a,
 header p {
   text-align: center;
   text-decoration: none;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 10;
-  max-height: 69px;
-  padding: 0.1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 45px;
-
-  .social-icon {
-    width: 2rem;
-    padding: 0.5rem;
-  }
 }
 
 /* nav */
@@ -226,11 +206,16 @@ nav {
 body.dark-mode nav {
   background-color: var(--night-green);
   color: var(--white);
+  border: 1px solid var(--white);
+  border-left: none;
+  border-right: none;
 }
 
 body.light-mode nav {
   background-color: var(--day-green);
   color: var(--black);
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
 }
 
 header nav ul {
@@ -266,6 +251,38 @@ body.light-mode .nav-item {
 
 .moon-icon {
   color: var(--black);
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  max-height: 69px;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 45px;
+
+  .social-icon {
+    width: 2rem;
+    padding: 0.5rem;
+  }
+}
+
+body.dark-mode footer {
+  background-color: var(--night-purple);
+  color: var(--white);
+  border-top: 1px solid var(--white);
+}
+
+body.light-mode footer {
+  background-color: var(--day-purple);
+  color: var(--black);
+  border-top: 1px solid var(--black);
 }
 
 /* ---------- PAGES ---------- */
@@ -316,11 +333,13 @@ h6 {
 body.light-mode .join-btn {
   background-color: var(--day-blue);
   color: var(--black);
+  border: 1px solid var(--black);
 }
 
 body.dark-mode .join-btn {
   background-color: var(--night-blue);
   color: var(--white);
+  border: 1px solid var(--white);
 }
 
 /* about */
