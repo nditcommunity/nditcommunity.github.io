@@ -382,4 +382,8 @@ body.night-mode .join-btn {
   height: 20rem;
   border: 0;
   width: 100%;
+  border-radius: 1rem;
+  background-color: var(--white);
+  padding: 1rem;
+  border: 1px solid var(--black);
 }
