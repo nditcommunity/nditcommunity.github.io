@@ -1,58 +1,36 @@
-$(document).ready(function () {
-  loadSavedTheme();
-  updateThemeColors();
+// theme management
 
-  $(".theme-icon").on("click", function () {
-    toggleTheme();
+$(document).ready(() => {
+
+  const applyTheme = (themeClass) => {
+
+    // update theme class
+    $("body").removeClass("dark-mode light-mode").addClass(themeClass);
+
+    // update theme icons
+    const isDarkMode = themeClass === "dark-mode";
+    $(".sun-icon").toggleClass("hidden", !isDarkMode);
+    $(".moon-icon").toggleClass("hidden", isDarkMode);
+  };
+
+  // load previously saved theme
+  const savedTheme = localStorage.getItem("theme") || "light-mode";
+  applyTheme(savedTheme);
+
+  // toggle new theme
+  $(".theme-icon").on("click", () => {
+
+    // determine which theme to apply
+    const currentTheme = $("body").hasClass("dark-mode")
+      ? "dark-mode"
+      : "light-mode";
+
+    const newTheme = currentTheme === "dark-mode"
+      ? "light-mode"
+      : "dark-mode";
+
+    // save and apply new theme
+    localStorage.setItem("theme", newTheme);
+    applyTheme(newTheme);
   });
-
-  function applyTheme(theme) {
-    const $body = $("body");
-
-    if (theme === "dark") {
-      $body.removeClass("light-mode").addClass("dark-mode");
-    } else {
-      $body.removeClass("dark-mode").addClass("light-mode");
-    }
-  }
-
-  function loadSavedTheme() {
-    const savedTheme = localStorage.getItem("theme") || "light";
-
-    if (savedTheme === "light") {
-      $(".sun-icon").addClass("hidden");
-      $(".moon-icon").removeClass("hidden");
-
-    } else {
-      $(".moon-icon").addClass("hidden");
-      $(".sun-icon").removeClass("hidden");
-    }
-    
-    applyTheme(savedTheme);
-  }
-
-  function toggleTheme() {
-    $(".sun-icon, .moon-icon").toggleClass("hidden");
-    saveThemePreference();
-    updateThemeColors();
-
-    function saveThemePreference() {
-      const newTheme = $(".sun-icon").is(":visible") ? "dark" : "light";
-      localStorage.setItem("theme", newTheme);
-    }
-  }
-
-  function updateThemeColors() {
-    const theme = $(".sun-icon").is(":visible") ? "dark" : "light";
-
-    if (theme === "dark") {
-      color1 = "white";
-      color2 = "black";
-    } else {
-      color1 = "black";
-      color2 = "white";
-    }
-
-    applyTheme(theme);
-  }
 });
