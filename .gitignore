@@ -2,5 +2,5 @@ node_modules
 .DS_Store
 _site/*
 !_site/**/*.html
+!_site/*.html
 **/.DS_Store
-.DS_Store
