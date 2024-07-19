@@ -168,6 +168,20 @@ main ul li {
   padding-bottom: 1em;
 }
 
+/* links */
+
+a {
+  text-decoration: none;
+}
+
+body.night-mode a {
+  color: var(--white);
+}
+
+body.day-mode a {
+  color: var(--black);
+}
+
 /* ---------- HEADING ---------- */
 
 /* title bar */
@@ -188,10 +202,8 @@ body.day-mode .title {
   color: var(--black);
 }
 
-header a,
 header p {
   text-align: center;
-  text-decoration: none;
 }
 
 /* nav */
@@ -312,12 +324,20 @@ h6 {
 
 /* home */
 
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .tagline {
   margin: 1rem;
   font-size: 1.3rem;
   font-weight: bold;
   margin-block-start: 1em;
   margin-block-end: 0.67em;
+  text-align: center;
 }
 
 .join-btn {
