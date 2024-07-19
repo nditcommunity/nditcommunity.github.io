@@ -11,45 +11,32 @@
   --font-stack: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
 
-  /* most commonly used brand colors */
+  /* currently used colors */
   --black: black;
   --white: white;
-  --yellow: #e0b645;
-  --pink: #bc69aa;
-  --blue: #32adc7;
-  --green: #55bf8a;
-  --purple: #8772de;
-
-  /* night mode shades */
-
   --night-purple: #432979;
-  --night-green: #376c54;
-
-  /* light mode shades */
-
   --day-purple: #f1eaff;
+  --night-green: #376c54;
   --day-green: #ddffef;
+  --blue: #32adc7;
+
+  /* most commonly used brand colors */
+  /* --yellow: #e0b645;
+  --pink: #bc69aa;
+  --green: #55bf8a;
+  --purple: #8772de; */
 
   /* others colors from logo */
-  --light-green: #8adf88;
+  /* --light-green: #8adf88;
   --turquoise: #2db7a2;
   --red: #f07877;
   --dark-orange: #f18b5b;
-  --light-orange: #f69e45;
+  --light-orange: #f69e45; */
 }
 
-body {
-  font-family: var(--font-stack);
-  color: var(--black);
-  background-color: var(--white);
-  align-items: center;
-  font-size: 100%;
-}
+/* ---------- FONTS ---------- */
 
-/* ---------- RM DEFAULT BASE STYLES ---------- */
-/* (most commented out for now, from template, can circle back) */
-
-/* fonts */
+/* font face */
 
 @font-face {
   font-family: 'Atkinson Hyperlegible';
@@ -83,7 +70,59 @@ body {
   font-display: swap;
 }
 
-/* general */
+/* text styles */
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* ---------- ACCESSIBILITY ---------- */
+
+/* Hide visually AND from screen readers */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/* hide visually AND from screen readers (but still keep layout) */
+
+.invisible {
+  visibility: hidden;
+}
+
+/* hide visually but NOT from screen-readers */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* support keyboard navigatation: drupal.org/node/897638 */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/* ---------- GENERAL ---------- */
+
+/* body */
 
 * {
   padding: 0;
@@ -92,11 +131,21 @@ body {
 
 body {
   font-family: var(--font-stack);
-  color: var(--black);
-  background-color: var(--white);
   align-items: center;
   font-size: 100%;
 }
+
+body.light-mode {
+  color: var(--black);
+  background-color: var(--white);
+}
+
+body.dark-mode {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+/* main */
 
 main {
   max-width: 33rem; /* Aim for 33–38 rem for readability. 33rem results in around 70 chars per line. */
@@ -115,6 +164,110 @@ main ul {
 main ul li {
   padding-bottom: 1em;
 }
+
+/* ---------- HEADING ---------- */
+
+/* title bar & footer */
+
+.title {
+  padding: 1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+body.dark-mode .title,
+body.dark-mode footer {
+  background-color: var(--night-purple);
+  color: white;
+}
+
+body.light-mode .title,
+body.light-mode footer {
+  background-color: var(--day-purple);
+  color: black;
+}
+
+header a,
+header p {
+  text-align: center;
+  text-decoration: none;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  max-height: 69px;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 45px;
+
+  .social-icon {
+    width: 2rem;
+    padding: 0.5rem;
+  }
+}
+
+/* nav */
+
+nav {
+  min-height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body.dark-mode nav {
+  background-color: var(--night-green);
+  color: white;
+}
+
+body.light-mode nav {
+  background-color: var(--day-green);
+  color: black;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+
+.nav-item {
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+}
+
+body.dark-mode .nav-item {
+  color: white;
+}
+
+body.light-mode .nav-item {
+  color: black;
+}
+
+.theme-icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 0.2rem;
+}
+
+.sun-icon {
+  color: white;
+}
+
+.moon-icon {
+  color: black;
+}
+
+/* ---------- PAGES ---------- */
+
+/* headings */
 
 h1 {
   margin-top: 1em;
@@ -137,73 +290,7 @@ h6 {
   margin-bottom: 0.5em;
 }
 
-/* header */
-
-.title {
-  padding: 1rem;
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-body.dark-mode .title {
-  background-color: var(--night-purple);
-  color: white;
-}
-
-body.light-mode .title {
-  background-color: var(--day-purple);
-  color: black;
-}
-
-header p {
-  text-align: center;
-}
-
-header a {
-  text-decoration: none;
-}
-
-header nav {
-  min-height: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-body.dark-mode nav {
-  background-color: var(--night-green);
-  color: white;
-}
-
-body.light-mode nav {
-  background-color: var(--day-green);
-  color: black;
-}
-
-body.dark-mode .nav-item {
-  color: white;
-}
-
-body.light-mode .nav-item {
-  color: black;
-}
-
-header nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
-}
-
-.nav-item {
-  text-decoration: none;
-  /* color: white; */
-  color: black;
-  font-weight: bold;
-  padding: 0.5rem 2rem;
-}
-
-/* content */
+/* home */
 
 .tagline {
   margin: 1rem;
@@ -238,137 +325,4 @@ header nav ul {
   height: 20rem;
   border: 0;
   width: 100%;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 10;
-  max-height: 69px;
-  padding: 0.1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 45px;
-
-  .social-icon {
-    width: 2rem;
-    padding: 0.5rem;
-  }
-}
-
-body.dark-mode footer {
-  background-color: var(--night-purple);
-}
-
-body.light-mode footer {
-  background-color: var(--day-purple);
-}
-
-/* text shadows when selecting */
-
-/* ::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-} */
-
-/* ::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-} */
-
-/* horizontal rules */
-
-/* hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-} */
-
-/* fieldset */
-
-/* fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-} */
-
-/* ---------- ACCESSIBILITY ---------- */
-
-/* Hide visually AND from screen readers */
-
-.hidden,
-[hidden] {
-  display: none !important;
-}
-
-/* hide visually AND from screen readers (but still keep layout) */
-
-.invisible {
-  visibility: hidden;
-}
-
-/* hide visually but NOT from screen-readers */
-
-.visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-/* ---------- END ACCESSIBILITY ---------- */
-
-/* support keyboard navigatation: drupal.org/node/897638 */
-
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
-}
-
-.theme-icon {
-  font-size: 1.2rem;
-  cursor: pointer;
-  width: 0.2rem;
-}
-
-/* Light mode */
-.sun-icon {
-  color: white;
-}
-
-/* Dark mode */
-.moon-icon {
-  color: black;
-}
-
-/* ---------- UTILITY CLASSES ---------- */
-
-.italic {
-  font-style: italic;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-/* ---------- END UTILITY CLASSES ---------- */
-
-/* Theme-specific styles */
-body.dark-mode {
-  --black: white;
-  --white: black;
 }
