@@ -32,6 +32,9 @@
   --red: #f07877;
   --dark-orange: #f18b5b;
   --light-orange: #f69e45; */
+
+  --day-blue: #cdeef8;  
+  --night-blue: #195963;
 }
 
 /* ---------- FONTS ---------- */
@@ -178,13 +181,13 @@ main ul li {
 body.dark-mode .title,
 body.dark-mode footer {
   background-color: var(--night-purple);
-  color: white;
+  color: var(--white);
 }
 
 body.light-mode .title,
 body.light-mode footer {
   background-color: var(--day-purple);
-  color: black;
+  color: var(--black);
 }
 
 header a,
@@ -222,12 +225,12 @@ nav {
 
 body.dark-mode nav {
   background-color: var(--night-green);
-  color: white;
+  color: var(--white);
 }
 
 body.light-mode nav {
   background-color: var(--day-green);
-  color: black;
+  color: var(--black);
 }
 
 header nav ul {
@@ -244,11 +247,11 @@ header nav ul {
 }
 
 body.dark-mode .nav-item {
-  color: white;
+  color: var(--white);
 }
 
 body.light-mode .nav-item {
-  color: black;
+  color: var(--black);
 }
 
 .theme-icon {
@@ -258,11 +261,11 @@ body.light-mode .nav-item {
 }
 
 .sun-icon {
-  color: white;
+  color: var(--white);
 }
 
 .moon-icon {
-  color: black;
+  color: var(--black);
 }
 
 /* ---------- PAGES ---------- */
@@ -304,12 +307,22 @@ h6 {
   display: inline-block;
   padding: 1rem 2rem;
   margin: 1rem;
-  background-color: var(--blue);
-  color: white;
   text-decoration: none;
   border-radius: 50rem;
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+body.light-mode .join-btn {
+  background-color: var(--day-blue);
+  color: var(--black);
+  border: 1px solid var(--black);
+}
+
+body.dark-mode .join-btn {
+  background-color: var(--night-blue);
+  color: var(--white);
+  border: 1px solid var(--white);
 }
 
 /* about */
