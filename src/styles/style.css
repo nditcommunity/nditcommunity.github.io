@@ -14,17 +14,27 @@
   /* currently used colors */
   --black: black;
   --white: white;
-  --night-purple: #432979;
-  --night-green: #376c54;
-  --day-purple: #f1eaff;
-  --day-green: #ddffef;
-  --blue: #32adc7;
+  --day-purple: #f3ecf8;
+  --day-green: #e6fff4;
+  --day-blue: #e9f8fe;
+  --night-purple: #5b4b85;
+  --night-green: #507d6a;
+  --night-blue: #3a6e78;
+
+  /* more saturated used colors */
+  /* --night-purple: #432979; */
+  /* --night-green: #376c54; */
+  /* --night-blue: #195963; */
+  /* --day-purple: #f1eaff; */
+  /* --day-green: #ddffef; */
+  /* --day-blue: #cdeef8; */
 
   /* most commonly used brand colors */
-  /* --yellow: #e0b645;
-  --pink: #bc69aa;
-  --green: #55bf8a;
-  --purple: #8772de; */
+  /* --yellow: #e0b645; */
+  /* --pink: #bc69aa; */
+  /* --green: #55bf8a; */
+  /* --purple: #8772de; */
+  /* --blue: #32adc7; */
 
   /* others colors from logo */
   /* --light-green: #8adf88;
@@ -32,9 +42,6 @@
   --red: #f07877;
   --dark-orange: #f18b5b;
   --light-orange: #f69e45; */
-
-  --day-blue: #cdeef8;
-  --night-blue: #195963;
 }
 
 /* ---------- FONTS ---------- */
