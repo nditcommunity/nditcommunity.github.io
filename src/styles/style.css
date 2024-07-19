@@ -316,13 +316,11 @@ h6 {
 body.light-mode .join-btn {
   background-color: var(--day-blue);
   color: var(--black);
-  border: 1px solid var(--black);
 }
 
 body.dark-mode .join-btn {
   background-color: var(--night-blue);
   color: var(--white);
-  border: 1px solid var(--white);
 }
 
 /* about */
