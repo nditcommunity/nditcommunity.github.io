@@ -15,8 +15,8 @@
   --black: black;
   --white: white;
   --night-purple: #432979;
-  --day-purple: #f1eaff;
   --night-green: #376c54;
+  --day-purple: #f1eaff;
   --day-green: #ddffef;
   --blue: #32adc7;
 
@@ -138,12 +138,12 @@ body {
   font-size: 100%;
 }
 
-body.light-mode {
+body.day-mode {
   color: var(--black);
   background-color: var(--white);
 }
 
-body.dark-mode {
+body.night-mode {
   color: var(--white);
   background-color: var(--black);
 }
@@ -178,12 +178,12 @@ main ul li {
   font-weight: bold;
 }
 
-body.dark-mode .title {
+body.night-mode .title {
   background-color: var(--night-purple);
   color: var(--white);
 }
 
-body.light-mode .title {
+body.day-mode .title {
   background-color: var(--day-purple);
   color: var(--black);
 }
@@ -203,7 +203,7 @@ nav {
   align-items: center;
 }
 
-body.dark-mode nav {
+body.night-mode nav {
   background-color: var(--night-green);
   color: var(--white);
   border: 1px solid var(--white);
@@ -211,7 +211,7 @@ body.dark-mode nav {
   border-right: none;
 }
 
-body.light-mode nav {
+body.day-mode nav {
   background-color: var(--day-green);
   color: var(--black);
   border-top: 1px solid var(--black);
@@ -231,11 +231,11 @@ header nav ul {
   padding: 0.5rem 2rem;
 }
 
-body.dark-mode .nav-item {
+body.night-mode .nav-item {
   color: var(--white);
 }
 
-body.light-mode .nav-item {
+body.day-mode .nav-item {
   color: var(--black);
 }
 
@@ -273,13 +273,13 @@ footer {
   }
 }
 
-body.dark-mode footer {
+body.night-mode footer {
   background-color: var(--night-purple);
   color: var(--white);
   border-top: 1px solid var(--white);
 }
 
-body.light-mode footer {
+body.day-mode footer {
   background-color: var(--day-purple);
   color: var(--black);
   border-top: 1px solid var(--black);
@@ -330,13 +330,13 @@ h6 {
   font-weight: bold;
 }
 
-body.light-mode .join-btn {
+body.day-mode .join-btn {
   background-color: var(--day-blue);
   color: var(--black);
   border: 1px solid var(--black);
 }
 
-body.dark-mode .join-btn {
+body.night-mode .join-btn {
   background-color: var(--night-blue);
   color: var(--white);
   border: 1px solid var(--white);
