@@ -20,12 +20,30 @@
   --dark-green: #55bf8a;
   --purple: #8772de;
 
+  /* night mode shades */
+
+  --night-purple: #432979;
+  --night-green: #376c54;
+
+  /* light mode shades */
+
+  --day-purple: #f1eaff;
+  --day-green: #ddffef;
+
   /* others colors from logo */
   --light-green: #8adf88;
-  --turqiouse: #2db7a2;
+  --turquoise: #2db7a2;
   --red: #f07877;
   --dark-orange: #f18b5b;
   --light-orange: #f69e45;
+}
+
+body {
+  font-family: var(--font-stack);
+  color: var(--black);
+  background-color: var(--white);
+  align-items: center;
+  font-size: 100%;
 }
 
 /* ---------- RM DEFAULT BASE STYLES ---------- */
@@ -98,13 +116,24 @@ main ul li {
   padding-bottom: 1em;
 }
 
-h1,
+h1 {
+  margin-top: 1em;
+}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
   margin-top: 1.5em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 0.5em;
 }
 
@@ -112,10 +141,18 @@ h6 {
 
 .title {
   padding: 1rem;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  background-color: var(--purple);
+}
+
+body.dark-mode .title {
+  background-color: var(--night-purple);
   color: white;
+}
+
+body.light-mode .title {
+  background-color: var(--day-purple);
+  color: black;
 }
 
 header p {
@@ -127,11 +164,28 @@ header a {
 }
 
 header nav {
-  background-color: var(--dark-green);
   min-height: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+body.dark-mode nav {
+  background-color: var(--night-green);
+  color: white;
+}
+
+body.light-mode nav {
+  background-color: var(--day-green);
+  color: black;
+}
+
+body.dark-mode .nav-item {
+  color: white;
+}
+
+body.light-mode .nav-item {
+  color: black;
 }
 
 header nav ul {
@@ -143,7 +197,8 @@ header nav ul {
 
 .nav-item {
   text-decoration: none;
-  color: white;
+  /* color: white; */
+  color: black;
   font-weight: bold;
   padding: 0.5rem 2rem;
 }
@@ -191,7 +246,6 @@ footer {
   width: 100%;
   z-index: 10;
   max-height: 69px;
-  background-color: var(--purple);
   padding: 0.1rem;
   display: flex;
   justify-content: center;
@@ -202,6 +256,14 @@ footer {
     width: 2rem;
     padding: 0.5rem;
   }
+}
+
+footer.dark-mode {
+  background-color: var(--night-purple);
+}
+
+footer.light-mode {
+  background-color: var(--day-purple);
 }
 
 /* text shadows when selecting */
@@ -278,10 +340,19 @@ footer {
 }
 
 .theme-icon {
-  color: var(--white);
   font-size: 1.2rem;
   cursor: pointer;
   width: 0.2rem;
+}
+
+/* Light mode */
+.sun-icon {
+  color: white;
+}
+
+/* Dark mode */
+.moon-icon {
+  color: black;
 }
 
 /* ---------- UTILITY CLASSES ---------- */
@@ -295,3 +366,9 @@ footer {
 }
 
 /* ---------- END UTILITY CLASSES ---------- */
+
+/* Theme-specific styles */
+body.dark-mode {
+  --black: white;
+  --white: black;
+}
