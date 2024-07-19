@@ -17,7 +17,7 @@
   --yellow: #e0b645;
   --pink: #bc69aa;
   --blue: #32adc7;
-  --dark-green: #55bf8a;
+  --green: #55bf8a;
   --purple: #8772de;
 
   /* night mode shades */
@@ -258,11 +258,11 @@ footer {
   }
 }
 
-footer.dark-mode {
+body.dark-mode footer {
   background-color: var(--night-purple);
 }
 
-footer.light-mode {
+body.light-mode footer {
   background-color: var(--day-purple);
 }
 
