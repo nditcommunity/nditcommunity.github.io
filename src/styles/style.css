@@ -257,6 +257,7 @@ header nav ul {
   justify-content: center;
   align-items: center;
   list-style-type: none;
+  padding-top: 0.2rem;
 }
 
 .nav-item {
