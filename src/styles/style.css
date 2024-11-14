@@ -14,14 +14,23 @@
   /* currently used colors */
   --black: black;
   --white: white;
-  --almost-black: #121212;
+  --almost-black: #1c1c1c;
   --almost-white: #f2f2f2;
-  --day-green: #d4e8e0;
-  --day-purple: #e1dce8;
-  --day-blue: #d6e8ec;
-  --night-purple: #5b4b85;
-  --night-green: #507d6a;
-  --night-blue: #3a6e78;
+  --day-green: #cfdcd7;
+  --day-purple: #d8d3dd;
+  --day-blue: #cfdde1;
+  --night-purple: #4f466e;
+  --night-green: #4a6f63;
+  --night-blue: #345a63;
+
+
+  /* draft 1 saturated */
+  /* --day-green: #d4e8e0; */
+  /* --day-purple: #e1dce8; */
+  /* --day-blue: #d6e8ec; */
+  /* --night-purple: #5b4b85; */
+  /* --night-green: #507d6a; */
+  /* --night-blue: #3a6e78; */
 
   /* more saturated used colors */
   /* --night-purple: #432979; */
