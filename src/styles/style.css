@@ -14,9 +14,11 @@
   /* currently used colors */
   --black: black;
   --white: white;
-  --day-purple: #f3ecf8;
-  --day-green: #e6fff4;
-  --day-blue: #e9f8fe;
+  --almost-black: #121212;
+  --almost-white: #f2f2f2;
+  --day-green: #d4e8e0;
+  --day-purple: #e1dce8;
+  --day-blue: #d6e8ec;
   --night-purple: #5b4b85;
   --night-green: #507d6a;
   --night-blue: #3a6e78;
@@ -32,9 +34,13 @@
   /* most commonly used brand colors */
   /* --yellow: #e0b645; */
   /* --pink: #bc69aa; */
-  /* --green: #55bf8a; */
+  /* --green: #55bf8a;
   /* --purple: #8772de; */
   /* --blue: #32adc7; */
+
+  /* --day-green: #cce8e0;
+  --day-purple: #e0d8eb;
+  --day-blue: #d5eaf2; */
 
   /* others colors from logo */
   /* --light-green: #8adf88;
@@ -147,12 +153,12 @@ body {
 
 body.day-mode {
   color: var(--black);
-  background-color: var(--white);
+  background-color: var(--almost-white);
 }
 
 body.night-mode {
   color: var(--white);
-  background-color: var(--black);
+  background-color: var(--almost-black);
 }
 
 /* main */
