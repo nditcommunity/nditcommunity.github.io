@@ -1,15 +1,33 @@
-// theme toggle
+$(document).ready(() => {
+  const applyTheme = (themeClass) => {
+    // update theme class
+    $("body").removeClass("night-mode day-mode").addClass(themeClass);
 
-$(document).ready(function () {
-  updateThemeColors();
+    // update theme icons
+    const isDarkMode = themeClass === "night-mode";
+    $(".sun-icon").toggleClass("hidden", !isDarkMode);
+    $(".moon-icon").toggleClass("hidden", isDarkMode);
 
-  $('.theme-icon').on('click', function () {
-    $('.sun-icon, .moon-icon').toggleClass('hidden');
-    updateThemeColors();
+    // update all social icons dynamically
+    $(".social-icon").each(function() {
+      const src = $(this).attr("src");
+      const newSrc = src.replace(/-(black|white)\.png$/, `-${isDarkMode ? 'white' : 'black'}.png`);
+      $(this).attr("src", newSrc);
+    });
+  };
+
+  // load previously saved theme or set default to night-mode
+  const savedTheme = localStorage.getItem("theme") || "night-mode";
+  applyTheme(savedTheme);
+
+  // toggle new theme
+  $(".theme-icon").on("click", () => {
+    // determine which theme to apply
+    const currentTheme = $("body").hasClass("night-mode") ? "night-mode" : "day-mode";
+    const newTheme = currentTheme === "night-mode" ? "day-mode" : "night-mode";
+
+    // save and apply new theme
+    localStorage.setItem("theme", newTheme);
+    applyTheme(newTheme);
   });
-
-  function updateThemeColors() {
-    const [color1, color2] = $('.sun-icon').is(':visible') ? ['white', 'black'] : ['black', 'white'];
-    $(':root').css({ '--black': color1, '--white': color2 });
-  }
 });
