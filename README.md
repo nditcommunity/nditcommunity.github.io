@@ -8,7 +8,7 @@ If you're neurodivergent, consider [joining the ND In Tech community](https://nd
 
 Anyone can help! You don’t need open-source experience, and you don’t need to be neurodivergent to contribute. This is an open-source and volunteer-driven project that you can add to your resume or LinkedIn. We appreciate all contributions, both large and small.
 
-You can find our [full ticket list here](https://github.com/orgs/nditcommunity/projects/1/views/6?filterQuery=is%3Aissue). You can filter for [only tickets that need help here](https://github.com/nditcommunity/nditcommunity.github.io/blob/main/README.md).
+You can find our [full ticket list here](https://github.com/orgs/nditcommunity/projects/1/views/6?filterQuery=is%3Aissue). You can filter for [only tickets that need help here]([https://github.com/nditcommunity/nditcommunity.github.io/blob/main/README.md](https://github.com/nditcommunity/nditcommunity.github.io/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)).
 
 ### Designers
 
