@@ -11,27 +11,56 @@
   --font-stack: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
 
-  /* most commonly used brand colors */
+  /* currently used colors */
   --black: black;
   --white: white;
-  --yellow: #e0b645;
-  --pink: #bc69aa;
-  --blue: #32adc7;
-  --dark-green: #55bf8a;
-  --purple: #8772de;
+  --almost-black: #1c1c1c;
+  --almost-white: #f7f7f7;
+  --day-green: #cfdcd7;
+  --day-purple: #d8d3dd;
+  --day-blue: #cfdde1;
+  --night-purple: #4f466e;
+  --night-green: #4a6f63;
+  --night-blue: #345a63;
+
+  /* draft 1 saturated */
+  /* --day-green: #d4e8e0; */
+  /* --day-purple: #e1dce8; */
+  /* --day-blue: #d6e8ec; */
+  /* --night-purple: #5b4b85; */
+  /* --night-green: #507d6a; */
+  /* --night-blue: #3a6e78; */
+
+  /* more saturated used colors */
+  /* --night-purple: #432979; */
+  /* --night-green: #376c54; */
+  /* --night-blue: #195963; */
+  /* --day-purple: #f1eaff; */
+  /* --day-green: #ddffef; */
+  /* --day-blue: #cdeef8; */
+
+  /* most commonly used brand colors */
+  /* --yellow: #e0b645; */
+  /* --pink: #bc69aa; */
+  /* --green: #55bf8a;
+  /* --purple: #8772de; */
+  /* --blue: #32adc7; */
+
+  /* --day-green: #cce8e0;
+  --day-purple: #e0d8eb;
+  --day-blue: #d5eaf2; */
 
   /* others colors from logo */
-  --light-green: #8adf88;
-  --turqiouse: #2db7a2;
+  /* --light-green: #8adf88;
+  --turquoise: #2db7a2;
   --red: #f07877;
   --dark-orange: #f18b5b;
-  --light-orange: #f69e45;
+  --light-orange: #f69e45; */
 }
 
-/* ---------- RM DEFAULT BASE STYLES ---------- */
-/* (most commented out for now, from template, can circle back) */
+/* ---------- FONTS ---------- */
 
-/* fonts */
+/* font face */
 
 @font-face {
   font-family: 'Atkinson Hyperlegible';
@@ -65,175 +94,15 @@
   font-display: swap;
 }
 
-/* general */
+/* text styles */
 
-* {
-  padding: 0;
-  margin: 0;
+.italic {
+  font-style: italic;
 }
 
-body {
-  font-family: var(--font-stack);
-  color: var(--black);
-  background-color: var(--white);
-  align-items: center;
-  font-size: 100%;
-}
-
-main {
-  max-width: 33rem; /* Aim for 33–38 rem for readability. 33rem results in around 70 chars per line. */
-  margin-inline: auto;
-}
-
-main p {
-  line-height: 1.618; /* Should be between 1.5 and 2.0. 1.618 is the golden ratio. */
-  margin-bottom: 2em;
-}
-
-main ul {
-  padding-left: 1em;
-}
-
-main ul li {
-  padding-bottom: 1em;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-/* header */
-
-.title {
-  padding: 1rem;
-  font-size: 3rem;
-  font-weight: bold;
-  background-color: var(--purple);
-  color: white;
-}
-
-header p {
-  text-align: center;
-}
-
-header a {
-  text-decoration: none;
-}
-
-header nav {
-  background-color: var(--dark-green);
-  min-height: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-header nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
-}
-
-.nav-item {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  padding: 0.5rem 2rem;
-}
-
-/* content */
-
-.tagline {
-  margin: 1rem;
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-block-start: 1em;
-  margin-block-end: 0.67em;
-}
-
-.join-btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  margin: 1rem;
-  background-color: var(--blue);
-  color: white;
-  text-decoration: none;
-  border-radius: 50rem;
-  font-size: 1.5rem;
+.bold {
   font-weight: bold;
 }
-
-/* about */
-
-.bio {
-  font-size: 1rem;
-  text-align: left;
-}
-
-/* events */
-
-.calendar {
-  height: 20rem;
-  border: 0;
-  width: 100%;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 10;
-  max-height: 69px;
-  background-color: var(--purple);
-  padding: 0.1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 45px;
-
-  .social-icon {
-    width: 2rem;
-    padding: 0.5rem;
-  }
-}
-
-/* text shadows when selecting */
-
-/* ::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-} */
-
-/* ::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-} */
-
-/* horizontal rules */
-
-/* hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-} */
-
-/* fieldset */
-
-/* fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-} */
 
 /* ---------- ACCESSIBILITY ---------- */
 
@@ -263,8 +132,6 @@ footer {
   width: 1px;
 }
 
-/* ---------- END ACCESSIBILITY ---------- */
-
 /* support keyboard navigatation: drupal.org/node/897638 */
 
 .visually-hidden.focusable:active,
@@ -277,21 +144,290 @@ footer {
   width: auto;
 }
 
-.theme-icon {
+/* ---------- GENERAL ---------- */
+
+/* body */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-stack);
+  align-items: center;
+  font-size: 100%;
+}
+
+body.day-mode {
+  color: var(--black);
+  background-color: var(--almost-white);
+}
+
+body.night-mode {
   color: var(--white);
-  font-size: 1.2rem;
-  cursor: pointer;
-  width: 0.2rem;
+  background-color: var(--almost-black);
 }
 
-/* ---------- UTILITY CLASSES ---------- */
+/* main */
 
-.italic {
-  font-style: italic;
+main {
+  max-width: 33rem; /* Aim for 33–38 rem for readability. 33rem results in around 70 chars per line. */
+  margin-inline: auto;
 }
 
-.bold {
+main p {
+  line-height: 1.618; /* Should be between 1.5 and 2.0. 1.618 is the golden ratio. */
+  margin-bottom: 2em;
+}
+
+main ul {
+  padding-left: 1em;
+}
+
+main ul li {
+  padding-bottom: 1em;
+}
+
+/* links */
+
+a {
+  text-decoration: none;
+}
+
+body.night-mode a {
+  color: var(--white);
+}
+
+body.day-mode a {
+  color: var(--black);
+}
+
+/* ---------- HEADING ---------- */
+
+/* title bar */
+
+.title {
+  padding: 1rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
-/* ---------- END UTILITY CLASSES ---------- */
+body.night-mode .title {
+  background-color: var(--night-purple);
+  color: var(--white);
+}
+
+body.day-mode .title {
+  background-color: var(--day-purple);
+  color: var(--black);
+}
+
+header p {
+  text-align: center;
+}
+
+/* nav */
+
+nav {
+  min-height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body.night-mode nav {
+  background-color: var(--night-green);
+  color: var(--white);
+  border: 1px solid var(--white);
+  border-left: none;
+  border-right: none;
+}
+
+body.day-mode nav {
+  background-color: var(--day-green);
+  color: var(--black);
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding-top: 0.2rem;
+}
+
+.nav-item {
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+}
+
+body.night-mode .nav-item {
+  color: var(--white);
+}
+
+body.day-mode .nav-item {
+  color: var(--black);
+}
+
+.theme-icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 0.2rem;
+  margin-right: 16px;
+}
+
+.sun-icon {
+  color: var(--white);
+}
+
+.moon-icon {
+  color: var(--black);
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  max-height: 69px;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 45px;
+
+  .social-icon {
+    width: 2rem;
+    padding: 0.6rem 0.5rem 0.4rem 0.5rem;
+  }
+}
+
+body.night-mode footer {
+  background-color: var(--night-purple);
+  color: var(--white);
+  border-top: 1px solid var(--white);
+}
+
+body.day-mode footer {
+  background-color: var(--day-purple);
+  color: var(--black);
+  border-top: 1px solid var(--black);
+}
+
+/* ---------- PAGES ---------- */
+
+/* headings */
+
+h1 {
+  margin-top: 1em;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.5em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5em;
+}
+
+/* home */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.tagline {
+  margin: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-block-start: 1em;
+  margin-block-end: 0.67em;
+  text-align: center;
+}
+
+.join-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  text-decoration: none;
+  border-radius: 50rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+body.day-mode .join-btn {
+  background-color: var(--day-blue);
+  color: var(--black);
+  border: 1px solid var(--black);
+}
+
+body.night-mode .join-btn {
+  background-color: var(--night-blue);
+  color: var(--white);
+  border: 1px solid var(--white);
+}
+
+/* about */
+
+.bio {
+  font-size: 1rem;
+  text-align: left;
+}
+
+/* events */
+
+.calendar {
+  height: 20rem;
+  border: 0;
+  width: 100%;
+  border-radius: 1rem;
+  background-color: var(--white);
+  padding: 1rem;
+  border: 1px solid var(--black);
+  overflow: hidden;
+}
+
+/* mobile */
+
+@media only screen and (max-width: 600px) {
+  main {
+    width: 19rem;
+  }
+
+  .calendar {
+    width: 17rem;
+    min-height: 17rem;
+    margin-top: 0.8rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .nav-item {
+    padding: 0.5rem 1rem;
+  }
+
+  .calendar {
+    height: auto;
+  }
+}
