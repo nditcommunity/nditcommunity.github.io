@@ -17,7 +17,7 @@ $(document).ready(() => {
   };
 
   // load previously saved theme or set default to night-mode
-  const savedTheme = localStorage.getItem('theme') || 'night-mode';
+  const savedTheme = localStorage.getItem('theme') || 'day-mode';
   applyTheme(savedTheme);
 
   // toggle new theme
