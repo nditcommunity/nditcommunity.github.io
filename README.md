@@ -27,6 +27,7 @@ We use JavaScript, HTML, CSS, 11ty, Prettier, Netlify
 #### 2. Run project
 
 - Enter the following in your terminal:
+
   ```
   npx @11ty/eleventy --serve
   ```
@@ -55,7 +56,7 @@ We use JavaScript, HTML, CSS, 11ty, Prettier, Netlify
 
 - Run this command in your terminal to ensure your code meets formatting standards before submission:
   ```
-  npx prettier --write
+  npx prettier --write .
   ```
 - When the PR is ready for code review, request review from an owner.
 - An owner will review your code or respond to questions.
