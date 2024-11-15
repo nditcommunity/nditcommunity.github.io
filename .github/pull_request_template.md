@@ -4,7 +4,7 @@
 
 Please include a summary of the change and which issue is fixed.
 
-[[link to ticket on issue board](https://github.com/orgs/nditcommunity/projects/1)]
+[Issue Board Ticket](https://github.com/nditcommunity/nditcommunity.github.io/issues/1)
 
 ## Type of change
 
