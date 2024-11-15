@@ -26,6 +26,9 @@
   --red: #f07877;
   --dark-orange: #f18b5b;
   --light-orange: #f69e45;
+
+  /* sizing */
+  --max-footer-height: 69px;
 }
 
 /* ---------- RM DEFAULT BASE STYLES ---------- */
@@ -83,6 +86,7 @@ body {
 main {
   max-width: 33rem; /* Aim for 33–38 rem for readability. 33rem results in around 70 chars per line. */
   margin-inline: auto;
+  margin-bottom: var(--max-footer-height);
 }
 
 main p {
@@ -190,13 +194,13 @@ footer {
   bottom: 0;
   width: 100%;
   z-index: 10;
-  max-height: 69px;
+  min-height: 45px;
+  max-height: var(--max-footer-height);
   background-color: var(--purple);
   padding: 0.1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 45px;
 
   .social-icon {
     width: 2rem;
