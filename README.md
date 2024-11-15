@@ -21,7 +21,6 @@ We use JavaScript, HTML, CSS, 11ty, Prettier, and Netlify.
 #### 1. Clone project
 
 - Clone the project locally (do not fork) by entering this in your terminal:
-
   ```
   git clone https://github.com/nditcommunity/nditcommunity.github.io.git
   ```
@@ -29,7 +28,6 @@ We use JavaScript, HTML, CSS, 11ty, Prettier, and Netlify.
 #### 2. Run project
 
 - Enter the following in your terminal:
-
   ```
   npx @11ty/eleventy --serve
   ```
@@ -45,13 +43,17 @@ We use JavaScript, HTML, CSS, 11ty, Prettier, and Netlify.
 #### 3. Take a ticket
 
 - Select a ticket from the "To Do" column on [our issue board](https://github.com/orgs/nditcommunity/projects/1/views/6?filterQuery=is%3Aissue) that has _both_ "good first issue" and "help needed" labels.
+
 - Assign the ticket to yourself and remove the "helper wanted" label.
+
 - Drag the ticket to the "In Progress" column.
 
 #### 4. Work on ticket
 
 - Name the branch using the issue number and a short name, like `6-favicon` or `18-day-night-toggle`.
+
 - Request write access by tagging an owner (see Team section below) in the issue ticket.
+
 - Create a Pull Request (PR) into `main`, and fill in the auto-generated PR template. If it's a work in progress, note this in the description and ignore sections below "Type of change".
 
 #### 5. Code review
@@ -60,8 +62,11 @@ We use JavaScript, HTML, CSS, 11ty, Prettier, and Netlify.
   ```
   npx prettier --write .
   ```
+
 - When the PR is ready for code review, request review from an owner.
+
 - An owner will review your code or respond to questions.
+
 - When approved, an owner will merge your PR into `main`. _Only owners are permitted to merge anything into main._
 
 ### Team
