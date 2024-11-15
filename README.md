@@ -16,7 +16,7 @@ In-progress wireframe brainstorming is happening on Penpot. Request an invite vi
 
 ### Developers
 
-We use JavaScript, HTML, CSS, 11ty, Prettier, Netlify
+We use JavaScript, HTML, CSS, 11ty, Prettier, and Netlify.
 
 #### 1. Clone project
 
@@ -45,14 +45,14 @@ We use JavaScript, HTML, CSS, 11ty, Prettier, Netlify
 #### 3. Take a ticket
 
 - Select a ticket from the "To Do" column on [our issue board](https://github.com/orgs/nditcommunity/projects/1/views/6?filterQuery=is%3Aissue) that has _both_ "good first issue" and "help needed" labels.
-- Assign the ticket to yourself & remove the "helper wanted" label.
+- Assign the ticket to yourself and remove the "helper wanted" label.
 - Drag the ticket to the "In Progress" column.
 
 #### 4. Work on ticket
 
 - Name the branch using the issue number and a short name, like `6-favicon` or `18-day-night-toggle`.
 - Request write access by tagging an owner (see Team section below) in the issue ticket.
-- Create a Pull Request (PR) into `main` & fill in the auto-generated PR template. If it's a work in progress, note this in the description and ignore sections below "Type of change".
+- Create a Pull Request (PR) into `main`, and fill in the auto-generated PR template. If it's a work in progress, note this in the description and ignore sections below "Type of change".
 
 #### 5. Code review
 
