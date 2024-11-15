@@ -28,6 +28,7 @@ We use JavaScript, HTML, CSS, 11ty, Prettier, and Netlify.
 #### 2. Run project
 
 - Enter the following in your terminal:
+
   ```
   npx @11ty/eleventy --serve
   ```
@@ -59,6 +60,7 @@ We use JavaScript, HTML, CSS, 11ty, Prettier, and Netlify.
 #### 5. Code review
 
 - Run this command in your terminal to ensure your code meets formatting standards before submission:
+
   ```
   npx prettier --write .
   ```
