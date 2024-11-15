@@ -2,13 +2,13 @@
 
 The draft is currently auto-deployed [at this Netlify URL](https://ndit-staging.netlify.app) and will officially be hosted at [nd-in-tech.org](nd-in-tech.org).
 
-You can find [our issue board here](https://github.com/orgs/nditcommunity/projects/1/views/6?filterQuery=is%3Aissue).
-
 If you're neurodivergent, consider [joining the ND In Tech community](https://nd-in-tech.org)!
 
 ## Contributing
 
 Anyone can help! You don’t need open-source experience, and you don’t need to be neurodivergent to contribute. This is an open-source and volunteer-driven project that you can add to your resume or LinkedIn. We appreciate all contributions, both large and small.
+
+You can find our [full ticket list here](https://github.com/orgs/nditcommunity/projects/1/views/6?filterQuery=is%3Aissue). You can filter for [only tickets that need help here](https://github.com/nditcommunity/nditcommunity.github.io/blob/main/README.md).
 
 ### Designers
 
