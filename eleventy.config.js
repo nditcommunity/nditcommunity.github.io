@@ -4,7 +4,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/scripts');
   eleventyConfig.addPassthroughCopy('src/site.webmanifest');
   eleventyConfig.addPassthroughCopy('src/icon.png');
-  eleventyConfig.addPassthroughCopy('src /icon.svg');
+  eleventyConfig.addPassthroughCopy('src/icon.svg');
   eleventyConfig.addPassthroughCopy('src/favicon.ico');
 
   return {

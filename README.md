@@ -1,76 +1,75 @@
 # Neurodiversity In Tech Website
 
-## Helping
+The draft is currently auto-deployed [here](https://ndit-staging.netlify.app) and will official be hosted at [nd-in-tech.org](nd-in-tech.org).
 
-### Who is allowed to help?
+If you're neurodivergent, consider [joining the ND In Tech community](https://nd-in-tech.org)!
 
-Anyone can help! You don't need open-source experience, and you don't need to be neurodivergent (ND) to help the cause. If you ARE ND yourself, you can also [join ND In Tech](nd-in-tech.org) yourself.
+## Contributing
 
-### What's the process?
+Anyone can help! You don’t need open-source experience, and you don’t need to be neurodivergent to contribute. This is an open-source and volunteer-driven project that you can add to your resume or LinkedIn. We appreciate all contributions, both large and small.
 
-1. **Clone:** Clone the project locally. Don't make a fork.
-2. **Ticket:** Choose a ticket from the "To Do" column of [our issue board](https://github.com/orgs/nditcommunity/projects/1) that you think you can complete in under a week.
-3. **Assign:** Set to yourself.
-4. **Move ticket:** Drag ticket to the "In Progress" column.
-5. **Create branch:** Name the local branch with the issue number plus 1-3 words summarizing of ticket, such as `6-favicon` or `18-day-night-toggle`.
-6. **Start:** Try your best to get it started.
-7. **Pull request:** Create a PR into `main`. It doesn't need to be complete yet; you can create one as soon as you start working on the ticket & keep pushing onto it.
-8. **PR template:** Fill in auto-generated template that will pop up. If it's still in progress, just note such in the description, and ignore everything below the "Type of change" section.
-9. **Request review:** When it's ready for code review or you have a question, assign it to an [owner](https://github.com/nditcommunity/ndit-website), with any questions right in the PR's "Conversation" tab.
-10. **Receive review:** Owners will do a review of code or questions.
-11. **Merging:** When it's good to go, an owner will merge the ticket into `main`.
-12. **Thank you!** We appreciate you contributing as a volunteer to this open-source, social-good project.
+### Designers
 
-### Who is allowed to move tickets to "To Do"?
+In-progress wireframe brainstorming is happening on Penpot. Request an invite via the Discussions tab or by commenting on an existing design ticket. Make sure to tag an owner (see Team section below).
 
-Anyone can move a ticket from "To Do" > "In Progress" > "Code Review" as they work, but we currently only allow only owners to move specifically from "Planning" > "To Do".
+### Developers
 
-### Who is allowed to review PRs?
+We use JavaScript, HTML, CSS, 11ty, Prettier, Netlify
 
-Anyone can help with PR code reviews, but please don't merge into `main`.
+#### 1. Clone project
 
-### Who is allowed to push to or merge into `main`?
+- Clone the project locally (do not fork) by entering this in your terminal:
 
-Right now, we only allow only owners to merge PRs into `main`.
+  ```
+  git clone https://github.com/nditcommunity/nditcommunity.github.io.git
+  ```
 
-## Tech & resources
+#### 2. Run project
 
-### What tech is used?
+- Enter the following in your terminal:
 
-This site is currently made with JavaScript, HTML, & CSS.
+  ```
+  npx @11ty/eleventy --serve
+  ```
 
-### Where are the tickets?
+- When you're asked if you want to install relevant packages, respond `y`.
 
-We use GitHub Project Issues ([linked here](https://github.com/orgs/nditcommunity/projects/1)).
+- You _may_ need to update related libraries, including tools like Homebrew or Node.js, to ensure compatibility.
 
-### Where is the wireframe?
+- Run the above eleventy serve command again.
 
-We have in-progress wireframe brainstorming happening on [Penpot](design.penpot.app). If you'd like an invite to our team there, please reach out.
+- Open the site in your browser at `localhost:8080`.
 
-## Team
+#### 3. Take a ticket
 
-### Who are the owners?
+- Select a ticket from the "To Do" column on [our issue board](https://github.com/orgs/nditcommunity/projects/1/views/6?filterQuery=is%3Aissue) that has _both_ "good first issue" and "help needed" labels.
+- Assign the ticket to yourself.
+- Drag the ticket to the "In Progress" column.
 
-The owners of the repo are [@hayleyw7](https://github.com/hayleyw7) & [@royemosby](https://github.com/royemosby).
+#### 4. Work on ticket
 
-### Is there a code of conduct?
+- Name the branch using the issue number and a short name, like `6-favicon` or `18-day-night-toggle`.
+- Request write access by tagging an owner (see Team section below) in the issue ticket.
+- Create a Pull Request (PR) into `main` & fill in the auto-generated PR template. If it's a work in progress, note this in the description and ignore sections below "Type of change".
 
-Our general [code of conduct](https://github.com/nditcommunity/ndit-code-of-conduct) applies here.
+#### 5. Code review
 
-### Where do meet, ask for help, or chat with the team?
+- Run this command in your terminal to ensure your code meets formatting standards before submission:
+  ```
+  npx prettier --write .
+  ```
+- When the PR is ready for code review, request review from an owner.
+- An owner will review your code or respond to questions.
+- When approved, an owner will merge your PR into `main`. _Only owners are permitted to merge anything into main._
 
-We try to keep specific discourse and questions in tickets, PRs, and the [GitHub Discussions](https://github.com/nditcommunity/ndit-website/discussions) tab.
+### Team
 
-### Can I refer friends or colleagues?
+The **owners** of the repo are @hayleyw7 and @royemosby.
 
-Yes, please. We're open to all minds & labor offered.
+All contributors, including the owners, are dedicated volunteers.
 
-## Open-Source Software (OSS)
+While most contributors are members of the ND In Tech community, we are also fortunate to have incredible support from allies.
 
-### Does this count as open-source experience?
+## Licensing
 
-Absolutely! Once you've had a PR merged into `main`, it's great open-source & volunteer experience to put on your resume and post about on your LinkedIn.
-
-### What's the official licensing?
-
-The website is open-source and licensed under an [MIT License](https://github.com/nditcommunity/ndit-website?tab=MIT-1-ov-file#readme).
+The website is open-source and licensed under an MIT License.
