@@ -55,7 +55,11 @@
   --turquoise: #2db7a2;
   --red: #f07877;
   --dark-orange: #f18b5b;
-  --light-orange: #f69e45; */
+  --light-orange: #f69e45;
+
+  /* sizing */
+  --max-footer-height: 69px;
+  --light-orange: #f69e45;
 }
 
 /* ---------- FONTS ---------- */
@@ -99,6 +103,170 @@
 .italic {
   font-style: italic;
 }
+
+body {
+  font-family: var(--font-stack);
+  color: var(--black);
+  background-color: var(--white);
+  align-items: center;
+  font-size: 100%;
+}
+
+main {
+  max-width: 33rem; /* Aim for 33–38 rem for readability. 33rem results in around 70 chars per line. */
+  margin-inline: auto;
+  margin-bottom: calc(var(--max-footer-height) + 25px);
+}
+
+main p {
+  line-height: 1.618; /* Should be between 1.5 and 2.0. 1.618 is the golden ratio. */
+  margin-bottom: 2em;
+}
+
+main ul {
+  padding-left: 1em;
+}
+
+main ul li {
+  padding-bottom: 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* header */
+
+.title {
+  padding: 1rem;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: var(--purple);
+  color: white;
+}
+
+header p {
+  text-align: center;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header nav {
+  background-color: var(--dark-green);
+  min-height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+}
+
+/* content */
+
+.tagline {
+  margin: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-block-start: 1em;
+  margin-block-end: 0.67em;
+}
+
+.join-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  background-color: var(--blue);
+  color: white;
+  text-decoration: none;
+  border-radius: 50rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* about */
+
+.bio {
+  font-size: 1rem;
+  text-align: left;
+}
+
+/* events */
+
+.calendar {
+  height: 20rem;
+  border: 0;
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  min-height: 45px;
+  max-height: var(--max-footer-height);
+  background-color: var(--purple);
+  padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .social-icon {
+    width: 2rem;
+    padding: 0.5rem;
+  }
+}
+
+/* text shadows when selecting */
+
+/* ::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+} */
+
+/* ::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+} */
+
+/* horizontal rules */
+
+/* hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+} */
+
+/* fieldset */
+
+/* fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+} */
 
 .bold {
   font-weight: bold;
