@@ -1,6 +1,6 @@
 # Neurodiversity In Tech Website
 
-The draft is currently auto-deployed [here](https://ndit-staging.netlify.app) and will official be hosted at [nd-in-tech.org](nd-in-tech.org).
+The draft is currently auto-deployed [here](https://ndit-staging.netlify.app) and will officially be hosted at [nd-in-tech.org](nd-in-tech.org).
 
 If you're neurodivergent, consider [joining the ND In Tech community](https://nd-in-tech.org)!
 
