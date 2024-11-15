@@ -71,7 +71,7 @@ We use JavaScript, HTML, CSS, 11ty, Prettier, and Netlify.
 
 ### Team
 
-The **owners** of the repo are @hayleyw7 and @royemosby.
+The **owners** of the repo are [@hayleyw7](https://github.com/hayleyw7) and [@royemosby](https://github.com/royemosby).
 
 All contributors, including the owners, are dedicated volunteers.
 
