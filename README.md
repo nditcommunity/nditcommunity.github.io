@@ -45,7 +45,7 @@ We use JavaScript, HTML, CSS, 11ty, Prettier, Netlify
 #### 3. Take a ticket
 
 - Select a ticket from the "To Do" column on [our issue board](https://github.com/orgs/nditcommunity/projects/1/views/6?filterQuery=is%3Aissue) that has _both_ "good first issue" and "help needed" labels.
-- Assign the ticket to yourself.
+- Assign the ticket to yourself & remove the "helper wanted" label.
 - Drag the ticket to the "In Progress" column.
 
 #### 4. Work on ticket
