@@ -203,6 +203,17 @@ header nav ul {
   font-weight: bold;
 }
 
+@media (max-height: 450px) {
+  .tagline {
+    display: none;
+  }
+
+  div.home {
+    justify-content: flex-start;
+    padding-top: 10vh;
+  }
+}
+
 /* about */
 
 .bio {
