@@ -441,19 +441,11 @@ body.day-mode .nav-item {
   color: var(--black);
 }
 
-.theme-icon {
-  font-size: 1.2rem;
-  cursor: pointer;
-  width: 0.2rem;
-  margin-right: 16px;
-}
-
-.sun-icon {
-  color: var(--white);
-}
-
+.sun-icon,
 .moon-icon {
-  color: var(--black);
+  cursor: pointer;
+  font-size: 100% !important;
+  padding-top: 2.5px;
 }
 
 /* ---------- FOOTER ---------- */
