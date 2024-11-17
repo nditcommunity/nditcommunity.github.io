@@ -58,7 +58,7 @@
   --light-orange: #f69e45;
 
   /* sizing */
-  --max-footer-height: 69px;
+  --footer-height: 50px;
   --light-orange: #f69e45;
 }
 
@@ -115,7 +115,7 @@ body {
 main {
   max-width: 33rem; /* Aim for 33–38 rem for readability. 33rem results in around 70 chars per line. */
   margin-inline: auto;
-  margin-bottom: calc(var(--max-footer-height) + 25px);
+  margin-bottom: calc(var(--footer-height) + 20px);
 }
 
 main p {
@@ -223,8 +223,7 @@ footer {
   bottom: 0;
   width: 100%;
   z-index: 10;
-  min-height: 45px;
-  max-height: var(--max-footer-height);
+  height: var(--footer-height);
   background-color: var(--purple);
   padding: 0.1rem;
   display: flex;
