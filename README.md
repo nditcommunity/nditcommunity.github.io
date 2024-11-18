@@ -79,6 +79,10 @@ All contributors, including the owners, are dedicated volunteers.
 
 While most contributors are members of the ND In Tech community, we are also fortunate to have incredible support from allies.
 
+## Attribution
+
+Social icons are sources from [Freepik](https://www.flaticon.com/packs/social-media-86).
+
 ## Licensing
 
 The website is open-source and licensed under an MIT License.
