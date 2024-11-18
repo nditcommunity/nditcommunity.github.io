@@ -88,7 +88,7 @@ body {
 }
 
 main {
-  max-width: 33rem;
+  max-width: 33rem; /* Aim for 33–38 rem for readability. 33rem results in around 70 chars per line. */
   margin-inline: auto;
   margin-bottom: calc(var(--max-footer-height) + 25px);
 }
