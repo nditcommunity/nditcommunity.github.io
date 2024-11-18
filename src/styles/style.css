@@ -339,6 +339,7 @@ body.night-mode nav {
   color: var(--white);
   border-left: none;
   border-right: none;
+  border-bottom: 1px solid #303030;
 }
 
 body.day-mode nav {
