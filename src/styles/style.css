@@ -25,9 +25,13 @@
 
   /* gradients */
   --day-banner-gradient: linear-gradient(to right, var(--day-purple), var(--day-blue));
-  --day-btn-gradient: linear-gradient(to right, var(--day-green), var(--day-blue));
   --night-banner-gradient: linear-gradient(to right, var(--night-purple), var(--night-blue));
+
+  --day-btn-gradient: linear-gradient(to right, var(--day-green), var(--day-blue));
+  --day-btn-gradient-reversed: linear-gradient(to right, var(--day-blue), var(--day-green));
+
   --night-btn-gradient: linear-gradient(to right, var(--night-green), var(--night-blue));
+  --night-btn-gradient-reversed: linear-gradient(to right, var(--night-blue), var(--night-green));
 
   /* sizing */
   --max-footer-height: 69px;
@@ -115,7 +119,6 @@ h6 {
 /* general */
 
 li:hover,
-.join-btn:hover,
 .social-icon:hover {
   transform: scale(1.03) !important;
 }
@@ -478,9 +481,17 @@ body.day-mode .join-btn {
   color: var(--black);
 }
 
+body.day-mode .join-btn:hover {
+  background: var(--day-btn-gradient-reversed);
+}
+
 body.night-mode .join-btn {
   background: var(--night-btn-gradient);
   color: var(--white);
+}
+
+body.night-mode .join-btn:hover {
+  background: var(--night-btn-gradient-reversed);
 }
 
 /* about */
