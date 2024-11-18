@@ -198,24 +198,6 @@ header nav ul {
   width: 100%;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 10;
-  min-height: 45px;
-  max-height: var(--max-footer-height);
-  padding: 0.1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .social-icon {
-    width: 2rem;
-    padding: 0.5rem;
-  }
-}
-
 .bold {
   font-weight: bold;
 }
@@ -404,7 +386,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 45px;
+  max-height: var(--max-footer-height);
 
   .social-icon {
     width: 2rem;
