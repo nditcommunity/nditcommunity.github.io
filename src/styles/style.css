@@ -114,8 +114,8 @@ body {
 
 main {
   max-width: 33rem; /* Aim for 33–38 rem for readability. 33rem results in around 70 chars per line. */
-  margin-inline: auto;
-  margin-bottom: calc(var(--footer-height) + 20px);
+  padding-bottom: var(--footer-height);
+  overflow-y: hidden;
 }
 
 main p {
@@ -204,13 +204,13 @@ header nav ul {
 }
 
 @media (max-height: 450px) {
-  .tagline {
-    display: none;
+  div.home {
+    height: 30px;
+    padding-top: 10px;
   }
 
-  div.home {
-    justify-content: flex-start;
-    padding-top: 10vh;
+  .tagline {
+    display: none;
   }
 }
 
@@ -520,17 +520,15 @@ h6 {
 .home {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 60vh;
+  height: calc(300px - var(--footer-height)); 
+  padding-top: 30px;
 }
 
 .tagline {
-  margin: 1rem;
+  /* margin: 1rem; */
   font-size: 1.3rem;
   font-weight: bold;
-  margin-block-start: 1em;
-  margin-block-end: 0.67em;
   text-align: center;
 }
 
