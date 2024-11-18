@@ -34,7 +34,7 @@
   --night-btn-gradient-reversed: linear-gradient(to right, var(--night-blue), var(--night-green));
 
   /* sizing */
-  --max-footer-height: 69px;
+  --footer-height: 4.3rem;
 }
 
 /* ---------- FONTS ---------- */
@@ -90,7 +90,7 @@ body {
 main {
   max-width: 33rem; /* Aim for 33–38 rem for readability. 33rem results in around 70 chars per line. */
   margin-inline: auto;
-  margin-bottom: calc(var(--max-footer-height) + 25px);
+  margin-bottom: calc(var(--footer-height) + 1.5rem);
 }
 
 main p {
@@ -382,16 +382,15 @@ footer {
   bottom: 0;
   width: 100%;
   z-index: 10;
-  max-height: 69px;
-  padding: 0.1rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: var(--max-footer-height);
+  gap: 1rem;
+  height: var(--footer-height);
 
   .social-icon {
     width: 2rem;
-    padding: 0.6rem 0.5rem 0.4rem 0.5rem;
   }
 }
 
