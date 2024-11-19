@@ -23,43 +23,18 @@
   --night-green: #4a6f63;
   --night-blue: #345a63;
 
-  /* draft 1 saturated */
-  /* --day-green: #d4e8e0; */
-  /* --day-purple: #e1dce8; */
-  /* --day-blue: #d6e8ec; */
-  /* --night-purple: #5b4b85; */
-  /* --night-green: #507d6a; */
-  /* --night-blue: #3a6e78; */
+  /* gradients */
+  --day-banner-gradient: linear-gradient(to right, var(--day-purple), var(--day-blue));
+  --night-banner-gradient: linear-gradient(to right, var(--night-purple), var(--night-blue));
 
-  /* more saturated used colors */
-  /* --night-purple: #432979; */
-  /* --night-green: #376c54; */
-  /* --night-blue: #195963; */
-  /* --day-purple: #f1eaff; */
-  /* --day-green: #ddffef; */
-  /* --day-blue: #cdeef8; */
+  --day-btn-gradient: linear-gradient(to right, var(--day-green), var(--day-blue));
+  --day-btn-gradient-reversed: linear-gradient(to right, var(--day-blue), var(--day-green));
 
-  /* most commonly used brand colors */
-  /* --yellow: #e0b645; */
-  /* --pink: #bc69aa; */
-  /* --green: #55bf8a;
-  /* --purple: #8772de; */
-  /* --blue: #32adc7; */
-
-  /* --day-green: #cce8e0;
-  --day-purple: #e0d8eb;
-  --day-blue: #d5eaf2; */
-
-  /* others colors from logo */
-  /* --light-green: #8adf88;
-  --turquoise: #2db7a2;
-  --red: #f07877;
-  --dark-orange: #f18b5b;
-  --light-orange: #f69e45;
+  --night-btn-gradient: linear-gradient(to right, var(--night-green), var(--night-blue));
+  --night-btn-gradient-reversed: linear-gradient(to right, var(--night-blue), var(--night-green));
 
   /* sizing */
-  --max-footer-height: 69px;
-  --light-orange: #f69e45;
+  --footer-height: 4.3rem;
 }
 
 /* ---------- FONTS ---------- */
@@ -115,11 +90,11 @@ body {
 main {
   max-width: 33rem; /* Aim for 33–38 rem for readability. 33rem results in around 70 chars per line. */
   margin-inline: auto;
-  margin-bottom: calc(var(--max-footer-height) + 25px);
+  margin-bottom: calc(var(--footer-height) + 1.5rem);
 }
 
 main p {
-  line-height: 1.618; /* Should be between 1.5 and 2.0. 1.618 is the golden ratio. */
+  line-height: 1.618;
   margin-bottom: 2em;
 }
 
@@ -141,13 +116,19 @@ h6 {
   margin-bottom: 0.5em;
 }
 
+/* general */
+
+li:hover,
+.social-icon:hover {
+  transform: scale(1.03);
+}
+
 /* header */
 
 .title {
   padding: 1rem;
   font-size: 3rem;
   font-weight: bold;
-  background-color: var(--purple);
   color: white;
 }
 
@@ -160,7 +141,6 @@ header a {
 }
 
 header nav {
-  background-color: var(--dark-green);
   min-height: 1rem;
   display: flex;
   justify-content: center;
@@ -217,56 +197,6 @@ header nav ul {
   border: 0;
   width: 100%;
 }
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 10;
-  min-height: 45px;
-  max-height: var(--max-footer-height);
-  background-color: var(--purple);
-  padding: 0.1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .social-icon {
-    width: 2rem;
-    padding: 0.5rem;
-  }
-}
-
-/* text shadows when selecting */
-
-/* ::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-} */
-
-/* ::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-} */
-
-/* horizontal rules */
-
-/* hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-} */
-
-/* fieldset */
-
-/* fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-} */
 
 .bold {
   font-weight: bold;
@@ -340,12 +270,12 @@ body.night-mode {
 /* main */
 
 main {
-  max-width: 33rem; /* Aim for 33–38 rem for readability. 33rem results in around 70 chars per line. */
+  max-width: 33rem;
   margin-inline: auto;
 }
 
 main p {
-  line-height: 1.618; /* Should be between 1.5 and 2.0. 1.618 is the golden ratio. */
+  line-height: 1.618;
   margin-bottom: 2em;
 }
 
@@ -382,12 +312,12 @@ body.day-mode a {
 }
 
 body.night-mode .title {
-  background-color: var(--night-purple);
+  background: var(--night-banner-gradient);
   color: var(--white);
 }
 
 body.day-mode .title {
-  background-color: var(--day-purple);
+  background: var(--day-banner-gradient);
   color: var(--black);
 }
 
@@ -405,18 +335,15 @@ nav {
 }
 
 body.night-mode nav {
-  background-color: var(--night-green);
+  background-color: var(--almost-black);
   color: var(--white);
-  border: 1px solid var(--white);
   border-left: none;
   border-right: none;
+  border-bottom: 1px solid #303030;
 }
 
 body.day-mode nav {
-  background-color: var(--day-green);
   color: var(--black);
-  border-top: 1px solid var(--black);
-  border-bottom: 1px solid var(--black);
 }
 
 header nav ul {
@@ -441,19 +368,11 @@ body.day-mode .nav-item {
   color: var(--black);
 }
 
-.theme-icon {
-  font-size: 1.2rem;
-  cursor: pointer;
-  width: 0.2rem;
-  margin-right: 16px;
-}
-
-.sun-icon {
-  color: var(--white);
-}
-
+.sun-icon,
 .moon-icon {
-  color: var(--black);
+  cursor: pointer;
+  font-size: 100% !important;
+  padding-top: 2.5px;
 }
 
 /* ---------- FOOTER ---------- */
@@ -463,29 +382,26 @@ footer {
   bottom: 0;
   width: 100%;
   z-index: 10;
-  max-height: 69px;
-  padding: 0.1rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 45px;
+  gap: 1rem;
+  height: var(--footer-height);
 
   .social-icon {
     width: 2rem;
-    padding: 0.6rem 0.5rem 0.4rem 0.5rem;
   }
 }
 
 body.night-mode footer {
-  background-color: var(--night-purple);
+  background: var(--night-banner-gradient);
   color: var(--white);
-  border-top: 1px solid var(--white);
 }
 
 body.day-mode footer {
-  background-color: var(--day-purple);
+  background: var(--day-banner-gradient);
   color: var(--black);
-  border-top: 1px solid var(--black);
 }
 
 /* ---------- PAGES ---------- */
@@ -543,15 +459,21 @@ h6 {
 }
 
 body.day-mode .join-btn {
-  background-color: var(--day-blue);
+  background: var(--day-btn-gradient);
   color: var(--black);
-  border: 1px solid var(--black);
+}
+
+body.day-mode .join-btn:hover {
+  background: var(--day-btn-gradient-reversed);
 }
 
 body.night-mode .join-btn {
-  background-color: var(--night-blue);
+  background: var(--night-btn-gradient);
   color: var(--white);
-  border: 1px solid var(--white);
+}
+
+body.night-mode .join-btn:hover {
+  background: var(--night-btn-gradient-reversed);
 }
 
 /* about */
@@ -570,8 +492,11 @@ body.night-mode .join-btn {
   border-radius: 1rem;
   background-color: var(--white);
   padding: 1rem;
-  border: 1px solid var(--black);
   overflow: hidden;
+}
+
+.night-mode .calendar {
+  filter: invert(1) hue-rotate(180deg);
 }
 
 /* mobile */
@@ -598,4 +523,10 @@ body.night-mode .join-btn {
   .calendar {
     height: auto;
   }
+}
+
+.day-mode nav,
+.day-mode .join-btn,
+.day-mode .calendar {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
