@@ -203,7 +203,6 @@ h6 {
 
 /* header */
 
-
 header p {
   text-align: center;
 }
@@ -272,7 +271,7 @@ nav {
   color: var(--white);
   border-left: none;
   border-right: none;
-  box-shadow:  var(--night-shadow);
+  box-shadow: var(--night-shadow);
 }
 
 body.day-mode nav {
