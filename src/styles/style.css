@@ -3,63 +3,46 @@
 /* 1) HTML5 Boilerplate v9.0.0-RC1 | MIT License | html5boilerplate.com */
 /* 2) main.css 3.0.0 | MIT License | github.com/h5bp/main.css#readme */
 
-/* ---------- UTILITY ---------- */
+/* ---------- VARIABLES ---------- */
 
-/* root vars */
+/* colors */
 
 :root {
   --font-stack: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
 
   /* currently used colors */
+
   --black: black;
   --white: white;
-  --almost-black: #1c1c1c;
+  --almost-black: #121212;
   --almost-white: #f7f7f7;
-  --day-green: #cfdcd7;
+  --day-green: #cedad3;
   --day-purple: #d8d3dd;
   --day-blue: #cfdde1;
   --night-purple: #4f466e;
   --night-green: #4a6f63;
   --night-blue: #345a63;
 
-  /* draft 1 saturated */
-  /* --day-green: #d4e8e0; */
-  /* --day-purple: #e1dce8; */
-  /* --day-blue: #d6e8ec; */
-  /* --night-purple: #5b4b85; */
-  /* --night-green: #507d6a; */
-  /* --night-blue: #3a6e78; */
+  /* shadows */
 
-  /* more saturated used colors */
-  /* --night-purple: #432979; */
-  /* --night-green: #376c54; */
-  /* --night-blue: #195963; */
-  /* --day-purple: #f1eaff; */
-  /* --day-green: #ddffef; */
-  /* --day-blue: #cdeef8; */
+  --day-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  --night-shadow: 0px 4px 6px rgba(255, 255, 255, 0.25);
 
-  /* most commonly used brand colors */
-  /* --yellow: #e0b645; */
-  /* --pink: #bc69aa; */
-  /* --green: #55bf8a;
-  /* --purple: #8772de; */
-  /* --blue: #32adc7; */
+  /* gradients */
 
-  /* --day-green: #cce8e0;
-  --day-purple: #e0d8eb;
-  --day-blue: #d5eaf2; */
+  --day-banner-gradient: linear-gradient(to right, var(--day-purple), var(--day-blue));
+  --night-banner-gradient: linear-gradient(to right, var(--night-purple), var(--night-blue));
 
-  /* others colors from logo */
-  /* --light-green: #8adf88;
-  --turquoise: #2db7a2;
-  --red: #f07877;
-  --dark-orange: #f18b5b;
-  --light-orange: #f69e45;
+  --day-btn-gradient: linear-gradient(to right, var(--day-green), var(--day-blue));
+  --day-btn-gradient-reversed: linear-gradient(to right, var(--day-blue), var(--day-green));
+
+  --night-btn-gradient: linear-gradient(to right, var(--night-green), var(--night-blue));
+  --night-btn-gradient-reversed: linear-gradient(to right, var(--night-blue), var(--night-green));
 
   /* sizing */
-  --max-footer-height: 69px;
-  --light-orange: #f69e45;
+
+  --footer-height: 4.3rem;
 }
 
 /* ---------- FONTS ---------- */
@@ -104,177 +87,24 @@
   font-style: italic;
 }
 
-body {
-  font-family: var(--font-stack);
-  color: var(--black);
-  background-color: var(--white);
-  align-items: center;
-  font-size: 100%;
-}
-
-main {
-  max-width: 33rem; /* Aim for 33–38 rem for readability. 33rem results in around 70 chars per line. */
-  margin-inline: auto;
-  margin-bottom: calc(var(--max-footer-height) + 25px);
-}
-
-main p {
-  line-height: 1.618; /* Should be between 1.5 and 2.0. 1.618 is the golden ratio. */
-  margin-bottom: 2em;
-}
-
-main ul {
-  padding-left: 1em;
-}
-
-main ul li {
-  padding-bottom: 1em;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-/* header */
-
-.title {
-  padding: 1rem;
-  font-size: 3rem;
-  font-weight: bold;
-  background-color: var(--purple);
-  color: white;
-}
-
-header p {
-  text-align: center;
-}
-
-header a {
-  text-decoration: none;
-}
-
-header nav {
-  background-color: var(--dark-green);
-  min-height: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-header nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
-}
-
-.nav-item {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  padding: 0.5rem 2rem;
-}
-
-/* content */
-
-.tagline {
-  margin: 1rem;
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-block-start: 1em;
-  margin-block-end: 0.67em;
-}
-
-.join-btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  margin: 1rem;
-  background-color: var(--blue);
-  color: white;
-  text-decoration: none;
-  border-radius: 50rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-/* about */
-
-.bio {
-  font-size: 1rem;
-  text-align: left;
-}
-
-/* events */
-
-.calendar {
-  height: 20rem;
-  border: 0;
-  width: 100%;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 10;
-  min-height: 45px;
-  max-height: var(--max-footer-height);
-  background-color: var(--purple);
-  padding: 0.1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .social-icon {
-    width: 2rem;
-    padding: 0.5rem;
-  }
-}
-
-/* text shadows when selecting */
-
-/* ::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-} */
-
-/* ::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-} */
-
-/* horizontal rules */
-
-/* hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-} */
-
-/* fieldset */
-
-/* fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-} */
-
 .bold {
   font-weight: bold;
 }
 
+/* links */
+
+a {
+  text-decoration: none;
+}
+
+li:hover,
+.social-icon:hover {
+  transform: scale(1.03);
+}
+
 /* ---------- ACCESSIBILITY ---------- */
 
-/* Hide visually AND from screen readers */
+/* hide visually AND from screen readers */
 
 .hidden,
 [hidden] {
@@ -325,6 +155,8 @@ body {
   font-family: var(--font-stack);
   align-items: center;
   font-size: 100%;
+  color: var(--black);
+  background-color: var(--white);
 }
 
 body.day-mode {
@@ -340,12 +172,14 @@ body.night-mode {
 /* main */
 
 main {
-  max-width: 33rem; /* Aim for 33–38 rem for readability. 33rem results in around 70 chars per line. */
+  /* aim for 33–38rem for readability (33 ~70 chars/line) */
+  max-width: 33rem;
   margin-inline: auto;
+  margin-bottom: calc(var(--footer-height) + 1.5rem);
 }
 
 main p {
-  line-height: 1.618; /* Should be between 1.5 and 2.0. 1.618 is the golden ratio. */
+  line-height: 1.618;
   margin-bottom: 2em;
 }
 
@@ -357,21 +191,48 @@ main ul li {
   padding-bottom: 1em;
 }
 
-/* links */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
 
-a {
+/* header */
+
+header p {
+  text-align: center;
+}
+
+header a {
   text-decoration: none;
 }
 
-body.night-mode a {
-  color: var(--white);
+header nav {
+  min-height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-body.day-mode a {
-  color: var(--black);
+header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
 }
 
-/* ---------- HEADING ---------- */
+.nav-item {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+}
+
+/* ---------- HEADER ---------- */
 
 /* title bar */
 
@@ -379,15 +240,16 @@ body.day-mode a {
   padding: 1rem;
   font-size: 2.5rem;
   font-weight: bold;
+  color: white;
 }
 
 body.night-mode .title {
-  background-color: var(--night-purple);
+  background: var(--night-banner-gradient);
   color: var(--white);
 }
 
 body.day-mode .title {
-  background-color: var(--day-purple);
+  background: var(--day-banner-gradient);
   color: var(--black);
 }
 
@@ -404,19 +266,17 @@ nav {
   align-items: center;
 }
 
-body.night-mode nav {
-  background-color: var(--night-green);
+.night-mode nav {
+  background-color: var(--almost-black);
   color: var(--white);
-  border: 1px solid var(--white);
   border-left: none;
   border-right: none;
+  box-shadow: var(--night-shadow);
 }
 
 body.day-mode nav {
-  background-color: var(--day-green);
   color: var(--black);
-  border-top: 1px solid var(--black);
-  border-bottom: 1px solid var(--black);
+  box-shadow: var(--day-shadow);
 }
 
 header nav ul {
@@ -441,54 +301,14 @@ body.day-mode .nav-item {
   color: var(--black);
 }
 
-.theme-icon {
-  font-size: 1.2rem;
-  cursor: pointer;
-  width: 0.2rem;
-  margin-right: 16px;
-}
-
-.sun-icon {
-  color: var(--white);
-}
-
+.sun-icon,
 .moon-icon {
-  color: var(--black);
+  cursor: pointer;
+  font-size: 100% !important;
+  padding-top: 2.5px;
 }
 
-/* ---------- FOOTER ---------- */
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 10;
-  max-height: 69px;
-  padding: 0.1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 45px;
-
-  .social-icon {
-    width: 2rem;
-    padding: 0.6rem 0.5rem 0.4rem 0.5rem;
-  }
-}
-
-body.night-mode footer {
-  background-color: var(--night-purple);
-  color: var(--white);
-  border-top: 1px solid var(--white);
-}
-
-body.day-mode footer {
-  background-color: var(--day-purple);
-  color: var(--black);
-  border-top: 1px solid var(--black);
-}
-
-/* ---------- PAGES ---------- */
+/* PAGES */
 
 /* headings */
 
@@ -515,20 +335,48 @@ h6 {
 
 /* home */
 
-.home {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 60vh;
-}
-
 .tagline {
   margin: 1rem;
   font-size: 1.3rem;
   font-weight: bold;
   margin-block-start: 1em;
   margin-block-end: 0.67em;
+}
+
+.join-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  background-color: var(--blue);
+  color: white;
+  text-decoration: none;
+  border-radius: 50rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+@media (max-height: 450px) {
+  div.home {
+    height: 30px;
+    padding-top: 8px;
+  }
+
+  .tagline {
+    display: none;
+  }
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(200px - var(--footer-height));
+  padding-top: 30px;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  font-weight: bold;
   text-align: center;
 }
 
@@ -543,15 +391,23 @@ h6 {
 }
 
 body.day-mode .join-btn {
-  background-color: var(--day-blue);
+  background: var(--day-btn-gradient);
   color: var(--black);
-  border: 1px solid var(--black);
+  box-shadow: var(--day-shadow);
+}
+
+body.day-mode .join-btn:hover {
+  background: var(--day-btn-gradient-reversed);
 }
 
 body.night-mode .join-btn {
-  background-color: var(--night-blue);
+  background: var(--night-btn-gradient);
   color: var(--white);
-  border: 1px solid var(--white);
+  box-shadow: var(--night-shadow);
+}
+
+body.night-mode .join-btn:hover {
+  background: var(--night-btn-gradient-reversed);
 }
 
 /* about */
@@ -570,21 +426,52 @@ body.night-mode .join-btn {
   border-radius: 1rem;
   background-color: var(--white);
   padding: 1rem;
-  border: 1px solid var(--black);
   overflow: hidden;
 }
 
-/* mobile */
+.day-mode .calendar {
+  box-shadow: var(--day-shadow);
+}
+
+.night-mode .calendar {
+  filter: invert(1) hue-rotate(180deg);
+  box-shadow: 0px 4px 6px rgba(128, 128, 128, 0.45);
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: var(--footer-height);
+
+  .social-icon {
+    width: 2rem;
+  }
+}
+
+body.night-mode footer {
+  background: var(--night-banner-gradient);
+  color: var(--white);
+}
+
+body.day-mode footer {
+  background: var(--day-banner-gradient);
+  color: var(--black);
+}
+
+/* ---------- MOBILE ---------- */
 
 @media only screen and (max-width: 600px) {
   main {
     width: 19rem;
-  }
-
-  .calendar {
-    width: 17rem;
-    min-height: 17rem;
-    margin-top: 0.8rem;
   }
 
   .title {
@@ -596,6 +483,9 @@ body.night-mode .join-btn {
   }
 
   .calendar {
+    width: 17rem;
+    min-height: 17rem;
+    margin-top: 0.8rem;
     height: auto;
   }
 }
