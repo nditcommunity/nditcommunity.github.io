@@ -495,9 +495,16 @@ body.day-mode footer {
   }
 
   .calendar {
-    width: 17rem;
+    width: 19rem;
     min-height: 17rem;
     margin-top: 0.8rem;
     height: auto;
+    margin-left: -1rem;
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+
+  .contact-form {
+    height: 50rem;
   }
 }
