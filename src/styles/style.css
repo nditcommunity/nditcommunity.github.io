@@ -15,9 +15,9 @@
 
   --black: black;
   --white: white;
-  --almost-black: #0a0a0a;
+  --almost-black: #121212;
   --almost-white: #f7f7f7;
-  --day-green: #cfdcd7;
+  --day-green: #cedad3;
   --day-purple: #d8d3dd;
   --day-blue: #cfdde1;
   --night-purple: #4f466e;
@@ -359,7 +359,7 @@ h6 {
 @media (max-height: 450px) {
   div.home {
     height: 30px;
-    padding-top: 0;
+    padding-top: 8px;
   }
 
   .tagline {
@@ -404,7 +404,7 @@ body.day-mode .join-btn:hover {
 body.night-mode .join-btn {
   background: var(--night-btn-gradient);
   color: var(--white);
-    box-shadow: var(--night-shadow);
+  box-shadow: var(--night-shadow);
 }
 
 body.night-mode .join-btn:hover {
@@ -436,7 +436,7 @@ body.night-mode .join-btn:hover {
 
 .night-mode .calendar {
   filter: invert(1) hue-rotate(180deg);
-  box-shadow: var(--night-shadow);
+  box-shadow: 0px 4px 6px rgba(128, 128, 128, 0.45);
 }
 
 /* ---------- FOOTER ---------- */
