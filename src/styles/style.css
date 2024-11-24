@@ -35,6 +35,7 @@
 
   /* sizing */
   --footer-height: 4.3rem;
+}
 
 /* ---------- FONTS ---------- */
 
@@ -185,7 +186,7 @@ header nav ul {
 @media (max-height: 450px) {
   div.home {
     height: 30px;
-    padding-top: 20px;
+    padding-top: 0;
   }
 
   .tagline {
