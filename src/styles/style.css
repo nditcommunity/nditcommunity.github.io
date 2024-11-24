@@ -185,7 +185,7 @@ header nav ul {
 @media (max-height: 450px) {
   div.home {
     height: 30px;
-    padding-top: 10px;
+    padding-top: 20px;
   }
 
   .tagline {
@@ -445,7 +445,7 @@ h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc(300px - var(--footer-height));
+  height: calc(200px - var(--footer-height));
   padding-top: 30px;
 }
 
