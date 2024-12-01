@@ -333,6 +333,25 @@ h6 {
   margin-bottom: 0.5em;
 }
 
+/* iframes */
+
+iframe {
+  border: 0;
+  width: 100%;
+  border-radius: 1rem;
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+.day-mode iframe {
+  box-shadow: var(--day-shadow);
+}
+
+.night-mode iframe {
+  filter: invert(1) hue-rotate(180deg);
+  box-shadow: 0px 4px 6px rgba(128, 128, 128, 0.45);
+}
+
 /* home */
 
 .tagline {
@@ -421,21 +440,14 @@ body.night-mode .join-btn:hover {
 
 .calendar {
   height: 20rem;
-  border: 0;
-  width: 100%;
-  border-radius: 1rem;
-  background-color: var(--white);
   padding: 1rem;
-  overflow: hidden;
 }
 
-.day-mode .calendar {
-  box-shadow: var(--day-shadow);
-}
+/* contact */
 
-.night-mode .calendar {
-  filter: invert(1) hue-rotate(180deg);
-  box-shadow: 0px 4px 6px rgba(128, 128, 128, 0.45);
+.contact-form {
+  height: 46rem;
+  padding: 1rem 0;
 }
 
 /* ---------- FOOTER ---------- */
@@ -483,9 +495,16 @@ body.day-mode footer {
   }
 
   .calendar {
-    width: 17rem;
+    width: 19rem;
     min-height: 17rem;
     margin-top: 0.8rem;
     height: auto;
+    margin-left: -1rem;
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+
+  .contact-form {
+    height: 50rem;
   }
 }
