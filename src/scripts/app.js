@@ -30,4 +30,14 @@ $(document).ready(() => {
     localStorage.setItem('theme', newTheme);
     applyTheme(newTheme);
   });
+
+  // iframe loading
+  const iframe = document.querySelector('iframe');
+  if (iframe) {
+    setTimeout(() => {
+      iframe.style.visibility = 'visible';
+      const loadingIcon = document.querySelector('.loading-icon');
+      loadingIcon.style.display = 'none';
+    }, 2000);
+  }
 });
