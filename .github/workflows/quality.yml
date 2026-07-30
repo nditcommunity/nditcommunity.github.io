@@ -1,36 +1,34 @@
-name: Build & Deploy
+name: Reusable quality checks
 
 on:
-  push:
-    branches: ['main']
+  workflow_call:
 
 jobs:
-  build:
+  quality:
     runs-on: ubuntu-latest
     permissions:
       contents: read
 
-    strategy:
-      matrix:
-        node-version: ['22.12.0']
-
     steps:
       - uses: actions/checkout@v4
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use project Node.js version
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: '.nvmrc'
           cache: 'npm'
 
       - name: Install packages
         run: npm ci
 
-      - name: Install browser
+      - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Check Prettier
+      - name: Check formatting
         run: npm run prettier:check
+
+      - name: Audit dependencies
+        run: npm audit --omit=optional
 
       - name: Run test suite
         run: npm test
@@ -42,12 +40,3 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 14
-
-      - name: Run npm build
-        run: npm run build:eleventy:prod
-
-      - name: Deploy static site content
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./_site

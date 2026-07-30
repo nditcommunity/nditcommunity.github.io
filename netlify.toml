@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build:eleventy:prod"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "22.12.0"

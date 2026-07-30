@@ -1,7 +1,7 @@
-name: Validate pull request
+name: Validate main
 
 on:
-  pull_request:
+  push:
     branches: ['main']
 
 jobs:

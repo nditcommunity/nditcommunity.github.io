@@ -8,9 +8,12 @@
   ],
   "license": "MIT",
   "author": "Neurodiversity in Tech",
+  "engines": {
+    "node": ">=22.12.0 <23"
+  },
   "repository": {
     "type": "git",
-    "url": "git@github.com:nditcommunity/ndit-website.git"
+    "url": "git+https://github.com/nditcommunity/nditcommunity.github.io.git"
   },
   "scripts": {
     "build": "npx @11ty/eleventy",

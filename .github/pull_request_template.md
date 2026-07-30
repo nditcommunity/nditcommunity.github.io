@@ -11,7 +11,7 @@ Please include a summary of the change and which issue is fixed.
 - [ ] Bug fix
 - [ ] New feature
 - [ ] Documentation
-- [ ] Infrastucture
+- [ ] Infrastructure
 - [ ] Other (please clarify): **\_**
 
 ## Change log
@@ -22,13 +22,11 @@ Please include a summary of the change and which issue is fixed.
 
 ## Testing
 
-- How did you test this?
-- This will only be manual until we add built-in testing.
+- Automated tests run in GitHub Actions. Describe any additional manual testing performed.
 
 ## Checklist
 
 - [ ] I have performed a self-review of my own code.
-- [ ] I have commented my code, particularly in hard-to-understand areas.
 - [ ] My changes generate no new console warnings.
-- [ ] I manually tested to prove my fix is effective or that my feature works.
-- [ ] I have assigned this PR to an [owner](https://github.com/nditcommunity/ndit-website).
+- [ ] I ran `npm test` and `npm run prettier:check` locally, or explained why I could not.
+- [ ] I have requested review from a repository owner.
