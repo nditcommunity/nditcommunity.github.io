@@ -10,7 +10,6 @@ canonical hosting and deployment platform.
 
 - Node.js 22.12.x
 - npm
-- Python 3 for Playwright's local static test server
 
 If you use `nvm`, run:
 
@@ -47,6 +46,7 @@ npm run test:structure  # Run fast content and security checks
 npm run test:ui         # Run Playwright browser and accessibility tests
 npm run test:links      # Check generated internal links and fragments
 npm run test:links:external # Check live external links
+npm run test:production # Check the deployed site and security headers
 npm test                # Run the complete test suite
 npm audit               # Check dependencies for known vulnerabilities
 ```
@@ -75,6 +75,8 @@ The test suite includes:
 
 GitHub Actions runs formatting, dependency auditing, the production build, and the complete test suite on
 pull requests and pushes to `main`. Failed browser runs upload a Playwright report with traces and screenshots.
+Successful deployment notifications also trigger a smoke test against the production pages, integrations, and
+security headers.
 
 ## Deployment
 
@@ -107,6 +109,8 @@ tests/
 tools/
   bundle-css.js   Creates one production stylesheet from the split CSS sources
   check-links.js  Checks generated and external links
+  serve-site.js   Serves the generated site during browser tests
+  smoke-production.js Checks the deployed site and response headers
 .github/
   workflows/      Reusable pull-request and main-branch checks
 ```

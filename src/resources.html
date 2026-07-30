@@ -13,20 +13,6 @@ description: Community, learning, and job search resources for neurodivergent te
   <h2>{{ section.title }}</h2>
   {% for group in section.groups %} {% if group.title %}
   <h3>{{ group.title }}</h3>
-  {% endif %}
-  <ul class="resource-list">
-    {% for item in group.items %}
-    <li>
-      <a
-        href="{{ item.url }}"
-        target="_blank"
-        rel="noreferrer"
-        >{{ item.title }}</a
-      >
-      <p>{{ item.description }}</p>
-    </li>
-    {% endfor %}
-  </ul>
-  {% endfor %}
+  {% endif %} {% assign list_items = group.items %} {% include 'resource-list' %} {% endfor %}
 </section>
 {% endfor %}

@@ -1,3 +1,7 @@
 <script src='/scripts/theme.js'></script>
-<script src='/scripts/contact.js'></script>
-<script src='/scripts/calendar.js'></script>
+{% if page.url == '/contact/' %}
+  <script src='/scripts/contact.js'></script>
+{% endif %}
+{% if page.url == '/events/' %}
+  <script src='/scripts/calendar.js'></script>
+{% endif %}

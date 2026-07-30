@@ -117,6 +117,24 @@ test.describe('theme behavior', () => {
   });
 });
 
+test.describe('page-specific scripts', () => {
+  test('pages only load the behavior they use', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('script[src="/scripts/theme.js"]')).toHaveCount(1);
+    await expect(page.locator('script[src="/scripts/contact.js"]')).toHaveCount(0);
+    await expect(page.locator('script[src="/scripts/calendar.js"]')).toHaveCount(0);
+
+    await page.goto('/contact/');
+    await expect(page.locator('script[src="/scripts/contact.js"]')).toHaveCount(1);
+    await expect(page.locator('script[src="/scripts/calendar.js"]')).toHaveCount(0);
+
+    await mockCalendar(page);
+    await page.goto('/events/');
+    await expect(page.locator('script[src="/scripts/calendar.js"]')).toHaveCount(1);
+    await expect(page.locator('script[src="/scripts/contact.js"]')).toHaveCount(0);
+  });
+});
+
 test.describe('contact form', () => {
   test('native validation blocks missing required fields', async ({ page }) => {
     await page.goto('/contact/');

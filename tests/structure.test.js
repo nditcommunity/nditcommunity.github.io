@@ -110,3 +110,8 @@ test('resource and media data contain complete, unique, tracking-free HTTPS link
     }
   }
 });
+
+test('Resources and Media share the card-list include', () => {
+  assert.match(read('src/resources.html'), /include 'resource-list'/);
+  assert.match(read('src/media.html'), /include 'resource-list'/);
+});

@@ -28,7 +28,8 @@
     "test:structure": "node --test tests/structure.test.js",
     "test:ui": "playwright test",
     "test:links": "node tools/check-links.js",
-    "test:links:external": "npm run build && node tools/check-links.js --external"
+    "test:links:external": "npm run build && node tools/check-links.js --external",
+    "test:production": "node tools/smoke-production.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",

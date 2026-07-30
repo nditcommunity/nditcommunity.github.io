@@ -11,18 +11,6 @@ description: press releases and other social highlights of Neurodiversity in Tec
 {% for section in media %}
 <section class="resource-section">
   <h2>{{ section.title }}</h2>
-  <ul class="resource-list">
-    {% for item in section.items %}
-    <li>
-      <a
-        href="{{ item.url }}"
-        target="_blank"
-        rel="noreferrer"
-        >{{ item.title }}</a
-      >
-      <p>{{ item.description }}</p>
-    </li>
-    {% endfor %}
-  </ul>
+  {% assign list_items = section.items %} {% include 'resource-list' %}
 </section>
 {% endfor %}

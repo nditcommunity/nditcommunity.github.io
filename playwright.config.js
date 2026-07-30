@@ -23,7 +23,7 @@ module.exports = defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run build && python3 -m http.server 8081 --directory _site',
+    command: 'npm run build && node tools/serve-site.js',
     url: 'http://127.0.0.1:8081',
     reuseExistingServer: !process.env.CI,
     timeout: 120000,
