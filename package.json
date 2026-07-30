@@ -20,10 +20,15 @@
     "dry-run": "npx @11ty/eleventy --dryrun",
     "build:eleventy:prod": "ELEVENTY_ENV=production eleventy",
     "prettier:write": "prettier --write .",
-    "prettier:check": "prettier --check ."
+    "prettier:check": "prettier --check .",
+    "test": "npm run test:structure && npm run test:ui",
+    "test:structure": "node --test tests/structure.test.js",
+    "test:ui": "playwright test"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
+    "@axe-core/playwright": "^4.12.1",
+    "@playwright/test": "^1.62.1",
     "@shopify/prettier-plugin-liquid": "^1.4.4",
     "prettier": "^3.2.5"
   },

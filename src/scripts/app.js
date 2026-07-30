@@ -153,6 +153,11 @@ const retryCalendar = () => {
 };
 
 calendar?.addEventListener('load', () => {
+  if (!navigator.onLine) {
+    showCalendarError('You appear to be offline. The calendar will retry when you reconnect.');
+    return;
+  }
+
   clearTimeout(calendarTimeout);
   calendarStatus.classList.add('hidden');
 });
