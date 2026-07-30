@@ -66,6 +66,14 @@
   transform: translateY(0.08rem);
 }
 
+.moon-icon {
+  transform: translateY(0.06rem);
+}
+
+.nav-secondary li:last-child {
+  margin-left: 0.7rem;
+}
+
 /* ---------- SOCIAL LINKS ---------- */
 
 .social-link {
@@ -90,12 +98,6 @@
 .social-icon {
   width: 1.65rem;
   height: 1.65rem;
-}
-
-.social-letter {
-  color: var(--text);
-  font-size: 1.25rem;
-  font-weight: 700;
 }
 
 /* ---------- EMBEDS ---------- */

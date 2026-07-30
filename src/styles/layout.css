@@ -39,6 +39,10 @@ main li {
   width: min(100% - 2rem, 58rem);
   margin-inline: auto;
   padding-block: 0.65rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .site-nav ul {

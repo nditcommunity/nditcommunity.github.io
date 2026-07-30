@@ -94,23 +94,7 @@ contactFormResponse?.addEventListener('load', () => {
 
 const calendar = document.querySelector('.calendar');
 const calendarStatus = document.querySelector('.calendar-status');
-const mobileCalendar = window.matchMedia('(max-width: 30rem)');
 let calendarTimeout;
-
-const setCalendarSource = () => {
-  if (!calendar) {
-    return;
-  }
-
-  const source = mobileCalendar.matches ? calendar.dataset.mobileSrc : calendar.dataset.desktopSrc;
-
-  if (calendar.src === source) {
-    return;
-  }
-
-  calendarStatus.textContent = 'Loading calendar…';
-  calendar.src = source;
-};
 
 calendar?.addEventListener('load', () => {
   clearTimeout(calendarTimeout);
@@ -130,7 +114,4 @@ if (calendar) {
         'The calendar is taking longer than expected. You can open it in a new tab.';
     }
   }, 10000);
-
-  setCalendarSource();
-  mobileCalendar.addEventListener('change', setCalendarSource);
 }

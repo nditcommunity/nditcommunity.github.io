@@ -4,12 +4,14 @@
   .site-nav {
     width: 100%;
     padding: 0.55rem 0.6rem;
+    justify-content: safe center;
     overflow-x: auto;
   }
 
   .site-nav ul {
-    width: max-content;
-    min-width: 100%;
+    width: auto;
+    min-width: 0;
+    flex: 0 0 auto;
   }
 
   .nav-item {
@@ -18,9 +20,9 @@
   }
 }
 
-@media (max-width: 30rem) {
+@media (max-width: 36rem) {
   main {
-    width: min(100% - 1.25rem, var(--content-width));
+    width: min(100% - 2rem, var(--content-width));
     padding-block: 2rem;
   }
 
@@ -29,22 +31,21 @@
   }
 
   .site-nav {
+    width: 100%;
+    min-width: 0;
+    display: block;
     overflow-x: visible;
   }
 
-  .site-nav ul {
-    width: 100%;
-    min-width: 0;
+  .site-nav .nav-primary {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .site-nav li:nth-child(-n + 3) {
-    grid-column: span 4;
-  }
-
-  .site-nav li:nth-child(n + 4) {
-    grid-column: span 3;
+  .site-nav .nav-secondary {
+    padding-right: 0.55rem;
+    display: flex;
+    justify-content: space-between;
   }
 
   .nav-item {
@@ -56,11 +57,18 @@
   .theme-toggle {
     width: 2.75rem;
     justify-self: center;
+    border-color: transparent;
+    background: transparent;
   }
 
-  .site-nav li:last-child {
+  .theme-toggle:hover {
+    border-color: transparent;
+    background: transparent;
+  }
+
+  .nav-secondary li:last-child {
+    margin-left: 0;
     display: flex;
-    justify-content: center;
   }
 
   .home {
@@ -76,7 +84,7 @@
   }
 
   .calendar {
-    height: 22rem;
+    height: 24rem;
   }
 
   .toc ul {
