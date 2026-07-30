@@ -1,13 +1,13 @@
 {
   "name": "nd-in-tech",
   "version": "0.0.2",
-  "description": "Website for Neurodiversity in Tech",
+  "description": "Official website for Neurodiversity In Tech",
   "private": true,
   "keywords": [
     "website"
   ],
   "license": "MIT",
-  "author": "Neurodiversity in Tech",
+  "author": "Neurodiversity In Tech",
   "engines": {
     "node": ">=22.12.0 <23"
   },

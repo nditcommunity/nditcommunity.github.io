@@ -1,152 +1,149 @@
 # Neurodiversity In Tech Website
 
-The official website for [Neurodiversity In Tech](https://nd-in-tech.org), a community for neurodivergent
-people working in and around technology.
+The source for the official [Neurodiversity In Tech](https://nd-in-tech.org) website. Neurodiversity In Tech
+is a neurodivergent-led community for people working in and around technology.
 
-The site is built with [Eleventy](https://www.11ty.dev/), plain HTML, CSS, and JavaScript. Netlify is the
-canonical hosting and deployment platform.
+The site is a static [Eleventy](https://www.11ty.dev/) project built with Liquid templates, HTML, CSS, and
+client-side JavaScript. Netlify is the canonical hosting and deployment platform.
 
-## Requirements
+## Quick start
+
+### Requirements
 
 - Node.js 22.12.x
-- npm
+- npm (included with Node.js)
 
-If you use `nvm`, run:
+Using the version in [`.nvmrc`](.nvmrc) is recommended:
 
 ```sh
 nvm use
-```
-
-## Local development
-
-Clone the repository and install the locked dependencies:
-
-```sh
-git clone https://github.com/nditcommunity/nditcommunity.github.io.git
-cd nditcommunity.github.io
 npm ci
-```
-
-Start the Eleventy development server:
-
-```sh
 npm run dev
 ```
 
-Open `http://localhost:8080`.
+Open `http://localhost:8080`. Eleventy watches the source files and refreshes the site as they change.
 
-## Available commands
-
-```sh
-npm run dev             # Start the development server
-npm run build           # Generate the production site in _site
-npm run prettier:check  # Check formatting
-npm run prettier:write  # Apply formatting
-npm run test:structure  # Run fast content and security checks
-npm run test:ui         # Run Playwright browser and accessibility tests
-npm run test:links      # Check generated internal links and fragments
-npm run test:links:external # Check live external links
-npm run test:production # Check the deployed site and security headers
-npm test                # Run the complete test suite
-npm audit               # Check dependencies for known vulnerabilities
-```
-
-Install Playwright's Chromium browser before the first UI test run:
+If this is your first time running the browser tests, also install Chromium:
 
 ```sh
 npx playwright install chromium
 ```
 
-## Testing
+## Commands
 
-The test suite includes:
+| Command                       | Purpose                                                                |
+| ----------------------------- | ---------------------------------------------------------------------- |
+| `npm run dev`                 | Start the local Eleventy server                                        |
+| `npm run build`               | Build the site into `_site/` and bundle its CSS                        |
+| `npm run clean`               | Remove the generated `_site/` directory                                |
+| `npm run dry-run`             | Validate Eleventy templates without writing output                     |
+| `npm run prettier:check`      | Check formatting                                                       |
+| `npm run prettier:write`      | Apply formatting                                                       |
+| `npm run test:structure`      | Run source, content, metadata, form, and security checks               |
+| `npm run test:links`          | Check generated internal links and fragments                           |
+| `npm run test:links:external` | Build the site and check live external links; requires internet access |
+| `npm run test:ui`             | Run Playwright UI and automated accessibility tests                    |
+| `npm run test:production`     | Smoke-test the deployed site and its HTTP security headers             |
+| `npm test`                    | Build and run the structure, internal-link, and UI test suites         |
+| `npm audit`                   | Check dependencies for known vulnerabilities                           |
 
-- Structural HTML, metadata, external-link, tracking-parameter, form, and security-header checks
-- Validated Resources and Media data, including required fields and duplicate URLs
-- Generated internal-link and fragment validation
-- Desktop and mobile browser tests
-- Automated Axe accessibility scans
-- Keyboard navigation and skip-link coverage
-- Responsive navbar regression checks
-- Light and dark theme behavior and persistence
-- Contact form validation, success, and offline paths
-- Calendar loading and failure paths
-- Browser console and JavaScript error checks
+The scheduled external-link check is intentionally separate from `npm test` because third-party sites can be
+slow, unavailable, or resistant to automated requests. The production smoke test targets
+`https://nd-in-tech.org` by default; set `SITE_URL` to test another deployment.
 
-GitHub Actions runs formatting, dependency auditing, the production build, and the complete test suite on
-pull requests and pushes to `main`. Failed browser runs upload a Playwright report with traces and screenshots.
-Successful deployment notifications also trigger a smoke test against the production pages, integrations, and
-security headers.
+## Editing the site
 
-## Deployment
+- Edit page content and front matter in `src/*.html`.
+- Edit shared navigation, metadata, footer, and other repeated markup in `src/_includes/`.
+- Edit page layouts in `src/_layouts/`.
+- Add or update Resource and Media cards in `src/_data/resources.json` and `src/_data/media.json`.
+- Edit styles in the split files under `src/styles/`. `tools/bundle-css.js` combines them into
+  `_site/styles/style.css` after each build.
+- Keep page-specific behavior in `src/scripts/` and load it only on pages that need it.
+- Place images and locally hosted fonts in `src/assets/`.
 
-Netlify deploys `main` using the settings in [`netlify.toml`](netlify.toml):
+Resource and Media entries require a title, description, and unique HTTPS URL. Do not add analytics or
+advertising parameters such as `utm_*`, `fbclid`, or `gclid` to links.
 
-- Build command: `npm run build:eleventy:prod`
-- Publish directory: `_site`
-- Node version: 22.12.0
-
-GitHub Actions validates changes but does not deploy the website. This avoids competing GitHub Pages and
-Netlify deployments.
-
-Production security headers are defined in [`src/_headers`](src/_headers) and copied into the generated site
-for Netlify to apply.
+Files under `src/drafts/` and `src/blog/` are excluded from the Eleventy build by `.eleventyignore`.
 
 ## Project structure
 
 ```text
 src/
-  _data/          Structured Resources and Media content
-  _includes/      Shared page sections
-  _layouts/       Eleventy layouts
-  assets/         Fonts, icons, and images
-  scripts/        Client-side JavaScript
+  _data/          Resource and Media card data
+  _includes/      Shared Liquid partials
+  _layouts/       Shared page layouts
+  assets/         Fonts, images, and logos
+  drafts/         Unpublished or unfinished page content
+  scripts/        Page-specific and shared browser JavaScript
   styles/         Split source stylesheets
-  *.html          Site pages
+  *.html          Published site pages
 tests/
   structure.test.js
-  ui/
+  ui/site.spec.js
 tools/
-  bundle-css.js   Creates one production stylesheet from the split CSS sources
-  check-links.js  Checks generated and external links
-  serve-site.js   Serves the generated site during browser tests
-  smoke-production.js Checks the deployed site and response headers
+  bundle-css.js          Build the production stylesheet
+  check-links.js         Check internal or external links
+  serve-site.js          Serve `_site/` during browser tests
+  smoke-production.js    Verify production pages and headers
 .github/
-  workflows/      Reusable pull-request and main-branch checks
+  workflows/             Pull-request, main, link, and production checks
 ```
+
+Eleventy copies the static assets, scripts, manifests, favicons, styles, and `src/_headers` into `_site/`.
+Generated files in `_site/` should not be edited or committed.
+
+## Testing and accessibility
+
+The automated checks cover:
+
+- Page titles, descriptions, heading structure, forms, and security-related markup
+- Resource and Media data completeness, duplicate URLs, and tracking parameters
+- Generated internal links and fragment targets
+- Desktop, mobile, and tablet navigation layouts
+- Keyboard navigation and skip links
+- Light and dark themes, including persistence and storage failures
+- Contact-form validation, success, and offline behavior
+- Calendar loading, success, and failure behavior
+- Browser console errors and page-specific script loading
+- Automated [Axe](https://www.deque.com/axe/) accessibility scans
+
+Automated accessibility testing cannot replace manual review. For visible UI changes, also check keyboard-only
+use, focus order and visibility, zoom, responsive layouts, and both color themes.
+
+## Continuous integration and deployment
+
+Pull requests into `main` and pushes to `main` run formatting, dependency auditing, a production build, and the
+full local test suite in GitHub Actions. Failed browser runs upload a Playwright report with traces and
+screenshots. A weekly workflow checks live external links.
+
+Netlify deploys `main` using [`netlify.toml`](netlify.toml):
+
+- Build command: `npm run build:eleventy:prod`
+- Publish directory: `_site`
+- Node.js version: 22.12.0
+
+GitHub Actions validates the site but does not deploy it. Successful deployment notifications trigger a smoke
+test of the production pages, integrations, and HTTP security headers. The site-managed header policy lives in
+[`src/_headers`](src/_headers).
 
 ## Contributing
 
-Anyone can help. You do not need open-source experience or need to be neurodivergent to contribute.
+Contributions are welcome; open-source experience and a neurodivergent identity are not required. See
+[`CONTRIBUTING.md`](CONTRIBUTING.md) for the development workflow, testing expectations, and pull-request
+guidance. Participation in this project is governed by the [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
 
-1. Select an issue from the [project board](https://github.com/orgs/nditcommunity/projects/1/views/6?filterQuery=is%3Aissue).
-2. Create a branch named with the issue number and a short description, such as `110-navbar-update`.
-3. Make the change and add or update relevant tests.
-4. Run:
+Dependabot checks npm packages and GitHub Actions monthly. Related updates are grouped and must pass the same
+quality checks as other contributions.
 
-   ```sh
-   npm run prettier:check
-   npm test
-   ```
+## Maintainers
 
-5. Open a pull request into `main` and complete the pull request template.
+The repository maintainers are [@hayleyw7](https://github.com/hayleyw7) and
+[@royemosby](https://github.com/royemosby). Everyone working on the project, including its maintainers, is a
+volunteer.
 
-Only repository owners merge changes into `main`.
+## Attribution and license
 
-## Automated dependency updates
-
-Dependabot checks npm packages and GitHub Actions monthly. Related updates are grouped to reduce pull-request
-noise, and every update must pass the same complete test suite.
-
-## Team
-
-The repository owners are [@hayleyw7](https://github.com/hayleyw7) and
-[@royemosby](https://github.com/royemosby). All contributors, including owners, are volunteers.
-
-## Attribution
-
-Social brand icons are from [Font Awesome Free](https://fontawesome.com/license/free).
-
-## License
-
-This website is open source under the [MIT License](LICENSE).
+Social brand icons are from [Font Awesome Free](https://fontawesome.com/license/free). The website is available
+under the [MIT License](LICENSE).

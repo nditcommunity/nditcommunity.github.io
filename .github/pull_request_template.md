@@ -1,10 +1,14 @@
-# Issue Name Here
+# Summary
 
 ## Description
 
-Please include a summary of the change and which issue is fixed.
+Describe what changed and why.
 
-[Issue Board Ticket](https://github.com/nditcommunity/nditcommunity.github.io/issues/1)
+## Related issue
+
+Closes #
+
+Remove this section if the pull request does not have a related issue.
 
 ## Type of change
 
@@ -12,21 +16,23 @@ Please include a summary of the change and which issue is fixed.
 - [ ] New feature
 - [ ] Documentation
 - [ ] Infrastructure
-- [ ] Other (please clarify): **\_**
+- [ ] Other:
 
-## Change log
+## Changes
 
-- List
-- Everything
-- Changed
+-
+-
 
 ## Testing
 
-- Automated tests run in GitHub Actions. Describe any additional manual testing performed.
+List the automated and manual checks you ran.
 
 ## Checklist
 
 - [ ] I have performed a self-review of my own code.
-- [ ] My changes generate no new console warnings.
+- [ ] I have added or updated tests where appropriate.
+- [ ] My changes introduce no new browser console errors or warnings.
+- [ ] I have checked relevant UI changes on mobile and desktop in light and dark modes.
+- [ ] I have checked relevant UI changes with keyboard navigation.
 - [ ] I ran `npm test` and `npm run prettier:check` locally, or explained why I could not.
-- [ ] I have requested review from a repository owner.
+- [ ] I have removed tracking parameters from any links I added.
