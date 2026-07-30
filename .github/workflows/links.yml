@@ -1,0 +1,27 @@
+name: Check external links
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 14 * * 1'
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use project Node.js version
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install packages
+        run: npm ci
+
+      - name: Check external links
+        run: npm run test:links:external

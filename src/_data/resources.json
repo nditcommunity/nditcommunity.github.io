@@ -1,0 +1,90 @@
+[
+  {
+    "title": "ND In Tech Resources",
+    "groups": [
+      {
+        "title": "For Workers",
+        "items": [
+          {
+            "title": "ND Job Hunt Playbook: Interviewing",
+            "url": "https://www.linkedin.com/posts/nditcommunity_neurodiversityintech-thoughtdiversity-interviewtips-activity-7215788366162800642-Fcgt/",
+            "description": "Interview tips for neurodivergent workers exploring new opportunities."
+          }
+        ]
+      },
+      {
+        "title": "For Employers",
+        "items": [
+          {
+            "title": "Post a Neurodivergent-Friendly Job",
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSemKwvdKV5ZN5GKGohwe8L2BQn4jdRC9SFrVUzFZOagRTWTSA/viewform",
+            "description": "Share a job opportunity with the Neurodiversity In Tech community."
+          },
+          {
+            "title": "Building an Inclusive Work Culture",
+            "url": "https://www.linkedin.com/posts/nditcommunity_neurodiversityintech-inclusiveworkculture-activity-7170491619035533313-mB2F/",
+            "description": "Ways teams can create a more inclusive workplace for neurodivergent professionals."
+          },
+          {
+            "title": "Inclusive Hiring in Tech",
+            "url": "https://www.linkedin.com/posts/nditcommunity_neurodiversityintech-interviewprocess-inclusionmatters-activity-7146683377931202560-XC9E/",
+            "description": "Ideas for making hiring and interview processes more inclusive."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Communities",
+    "groups": [
+      {
+        "items": [
+          {
+            "title": "Neurodiverse Hackers",
+            "url": "https://neurodiversehackers.com/",
+            "description": "A nonprofit community that empowers and supports neurodivergent people in cybersecurity."
+          },
+          {
+            "title": "ND Connect",
+            "url": "https://www.ndconnect.app/",
+            "description": "A neurodivergent-led community offering peer support, mentorship, events, and virtual body doubling."
+          },
+          {
+            "title": "Professionally Neurospicy",
+            "url": "https://professionallyneurospicy.com/",
+            "description": "A peer-support community for neurodivergent professionals navigating work life unmasked."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Job Search",
+    "groups": [
+      {
+        "items": [
+          {
+            "title": "Mentra",
+            "url": "https://www.mentra.com/",
+            "description": "A career network that connects neurodivergent job seekers with inclusive employers."
+          },
+          {
+            "title": "Diversify Tech",
+            "url": "https://www.diversifytech.com/",
+            "description": "Jobs, events, scholarships, and other career opportunities for underrepresented people in tech."
+          },
+          {
+            "title": "Jobs for Humanity: Neurodivergent",
+            "url": "https://www.jobsforhumanity.com/neurodivergent/",
+            "description": "Job opportunities and employment resources for neurodivergent candidates."
+          },
+          {
+            "title": "Neurodiversity Career Connector",
+            "url": "https://ndcc.simplifyhire.com/",
+            "description": "A free platform connecting neurodivergent job seekers with neuroinclusive employers."
+          }
+        ]
+      }
+    ]
+  }
+]

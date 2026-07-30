@@ -1,0 +1,14 @@
+<ul class='resource-list'>
+  {% for item in list_items %}
+    <li>
+      <a
+        href='{{ item.url }}'
+        target='_blank'
+        rel='noreferrer'
+      >
+        {{- item.title -}}
+      </a>
+      <p>{{ item.description }}</p>
+    </li>
+  {% endfor %}
+</ul>

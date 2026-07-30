@@ -6,10 +6,83 @@ description: get in contact with Neurodiversity in Tech
 
 <h1>Contact</h1>
 
-<iframe
-  class="contact-form"
-  src="https://docs.google.com/forms/d/e/1FAIpQLSendg9Er7RWxs1AAUPJ7pL6K-QwXfz6uKZFKIXzG1nCiXRrvQ/viewform?embedded=true&showTitle=0"
-  frameborder="0"
+<p>Questions, feedback, and requests are welcome.</p>
+
+<section
+  class="embed-card"
+  aria-labelledby="contact-form-heading"
 >
-  Loading Google Form...
-</iframe>
+  <div class="embed-header">
+    <div>
+      <h2 id="contact-form-heading">Send Us a Message</h2>
+    </div>
+    <a
+      class="embed-link"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSendg9Er7RWxs1AAUPJ7pL6K-QwXfz6uKZFKIXzG1nCiXRrvQ/viewform"
+      target="_blank"
+      rel="noreferrer"
+      >Open form in a new tab</a
+    >
+  </div>
+
+  <form
+    class="contact-form"
+    action="https://docs.google.com/forms/d/e/1FAIpQLSendg9Er7RWxs1AAUPJ7pL6K-QwXfz6uKZFKIXzG1nCiXRrvQ/formResponse"
+    method="post"
+    target="contact-form-response"
+  >
+    <div class="form-field">
+      <label for="contact-name">Name</label>
+      <input
+        id="contact-name"
+        name="entry.1508692594"
+        type="text"
+        autocomplete="name"
+      />
+    </div>
+
+    <div class="form-field">
+      <label for="contact-email">Email Address</label>
+      <input
+        id="contact-email"
+        name="entry.1739347545"
+        type="email"
+        autocomplete="email"
+        required
+      />
+    </div>
+
+    <div class="form-field">
+      <label for="contact-message">Message</label>
+      <textarea
+        id="contact-message"
+        name="entry.2118129583"
+        rows="6"
+        required
+      ></textarea>
+    </div>
+
+    <button
+      class="form-submit"
+      type="submit"
+    >
+      Send Message
+    </button>
+    <p
+      class="form-status"
+      role="status"
+      aria-live="polite"
+    ></p>
+  </form>
+
+  <iframe
+    class="hidden"
+    name="contact-form-response"
+    title="Contact form submission response"
+  ></iframe>
+
+  <p class="embed-note">
+    This form is hosted by Google. Information submitted through it is handled according to Google's privacy
+    practices.
+  </p>
+</section>

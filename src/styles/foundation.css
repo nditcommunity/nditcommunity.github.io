@@ -1,0 +1,202 @@
+/* ---------- CREDIT FOR STARTING TEMPLATE ---------- */
+
+/* 1) HTML5 Boilerplate v9.0.0-RC1 | MIT License | html5boilerplate.com */
+/* 2) main.css 3.0.0 | MIT License | github.com/h5bp/main.css#readme */
+
+/* ---------- DESIGN TOKENS ---------- */
+
+:root {
+  --font-stack: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --content-width: 46rem;
+  --radius-small: 0.5rem;
+  --radius-medium: 0.9rem;
+  --radius-large: 1.4rem;
+  --transition: 180ms ease;
+}
+
+html.light-mode {
+  color-scheme: light;
+}
+
+html.dark-mode {
+  color-scheme: dark;
+}
+
+body.light-mode,
+html.light-mode body {
+  --background: #f7f5fa;
+  --surface: #ffffff;
+  --surface-subtle: #efebf4;
+  --embed-background: #ffffff;
+  --text: #211c26;
+  --text-muted: #514959;
+  --heading: #29143d;
+  --link: #54217d;
+  --link-hover: #35124f;
+  --accent: #5b287f;
+  --accent-hover: #431960;
+  --accent-contrast: #ffffff;
+  --border: #d8cfe1;
+  --focus: #006b61;
+  --header-start: #e8dff1;
+  --header-end: #d6e9e6;
+  --footer-start: #ded2e9;
+  --footer-end: #c9e1dd;
+  --shadow: 0 0.45rem 1.5rem rgba(46, 25, 61, 0.1);
+  --shadow-hover: 0 0.7rem 1.8rem rgba(46, 25, 61, 0.16);
+}
+
+body.dark-mode,
+html.dark-mode body {
+  --background: #121016;
+  --surface: #1d1923;
+  --surface-subtle: #28222f;
+  --embed-background: #141414;
+  --text: #f6f2f9;
+  --text-muted: #d1c8d8;
+  --heading: #ffffff;
+  --link: #dfc5fa;
+  --link-hover: #f0e2ff;
+  --accent: #b883df;
+  --accent-hover: #cfa4eb;
+  --accent-contrast: #1b1022;
+  --border: #4d4358;
+  --focus: #6ee7d8;
+  --header-start: #3d2850;
+  --header-end: #174b48;
+  --footer-start: #33223f;
+  --footer-end: #143f3d;
+  --shadow: 0 0.5rem 1.6rem rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 0.75rem 2rem rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- FONTS ---------- */
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/assets/fonts/Atkinson-Hyperlegible-Regular-102a.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/assets/fonts/Atkinson-Hyperlegible-Italic-102a.woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/assets/fonts/Atkinson-Hyperlegible-Bold-102a.woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102a.woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------- GLOBAL ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 280ms;
+  animation-timing-function: ease-in-out;
+}
+
+body {
+  min-width: 20rem;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-stack);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: radial-gradient(
+      circle at 15% 15%,
+      color-mix(in srgb, var(--accent) 8%, transparent),
+      transparent 28rem
+    ),
+    var(--background);
+  transition:
+    color var(--transition),
+    background-color var(--transition);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  max-width: 28ch;
+  margin-block: 1.5em 0.55em;
+  color: var(--heading);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p,
+ul,
+ol {
+  margin-block: 0 1.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+img {
+  max-width: 100%;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: 700;
+}

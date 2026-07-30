@@ -1,0 +1,25 @@
+name: Production smoke test
+
+on:
+  workflow_dispatch:
+  deployment_status:
+
+jobs:
+  smoke:
+    if: github.event_name == 'workflow_dispatch' || github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use project Node.js version
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Verify production
+        run: npm run test:production
+        env:
+          SITE_URL: https://nd-in-tech.org

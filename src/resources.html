@@ -1,0 +1,18 @@
+---
+layout: base.liquid
+title: resources
+description: Community, learning, and job search resources for neurodivergent technology professionals
+---
+
+<h1>Resources</h1>
+
+<p>Explore ND In Tech guides, communities, learning materials, and job-search tools.</p>
+
+{% for section in resources %}
+<section class="resource-section">
+  <h2>{{ section.title }}</h2>
+  {% for group in section.groups %} {% if group.title %}
+  <h3>{{ group.title }}</h3>
+  {% endif %} {% assign list_items = group.items %} {% include 'resource-list' %} {% endfor %}
+</section>
+{% endfor %}

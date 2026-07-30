@@ -4,14 +4,25 @@
     name='viewport'
     content='width=device-width, initial-scale=1'
   >
-  <title>Neurodiversity In Tech</title>
+  <title>
+    {%- if title and title != 'Neurodiversity in Tech' -%}
+      {{ title | capitalize }} | Neurodiversity In Tech
+    {%- else -%}
+      Neurodiversity In Tech
+    {%- endif -%}
+  </title>
+  <script src='/scripts/theme-init.js'></script>
+  <meta
+    name='referrer'
+    content='strict-origin-when-cross-origin'
+  >
   <link
     rel='stylesheet'
     href='/styles/style.css'
   >
   <meta
     name='description'
-    content='Neurodivergent-led, Neurodivergent-driven: Shaping our space in tech'
+    content='{{ description | default: "Neurodivergent-led, Neurodivergent-driven: Shaping our space in tech" }}'
   >
 
   <!-- Preview Card data -->
@@ -80,11 +91,6 @@
     rel='apple-touch-icon'
     href='/icon.png'
   >
-  <link
-    href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined'
-    rel='stylesheet'
-  >
-
   <link
     rel='manifest'
     href='/site.webmanifest'

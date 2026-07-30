@@ -1,9 +1,17 @@
 <!doctype html>
 <html lang='en-US'>
   {% include 'head' %}
-  <body>
+  <body class='light-mode'>
+    <a
+      class='skip-link'
+      href='#main-content'
+      >Skip to main content</a
+    >
     {% include 'header' %}
-    <main>
+    <main
+      id='main-content'
+      tabindex='-1'
+    >
       {{ content }}
     </main>
     {% include 'footer' %}

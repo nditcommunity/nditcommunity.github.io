@@ -1,0 +1,79 @@
+/* ---------- MAIN ---------- */
+
+main {
+  width: min(100% - 2rem, var(--content-width));
+  flex: 1;
+  margin-inline: auto;
+  padding-block: clamp(2.25rem, 6vw, 4.5rem);
+}
+
+main > :first-child {
+  margin-top: 0;
+}
+
+main ul,
+main ol {
+  padding-left: 1.35rem;
+}
+
+main li {
+  padding-block: 0.2rem;
+}
+
+/* ---------- HEADER ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 0.2rem 1rem rgba(25, 15, 32, 0.08);
+}
+
+.brand-bar {
+  padding: clamp(1.4rem, 4vw, 2.4rem) 1rem;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(120deg, var(--header-start), var(--header-end));
+}
+
+.site-nav {
+  width: min(100% - 2rem, 58rem);
+  margin-inline: auto;
+  padding-block: 0.65rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.site-nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  list-style: none;
+}
+
+/* ---------- FOOTER ---------- */
+
+.site-footer {
+  width: 100%;
+  padding: 1.2rem 1rem;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(120deg, var(--footer-start), var(--footer-end));
+}
+
+.social-links {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.65rem;
+  list-style: none;
+}
+
+.social-links li {
+  display: flex;
+}

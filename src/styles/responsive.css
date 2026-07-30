@@ -1,0 +1,93 @@
+/* ---------- TABLET AND MOBILE ---------- */
+
+@media (max-width: 44rem) {
+  .site-nav {
+    width: 100%;
+    padding: 0.55rem 0.6rem;
+    justify-content: safe center;
+    overflow-x: auto;
+  }
+
+  .site-nav ul {
+    width: auto;
+    min-width: 0;
+    flex: 0 0 auto;
+  }
+
+  .nav-item {
+    padding-inline: 0.7rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 36rem) {
+  main {
+    width: min(100% - 2rem, var(--content-width));
+    padding-block: 2rem;
+  }
+
+  .brand-bar {
+    padding-block: 1.25rem;
+  }
+
+  .site-nav {
+    width: 100%;
+    min-width: 0;
+    display: block;
+    overflow-x: visible;
+  }
+
+  .site-nav .nav-primary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .site-nav .nav-secondary {
+    padding-right: 0.55rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-item {
+    width: 100%;
+    padding-inline: 0.55rem;
+    font-size: 0.9rem;
+  }
+
+  .theme-toggle {
+    width: 2.75rem;
+    justify-self: center;
+    border-color: transparent;
+    background: transparent;
+  }
+
+  .theme-toggle:hover {
+    border-color: transparent;
+    background: transparent;
+  }
+
+  .nav-secondary li:last-child {
+    margin-left: 0;
+    display: flex;
+  }
+
+  .home {
+    padding: 3.5rem 1rem;
+  }
+
+  .embed-header {
+    flex-direction: column;
+  }
+
+  .embed-link {
+    width: 100%;
+  }
+
+  .calendar {
+    height: 24rem;
+  }
+
+  .toc ul {
+    columns: 1;
+  }
+}
