@@ -1,88 +1,149 @@
 # Neurodiversity In Tech Website
 
-The draft is currently auto-deployed [at this Netlify URL](https://ndit-staging.netlify.app) and will officially be hosted at [nd-in-tech.org](nd-in-tech.org).
+The source for the official [Neurodiversity In Tech](https://nd-in-tech.org) website. Neurodiversity In Tech
+is a neurodivergent-led community for people working in and around technology.
 
-If you're neurodivergent, consider [joining the ND In Tech community](https://nd-in-tech.org)!
+The site is a static [Eleventy](https://www.11ty.dev/) project built with Liquid templates, HTML, CSS, and
+client-side JavaScript. Netlify is the canonical hosting and deployment platform.
+
+## Quick start
+
+### Requirements
+
+- Node.js 22.12.x
+- npm (included with Node.js)
+
+Using the version in [`.nvmrc`](.nvmrc) is recommended:
+
+```sh
+nvm use
+npm ci
+npm run dev
+```
+
+Open `http://localhost:8080`. Eleventy watches the source files and refreshes the site as they change.
+
+If this is your first time running the browser tests, also install Chromium:
+
+```sh
+npx playwright install chromium
+```
+
+## Commands
+
+| Command                       | Purpose                                                                |
+| ----------------------------- | ---------------------------------------------------------------------- |
+| `npm run dev`                 | Start the local Eleventy server                                        |
+| `npm run build`               | Build the site into `_site/` and bundle its CSS                        |
+| `npm run clean`               | Remove the generated `_site/` directory                                |
+| `npm run dry-run`             | Validate Eleventy templates without writing output                     |
+| `npm run prettier:check`      | Check formatting                                                       |
+| `npm run prettier:write`      | Apply formatting                                                       |
+| `npm run test:structure`      | Run source, content, metadata, form, and security checks               |
+| `npm run test:links`          | Check generated internal links and fragments                           |
+| `npm run test:links:external` | Build the site and check live external links; requires internet access |
+| `npm run test:ui`             | Run Playwright UI and automated accessibility tests                    |
+| `npm run test:production`     | Smoke-test the deployed site and its HTTP security headers             |
+| `npm test`                    | Build and run the structure, internal-link, and UI test suites         |
+| `npm audit`                   | Check dependencies for known vulnerabilities                           |
+
+The scheduled external-link check is intentionally separate from `npm test` because third-party sites can be
+slow, unavailable, or resistant to automated requests. The production smoke test targets
+`https://nd-in-tech.org` by default; set `SITE_URL` to test another deployment.
+
+## Editing the site
+
+- Edit page content and front matter in `src/*.html`.
+- Edit shared navigation, metadata, footer, and other repeated markup in `src/_includes/`.
+- Edit page layouts in `src/_layouts/`.
+- Add or update Resource and Media cards in `src/_data/resources.json` and `src/_data/media.json`.
+- Edit styles in the split files under `src/styles/`. `tools/bundle-css.js` combines them into
+  `_site/styles/style.css` after each build.
+- Keep page-specific behavior in `src/scripts/` and load it only on pages that need it.
+- Place images and locally hosted fonts in `src/assets/`.
+
+Resource and Media entries require a title, description, and unique HTTPS URL. Do not add analytics or
+advertising parameters such as `utm_*`, `fbclid`, or `gclid` to links.
+
+Files under `src/drafts/` and `src/blog/` are excluded from the Eleventy build by `.eleventyignore`.
+
+## Project structure
+
+```text
+src/
+  _data/          Resource and Media card data
+  _includes/      Shared Liquid partials
+  _layouts/       Shared page layouts
+  assets/         Fonts, images, and logos
+  drafts/         Unpublished or unfinished page content
+  scripts/        Page-specific and shared browser JavaScript
+  styles/         Split source stylesheets
+  *.html          Published site pages
+tests/
+  structure.test.js
+  ui/site.spec.js
+tools/
+  bundle-css.js          Build the production stylesheet
+  check-links.js         Check internal or external links
+  serve-site.js          Serve `_site/` during browser tests
+  smoke-production.js    Verify production pages and headers
+.github/
+  workflows/             Pull-request, main, link, and production checks
+```
+
+Eleventy copies the static assets, scripts, manifests, favicons, styles, and `src/_headers` into `_site/`.
+Generated files in `_site/` should not be edited or committed.
+
+## Testing and accessibility
+
+The automated checks cover:
+
+- Page titles, descriptions, heading structure, forms, and security-related markup
+- Resource and Media data completeness, duplicate URLs, and tracking parameters
+- Generated internal links and fragment targets
+- Desktop, mobile, and tablet navigation layouts
+- Keyboard navigation and skip links
+- Light and dark themes, including persistence and storage failures
+- Contact-form validation, success, and offline behavior
+- Calendar loading, success, and failure behavior
+- Browser console errors and page-specific script loading
+- Automated [Axe](https://www.deque.com/axe/) accessibility scans
+
+Automated accessibility testing cannot replace manual review. For visible UI changes, also check keyboard-only
+use, focus order and visibility, zoom, responsive layouts, and both color themes.
+
+## Continuous integration and deployment
+
+Pull requests into `main` and pushes to `main` run formatting, dependency auditing, a production build, and the
+full local test suite in GitHub Actions. Failed browser runs upload a Playwright report with traces and
+screenshots. A weekly workflow checks live external links.
+
+Netlify deploys `main` using [`netlify.toml`](netlify.toml):
+
+- Build command: `npm run build:eleventy:prod`
+- Publish directory: `_site`
+- Node.js version: 22.12.0
+
+GitHub Actions validates the site but does not deploy it. Successful deployment notifications trigger a smoke
+test of the production pages, integrations, and HTTP security headers. The site-managed header policy lives in
+[`src/_headers`](src/_headers).
 
 ## Contributing
 
-Anyone can help! You don’t need open-source experience, and you don’t need to be neurodivergent to contribute. This is an open-source and volunteer-driven project that you can add to your resume or LinkedIn. We appreciate all contributions, both large and small.
+Contributions are welcome; open-source experience and a neurodivergent identity are not required. See
+[`CONTRIBUTING.md`](CONTRIBUTING.md) for the development workflow, testing expectations, and pull-request
+guidance. Participation in this project is governed by the [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
 
-You can find our [full ticket list here](https://github.com/orgs/nditcommunity/projects/1/views/6?filterQuery=is%3Aissue). You can filter for [only tickets that need help here](https://github.com/nditcommunity/nditcommunity.github.io/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22).
+Dependabot checks npm packages and GitHub Actions monthly. Related updates are grouped and must pass the same
+quality checks as other contributions.
 
-### Designers
+## Maintainers
 
-In-progress wireframe brainstorming is happening on Penpot. Request an invite via the Discussions tab or by commenting on an existing design ticket. Make sure to tag an owner (see Team section below).
+The repository maintainers are [@hayleyw7](https://github.com/hayleyw7) and
+[@royemosby](https://github.com/royemosby). Everyone working on the project, including its maintainers, is a
+volunteer.
 
-### Developers
+## Attribution and license
 
-We use JavaScript, HTML, CSS, 11ty, Prettier, and Netlify.
-
-#### 1. Clone project
-
-- Clone the project locally (do not fork) by entering this in your terminal:
-  ```
-  git clone https://github.com/nditcommunity/nditcommunity.github.io.git
-  ```
-
-#### 2. Run project
-
-- Enter the following in your terminal:
-
-  ```
-  npx @11ty/eleventy --serve
-  ```
-
-- When you're asked if you want to install relevant packages, respond `y`.
-
-- You _may_ need to update related libraries, including tools like Homebrew or Node.js, to ensure compatibility.
-
-- Run the above eleventy serve command again.
-
-- Open the site in your browser at `localhost:8080`.
-
-#### 3. Take a ticket
-
-- Select a ticket from the "To Do" column on [our issue board](https://github.com/orgs/nditcommunity/projects/1/views/6?filterQuery=is%3Aissue) that has _both_ "good first issue" and "help needed" labels.
-
-- Assign the ticket to yourself and remove the "helper wanted" label.
-
-- Drag the ticket to the "In Progress" column.
-
-#### 4. Work on ticket
-
-- Name the branch using the issue number and a short name, like `6-favicon` or `18-day-night-toggle`.
-
-- Request write access by tagging an owner (see Team section below) in the issue ticket.
-
-- Create a Pull Request (PR) into `main`, and fill in the auto-generated PR template. If it's a work in progress, note this in the description and ignore sections below "Type of change".
-
-#### 5. Code review
-
-- Run this command in your terminal to ensure your code meets formatting standards before submission:
-
-  ```
-  npx prettier --write .
-  ```
-
-- When the PR is ready for code review, request review from an owner.
-
-- An owner will review your code or respond to questions.
-
-- When approved, an owner will merge your PR into `main`. _Only owners are permitted to merge anything into main._
-
-### Team
-
-The **owners** of the repo are [@hayleyw7](https://github.com/hayleyw7) and [@royemosby](https://github.com/royemosby).
-
-All contributors, including the owners, are dedicated volunteers.
-
-While most contributors are members of the ND In Tech community, we are also fortunate to have incredible support from allies.
-
-## Attribution
-
-Social icons are sources from [Freepik](https://www.flaticon.com/packs/social-media-86).
-
-## Licensing
-
-The website is open-source and licensed under an MIT License.
+Social brand icons are from [Font Awesome Free](https://fontawesome.com/license/free). The website is available
+under the [MIT License](LICENSE).

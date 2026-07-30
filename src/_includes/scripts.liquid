@@ -1,2 +1,7 @@
-<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
-<script src='/scripts/app.js'></script>
+<script src='/scripts/theme.js'></script>
+{% if page.url == '/contact/' %}
+  <script src='/scripts/contact.js'></script>
+{% endif %}
+{% if page.url == '/events/' %}
+  <script src='/scripts/calendar.js'></script>
+{% endif %}

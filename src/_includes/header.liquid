@@ -1,12 +1,34 @@
-<header>
-  <a href='/'><p class='title'>Neurodiversity In Tech</p></a>
+<header class='site-header'>
+  <div class='brand-bar'>
+    <a
+      class='brand'
+      href='/'
+      >Neurodiversity In Tech</a
+    >
+  </div>
 
-  <nav>
-    <ul>
+  <nav
+    class='site-nav'
+    aria-label='Primary navigation'
+  >
+    <ul class='nav-primary'>
+      <li>
+        <a
+          class='nav-item'
+          href='/'
+          {% if page.url == '/' %}
+            aria-current='page'
+          {% endif %}
+          >Home</a
+        >
+      </li>
       <li>
         <a
           class='nav-item'
           href='/about'
+          {% if page.url == '/about/' %}
+            aria-current='page'
+          {% endif %}
           >About</a
         >
       </li>
@@ -14,21 +36,62 @@
         <a
           class='nav-item'
           href='/events'
+          {% if page.url == '/events/' %}
+            aria-current='page'
+          {% endif %}
           >Events</a
+        >
+      </li>
+    </ul>
+    <ul class='nav-secondary'>
+      <li>
+        <a
+          class='nav-item'
+          href='/resources'
+          {% if page.url == '/resources/' %}
+            aria-current='page'
+          {% endif %}
+          >Resources</a
+        >
+      </li>
+      <li>
+        <a
+          class='nav-item'
+          href='/media'
+          {% if page.url == '/media/' %}
+            aria-current='page'
+          {% endif %}
+          >Media</a
         >
       </li>
       <li>
         <a
           class='nav-item'
           href='/contact'
+          {% if page.url == '/contact/' %}
+            aria-current='page'
+          {% endif %}
           >Contact</a
         >
       </li>
       <li>
-        <p class='nav-item theme-icon'>
-          <span class='sun-icon hidden material-symbols-outlined'>light_mode</span>
-          <span class='moon-icon material-symbols-outlined'>dark_mode</span>
-        </p>
+        <button
+          class='nav-item theme-toggle'
+          type='button'
+          aria-label='Switch to dark mode'
+          title='Switch to dark mode'
+        >
+          <span
+            class='sun-icon theme-icon hidden'
+            aria-hidden='true'
+            >☀︎</span
+          >
+          <span
+            class='moon-icon theme-icon'
+            aria-hidden='true'
+            >☾</span
+          >
+        </button>
       </li>
     </ul>
   </nav>
