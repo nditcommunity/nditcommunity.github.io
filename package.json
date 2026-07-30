@@ -23,8 +23,11 @@
     "prettier:check": "prettier --check ."
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.1.2",
     "@shopify/prettier-plugin-liquid": "^1.4.4",
     "prettier": "^3.2.5"
+  },
+  "overrides": {
+    "@11ty/recursive-copy": "^5.0.2"
   }
 }
