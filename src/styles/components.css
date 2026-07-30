@@ -1,80 +1,172 @@
-/* ---------- TITLE BAR ---------- */
+/* ---------- BRAND ---------- */
 
-.title {
-  padding: 1rem;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: white;
+.brand {
+  color: var(--heading);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  text-align: center;
+  text-decoration: none;
 }
 
-body.night-mode .title {
-  background: var(--night-banner-gradient);
-  color: var(--white);
-}
-
-body.day-mode .title {
-  background: var(--day-banner-gradient);
-  color: var(--black);
+.brand:hover {
+  color: var(--heading);
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
 }
 
 /* ---------- NAVIGATION ---------- */
 
-nav {
-  min-height: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.night-mode nav {
-  background-color: var(--almost-black);
-  color: var(--white);
-  border-left: none;
-  border-right: none;
-  box-shadow: var(--night-shadow);
-}
-
-body.day-mode nav {
-  color: var(--black);
-  box-shadow: var(--day-shadow);
-}
-
 .nav-item {
+  min-height: 2.75rem;
+  padding: 0.65rem 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: var(--text);
+  font-weight: 700;
   text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem 2rem;
+  transition:
+    color var(--transition),
+    background-color var(--transition);
 }
 
-body.night-mode .nav-item {
-  color: var(--white);
+.nav-item:hover,
+.nav-item[aria-current='page'] {
+  color: var(--heading);
+  background: var(--surface-subtle);
 }
 
-body.day-mode .nav-item {
-  color: var(--black);
-}
-
-.sun-icon,
-.moon-icon {
+.theme-toggle {
+  width: 2.75rem;
+  min-width: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--border);
   cursor: pointer;
-  font-size: 100% !important;
-  padding-top: 2.5px;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  background: var(--surface-subtle);
+}
+
+.theme-icon {
+  color: var(--text);
+  font-family: var(--font-stack);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.sun-icon {
+  transform: translateY(0.08rem);
+}
+
+/* ---------- SOCIAL LINKS ---------- */
+
+.social-link {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--text);
+  text-decoration: none;
+  transition:
+    background-color var(--transition),
+    transform var(--transition);
+}
+
+.social-link:hover {
+  background: color-mix(in srgb, var(--surface) 55%, transparent);
+  transform: translateY(-0.12rem);
+}
+
+.social-icon {
+  width: 1.65rem;
+  height: 1.65rem;
+}
+
+.social-letter {
+  color: var(--text);
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 /* ---------- EMBEDS ---------- */
 
 iframe {
-  border: 0;
   width: 100%;
-  border-radius: 1rem;
-  background-color: var(--white);
-  overflow: hidden;
+  display: block;
+  border: 0;
+  border-radius: var(--radius-medium);
+  background: #ffffff;
 }
 
-.day-mode iframe {
-  box-shadow: var(--day-shadow);
+body.night-mode iframe {
+  filter: invert(0.92) hue-rotate(180deg);
 }
 
-.night-mode iframe {
-  filter: invert(1) hue-rotate(180deg);
-  box-shadow: 0px 4px 6px rgba(128, 128, 128, 0.45);
+.embed-card {
+  margin-top: 2rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+  background: var(--embed-background);
+  box-shadow: var(--shadow);
+}
+
+.embed-header {
+  margin-bottom: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.embed-header h2 {
+  margin-top: 0;
+}
+
+.embed-header p {
+  margin-bottom: 0;
+  color: var(--text-muted);
+}
+
+.embed-link {
+  min-height: 2.75rem;
+  padding: 0.6rem 0.9rem;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 0.12rem solid var(--accent);
+  border-radius: 999px;
+  color: var(--link);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+.embed-link:hover {
+  color: var(--accent-contrast);
+  background: var(--accent);
+}
+
+.embed-note {
+  margin: 1rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.calendar-status {
+  min-height: 2rem;
+  margin: 0 0 0.5rem;
+  color: var(--text-muted);
+  font-weight: 700;
 }

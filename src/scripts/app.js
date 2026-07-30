@@ -1,33 +1,136 @@
-$(document).ready(() => {
-  const applyTheme = (themeClass) => {
-    // update theme class
-    $('body').removeClass('night-mode day-mode').addClass(themeClass);
+const themeToggle = document.querySelector('.theme-toggle');
+const sunIcon = document.querySelector('.sun-icon');
+const moonIcon = document.querySelector('.moon-icon');
+const socialIcons = document.querySelectorAll('.social-icon');
 
-    // update theme icons
-    const isDarkMode = themeClass === 'night-mode';
-    $('.sun-icon').toggleClass('hidden', !isDarkMode);
-    $('.moon-icon').toggleClass('hidden', isDarkMode);
+const applyTheme = (theme) => {
+  const isDarkMode = theme === 'night-mode';
 
-    // update all social icons dynamically
-    $('.social-icon').each(function () {
-      const src = $(this).attr('src');
-      const newSrc = src.replace(/-(black|white)\.png$/, `-${isDarkMode ? 'white' : 'black'}.png`);
-      $(this).attr('src', newSrc);
-    });
-  };
+  document.documentElement.classList.toggle('night-mode', isDarkMode);
+  document.documentElement.classList.toggle('day-mode', !isDarkMode);
+  document.body.classList.toggle('night-mode', isDarkMode);
+  document.body.classList.toggle('day-mode', !isDarkMode);
+  document.documentElement.style.colorScheme = isDarkMode ? 'dark' : 'light';
 
-  // load previously saved theme or set default to night-mode
-  const savedTheme = localStorage.getItem('theme') || 'day-mode';
-  applyTheme(savedTheme);
+  sunIcon?.classList.toggle('hidden', !isDarkMode);
+  moonIcon?.classList.toggle('hidden', isDarkMode);
 
-  // toggle new theme
-  $('.theme-icon').on('click', () => {
-    // determine which theme to apply
-    const currentTheme = $('body').hasClass('night-mode') ? 'night-mode' : 'day-mode';
-    const newTheme = currentTheme === 'night-mode' ? 'day-mode' : 'night-mode';
+  if (themeToggle) {
+    const action = isDarkMode ? 'Switch to light mode' : 'Switch to dark mode';
+    themeToggle.setAttribute('aria-label', action);
+    themeToggle.setAttribute('title', action);
+    themeToggle.setAttribute('aria-pressed', String(isDarkMode));
+  }
 
-    // save and apply new theme
-    localStorage.setItem('theme', newTheme);
-    applyTheme(newTheme);
+  socialIcons.forEach((icon) => {
+    icon.src = icon.src.replace(/-(black|white)\.png$/, `-${isDarkMode ? 'white' : 'black'}.png`);
   });
+
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  themeColor?.setAttribute('content', isDarkMode ? '#121016' : '#f7f5fa');
+};
+
+let savedTheme;
+
+try {
+  savedTheme = localStorage.getItem('theme');
+} catch {
+  savedTheme = null;
+}
+
+const preferredTheme =
+  savedTheme ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night-mode' : 'day-mode');
+
+applyTheme(preferredTheme);
+
+themeToggle?.addEventListener('click', () => {
+  const newTheme = document.body.classList.contains('night-mode') ? 'day-mode' : 'night-mode';
+
+  try {
+    localStorage.setItem('theme', newTheme);
+  } catch {
+    // The theme still changes when storage is unavailable.
+  }
+
+  applyTheme(newTheme);
 });
+
+const contactForm = document.querySelector('.contact-form');
+const contactFormResponse = document.querySelector('[name="contact-form-response"]');
+const formStatus = document.querySelector('.form-status');
+const formSubmit = contactForm?.querySelector('.form-submit');
+let contactFormSubmitted = false;
+let contactFormTimeout;
+
+contactForm?.addEventListener('submit', () => {
+  contactFormSubmitted = true;
+  formSubmit.disabled = true;
+  formStatus.textContent = 'Sending your message…';
+
+  clearTimeout(contactFormTimeout);
+  contactFormTimeout = setTimeout(() => {
+    if (!contactFormSubmitted) {
+      return;
+    }
+
+    formSubmit.disabled = false;
+    formStatus.textContent =
+      'We could not confirm that your message was sent. Please try the Google Form link.';
+    contactFormSubmitted = false;
+  }, 15000);
+});
+
+contactFormResponse?.addEventListener('load', () => {
+  if (!contactFormSubmitted) {
+    return;
+  }
+
+  clearTimeout(contactFormTimeout);
+  contactForm.reset();
+  formSubmit.disabled = false;
+  formStatus.textContent = 'Thanks! Your message has been sent.';
+  contactFormSubmitted = false;
+});
+
+const calendar = document.querySelector('.calendar');
+const calendarStatus = document.querySelector('.calendar-status');
+const mobileCalendar = window.matchMedia('(max-width: 30rem)');
+let calendarTimeout;
+
+const setCalendarSource = () => {
+  if (!calendar) {
+    return;
+  }
+
+  const source = mobileCalendar.matches ? calendar.dataset.mobileSrc : calendar.dataset.desktopSrc;
+
+  if (calendar.src === source) {
+    return;
+  }
+
+  calendarStatus.textContent = 'Loading calendar…';
+  calendar.src = source;
+};
+
+calendar?.addEventListener('load', () => {
+  clearTimeout(calendarTimeout);
+  calendarStatus.classList.add('hidden');
+});
+
+calendar?.addEventListener('error', () => {
+  clearTimeout(calendarTimeout);
+  calendarStatus.classList.remove('hidden');
+  calendarStatus.textContent = 'The calendar could not load. Use the link above to open it in a new tab.';
+});
+
+if (calendar) {
+  calendarTimeout = setTimeout(() => {
+    if (!calendarStatus.classList.contains('hidden')) {
+      calendarStatus.textContent =
+        'The calendar is taking longer than expected. You can open it in a new tab.';
+    }
+  }, 10000);
+
+  setCalendarSource();
+  mobileCalendar.addEventListener('change', setCalendarSource);
+}

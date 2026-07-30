@@ -1,46 +1,66 @@
-/* ---------- CREDIT FOR STARTING TEMPLATE ----------  */
+/* ---------- CREDIT FOR STARTING TEMPLATE ---------- */
 
 /* 1) HTML5 Boilerplate v9.0.0-RC1 | MIT License | html5boilerplate.com */
 /* 2) main.css 3.0.0 | MIT License | github.com/h5bp/main.css#readme */
 
-/* ---------- VARIABLES ---------- */
+/* ---------- DESIGN TOKENS ---------- */
 
 :root {
   --font-stack: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --content-width: 46rem;
+  --radius-small: 0.5rem;
+  --radius-medium: 0.9rem;
+  --radius-large: 1.4rem;
+  --transition: 180ms ease;
+}
 
-  /* currently used colors */
+body.day-mode,
+html.day-mode body {
+  --background: #f7f5fa;
+  --surface: #ffffff;
+  --surface-subtle: #efebf4;
+  --embed-background: #ffffff;
+  --text: #211c26;
+  --text-muted: #514959;
+  --heading: #29143d;
+  --link: #54217d;
+  --link-hover: #35124f;
+  --accent: #5b287f;
+  --accent-hover: #431960;
+  --accent-contrast: #ffffff;
+  --border: #d8cfe1;
+  --focus: #006b61;
+  --header-start: #e8dff1;
+  --header-end: #d6e9e6;
+  --footer-start: #ded2e9;
+  --footer-end: #c9e1dd;
+  --shadow: 0 0.45rem 1.5rem rgba(46, 25, 61, 0.1);
+  --shadow-hover: 0 0.7rem 1.8rem rgba(46, 25, 61, 0.16);
+}
 
-  --black: black;
-  --white: white;
-  --almost-black: #121212;
-  --almost-white: #f7f7f7;
-  --day-green: #cedad3;
-  --day-purple: #d8d3dd;
-  --day-blue: #cfdde1;
-  --night-purple: #4f466e;
-  --night-green: #4a6f63;
-  --night-blue: #345a63;
-
-  /* shadows */
-
-  --day-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  --night-shadow: 0px 4px 6px rgba(255, 255, 255, 0.25);
-
-  /* gradients */
-
-  --day-banner-gradient: linear-gradient(to right, var(--day-purple), var(--day-blue));
-  --night-banner-gradient: linear-gradient(to right, var(--night-purple), var(--night-blue));
-
-  --day-btn-gradient: linear-gradient(to right, var(--day-green), var(--day-blue));
-  --day-btn-gradient-reversed: linear-gradient(to right, var(--day-blue), var(--day-green));
-
-  --night-btn-gradient: linear-gradient(to right, var(--night-green), var(--night-blue));
-  --night-btn-gradient-reversed: linear-gradient(to right, var(--night-blue), var(--night-green));
-
-  /* sizing */
-
-  --footer-height: 4.3rem;
+body.night-mode,
+html.night-mode body {
+  --background: #121016;
+  --surface: #1d1923;
+  --surface-subtle: #28222f;
+  --embed-background: #141414;
+  --text: #f6f2f9;
+  --text-muted: #d1c8d8;
+  --heading: #ffffff;
+  --link: #dfc5fa;
+  --link-hover: #f0e2ff;
+  --accent: #b883df;
+  --accent-hover: #cfa4eb;
+  --accent-contrast: #1b1022;
+  --border: #4d4358;
+  --focus: #6ee7d8;
+  --header-start: #3d2850;
+  --header-end: #174b48;
+  --footer-start: #33223f;
+  --footer-end: #143f3d;
+  --shadow: 0 0.5rem 1.6rem rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 0.75rem 2rem rgba(0, 0, 0, 0.5);
 }
 
 /* ---------- FONTS ---------- */
@@ -77,32 +97,39 @@
   font-display: swap;
 }
 
-/* ---------- GENERAL ---------- */
+/* ---------- GLOBAL ---------- */
 
-* {
-  padding: 0;
-  margin: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+  scroll-behavior: smooth;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  min-width: 20rem;
   min-height: 100vh;
   min-height: 100dvh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-stack);
-  font-size: 100%;
-  color: var(--black);
-  background-color: var(--white);
-}
-
-body.day-mode {
-  color: var(--black);
-  background-color: var(--almost-white);
-}
-
-body.night-mode {
-  color: var(--white);
-  background-color: var(--almost-black);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: radial-gradient(
+      circle at 15% 15%,
+      color-mix(in srgb, var(--accent) 8%, transparent),
+      transparent 28rem
+    ),
+    var(--background);
+  transition:
+    color var(--transition),
+    background-color var(--transition);
 }
 
 h1,
@@ -111,12 +138,45 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
+  max-width: 28ch;
+  margin-block: 1.5em 0.55em;
+  color: var(--heading);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p,
+ul,
+ol {
+  margin-block: 0 1.25rem;
 }
 
 a {
-  text-decoration: none;
+  color: var(--link);
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+img {
+  max-width: 100%;
 }
 
 .italic {
@@ -124,10 +184,5 @@ a {
 }
 
 .bold {
-  font-weight: bold;
-}
-
-li:hover,
-.social-icon:hover {
-  transform: scale(1.03);
+  font-weight: 700;
 }

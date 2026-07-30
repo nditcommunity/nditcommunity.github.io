@@ -1,9 +1,14 @@
 <!doctype html>
 <html lang='en-US'>
   {% include 'head' %}
-  <body>
+  <body class='day-mode'>
+    <a
+      class='skip-link'
+      href='#main-content'
+      >Skip to main content</a
+    >
     {% include 'header' %}
-    <main>
+    <main id='main-content'>
       {{ content }}
     </main>
     {% include 'footer' %}

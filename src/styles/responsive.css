@@ -1,43 +1,76 @@
-/* ---------- SHORT VIEWPORTS ---------- */
+/* ---------- TABLET AND MOBILE ---------- */
 
-@media (max-height: 450px) {
-  div.home {
-    height: 30px;
-    padding-top: 8px;
+@media (max-width: 44rem) {
+  .site-nav {
+    width: 100%;
+    padding: 0.55rem 0.6rem;
+    overflow-x: auto;
   }
 
-  .tagline {
-    display: none;
-  }
-}
-
-/* ---------- MOBILE ---------- */
-
-@media only screen and (max-width: 600px) {
-  main {
-    width: 19rem;
-  }
-
-  .title {
-    font-size: 1.8rem;
+  .site-nav ul {
+    width: max-content;
+    min-width: 100%;
   }
 
   .nav-item {
-    padding: 0.5rem;
+    padding-inline: 0.7rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  main {
+    width: min(100% - 1.25rem, var(--content-width));
+    padding-block: 2rem;
+  }
+
+  .brand-bar {
+    padding-block: 1.25rem;
+  }
+
+  .site-nav {
+    overflow-x: visible;
+  }
+
+  .site-nav ul {
+    width: 100%;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .nav-item {
+    width: 100%;
+    padding-inline: 0.55rem;
     font-size: 0.9rem;
   }
 
-  .calendar {
-    width: 19rem;
-    min-height: 17rem;
-    margin-top: 0.8rem;
-    height: auto;
-    margin-left: -1rem;
-    transform: scale(0.9);
-    transform-origin: top center;
+  .theme-toggle {
+    width: 2.75rem;
+    justify-self: center;
   }
 
-  .contact-form {
-    height: 50rem;
+  .home {
+    padding: 3.5rem 1rem;
+  }
+
+  .embed-header {
+    flex-direction: column;
+  }
+
+  .embed-link {
+    width: 100%;
+  }
+
+  .calendar {
+    height: 22rem;
+  }
+
+  main .media-list {
+    grid-template-columns: 1fr;
+  }
+
+  .toc ul {
+    columns: 1;
   }
 }

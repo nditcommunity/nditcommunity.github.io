@@ -1,39 +1,71 @@
 /* ---------- ACCESSIBILITY ---------- */
 
-/* Hide visually and from screen readers. */
-
 .hidden,
 [hidden] {
   display: none !important;
 }
 
-/* Hide visually and from screen readers, but retain layout. */
-
 .invisible {
   visibility: hidden;
 }
 
-/* Hide visually, but retain access for screen readers. */
-
 .visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
   width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
-
-/* Restore visually hidden content for keyboard navigation. */
 
 .visually-hidden.focusable:active,
 .visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
   width: auto;
+  height: auto;
+  margin: 0;
+  position: static;
+  overflow: visible;
+  clip: auto;
+  white-space: inherit;
+}
+
+:focus-visible {
+  outline: 0.2rem solid var(--focus);
+  outline-offset: 0.2rem;
+}
+
+.skip-link {
+  padding: 0.7rem 1rem;
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+  border-radius: var(--radius-small);
+  color: var(--accent-contrast);
+  background: var(--accent);
+  font-weight: 700;
+}
+
+.skip-link:not(:focus) {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

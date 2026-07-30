@@ -4,14 +4,33 @@
     name='viewport'
     content='width=device-width, initial-scale=1'
   >
-  <title>Neurodiversity In Tech</title>
+  <title>
+    {%- if title and title != 'Neurodiversity in Tech' -%}
+      {{ title | capitalize }} | Neurodiversity In Tech
+    {%- else -%}
+      Neurodiversity In Tech
+    {%- endif -%}
+  </title>
+  <script>
+    (() => {
+      let theme;
+      try {
+        theme = localStorage.getItem('theme');
+      } catch {
+        theme = null;
+      }
+      const preferredTheme =
+        theme ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night-mode' : 'day-mode');
+      document.documentElement.classList.add(preferredTheme);
+    })();
+  </script>
   <link
     rel='stylesheet'
     href='/styles/style.css'
   >
   <meta
     name='description'
-    content='Neurodivergent-led, Neurodivergent-driven: Shaping our space in tech'
+    content='{{ description | default: "Neurodivergent-led, Neurodivergent-driven: Shaping our space in tech" }}'
   >
 
   <!-- Preview Card data -->
@@ -80,11 +99,6 @@
     rel='apple-touch-icon'
     href='/icon.png'
   >
-  <link
-    href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined'
-    rel='stylesheet'
-  >
-
   <link
     rel='manifest'
     href='/site.webmanifest'

@@ -1,74 +1,75 @@
 /* ---------- MAIN ---------- */
 
 main {
-  /* Aim for 33–38rem for readability (33rem is approximately 70 characters per line). */
-  width: 100%;
-  max-width: 33rem;
+  width: min(100% - 2rem, var(--content-width));
   flex: 1;
   margin-inline: auto;
-  margin-bottom: 1.5rem;
+  padding-block: clamp(2.25rem, 6vw, 4.5rem);
 }
 
-main p {
-  line-height: 1.618;
-  margin-bottom: 2em;
+main > :first-child {
+  margin-top: 0;
 }
 
-main ul {
-  padding-left: 1em;
+main ul,
+main ol {
+  padding-left: 1.35rem;
 }
 
-main ul li {
-  padding-bottom: 1em;
+main li {
+  padding-block: 0.2rem;
 }
 
 /* ---------- HEADER ---------- */
 
-header p {
-  text-align: center;
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 0.2rem 1rem rgba(25, 15, 32, 0.08);
 }
 
-header a {
-  text-decoration: none;
+.brand-bar {
+  padding: clamp(1.4rem, 4vw, 2.4rem) 1rem;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(120deg, var(--header-start), var(--header-end));
 }
 
-header nav {
-  min-height: 1rem;
+.site-nav {
+  width: min(100% - 2rem, 58rem);
+  margin-inline: auto;
+  padding-block: 0.65rem;
+}
+
+.site-nav ul {
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-header nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
-  padding-top: 0.2rem;
+  gap: 0.35rem;
+  list-style: none;
 }
 
 /* ---------- FOOTER ---------- */
 
-footer {
+.site-footer {
   width: 100%;
+  padding: 1.2rem 1rem;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(120deg, var(--footer-start), var(--footer-end));
+}
 
+.social-links {
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  height: var(--footer-height);
-
-  .social-icon {
-    width: 2rem;
-  }
+  gap: 0.65rem;
+  list-style: none;
 }
 
-body.night-mode footer {
-  background: var(--night-banner-gradient);
-  color: var(--white);
-}
-
-body.day-mode footer {
-  background: var(--day-banner-gradient);
-  color: var(--black);
+.social-links li {
+  display: flex;
 }
