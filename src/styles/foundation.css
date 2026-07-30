@@ -15,6 +15,14 @@
   --transition: 180ms ease;
 }
 
+html.day-mode {
+  color-scheme: light;
+}
+
+html.night-mode {
+  color-scheme: dark;
+}
+
 body.day-mode,
 html.day-mode body {
   --background: #f7f5fa;

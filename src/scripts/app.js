@@ -10,7 +10,6 @@ const applyTheme = (theme) => {
   document.documentElement.classList.toggle('day-mode', !isDarkMode);
   document.body.classList.toggle('night-mode', isDarkMode);
   document.body.classList.toggle('day-mode', !isDarkMode);
-  document.documentElement.style.colorScheme = isDarkMode ? 'dark' : 'light';
 
   sunIcon?.classList.toggle('hidden', !isDarkMode);
   moonIcon?.classList.toggle('hidden', isDarkMode);
