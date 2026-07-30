@@ -110,7 +110,7 @@ iframe {
   background: #ffffff;
 }
 
-body.night-mode iframe {
+body.dark-mode iframe {
   filter: invert(0.92) hue-rotate(180deg);
 }
 
@@ -169,6 +169,26 @@ body.night-mode iframe {
 .calendar-status {
   min-height: 2rem;
   margin: 0 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
   color: var(--text-muted);
   font-weight: 700;
+}
+
+.calendar-status.is-loading::before {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  border: 0.18rem solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  content: '';
+  animation: calendar-spin 750ms linear infinite;
+}
+
+@keyframes calendar-spin {
+  to {
+    transform: rotate(1turn);
+  }
 }

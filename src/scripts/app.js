@@ -4,12 +4,12 @@ const moonIcon = document.querySelector('.moon-icon');
 const socialIcons = document.querySelectorAll('.social-icon');
 
 const applyTheme = (theme) => {
-  const isDarkMode = theme === 'night-mode';
+  const isDarkMode = theme === 'dark-mode';
 
-  document.documentElement.classList.toggle('night-mode', isDarkMode);
-  document.documentElement.classList.toggle('day-mode', !isDarkMode);
-  document.body.classList.toggle('night-mode', isDarkMode);
-  document.body.classList.toggle('day-mode', !isDarkMode);
+  document.documentElement.classList.toggle('dark-mode', isDarkMode);
+  document.documentElement.classList.toggle('light-mode', !isDarkMode);
+  document.body.classList.toggle('dark-mode', isDarkMode);
+  document.body.classList.toggle('light-mode', !isDarkMode);
 
   sunIcon?.classList.toggle('hidden', !isDarkMode);
   moonIcon?.classList.toggle('hidden', isDarkMode);
@@ -37,13 +37,19 @@ try {
   savedTheme = null;
 }
 
+if (savedTheme === 'night-mode') {
+  savedTheme = 'dark-mode';
+} else if (savedTheme === 'day-mode') {
+  savedTheme = 'light-mode';
+}
+
 const preferredTheme =
-  savedTheme ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night-mode' : 'day-mode');
+  savedTheme ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark-mode' : 'light-mode');
 
 applyTheme(preferredTheme);
 
 themeToggle?.addEventListener('click', () => {
-  const newTheme = document.body.classList.contains('night-mode') ? 'day-mode' : 'night-mode';
+  const newTheme = document.body.classList.contains('dark-mode') ? 'light-mode' : 'dark-mode';
 
   try {
     localStorage.setItem('theme', newTheme);
@@ -51,7 +57,14 @@ themeToggle?.addEventListener('click', () => {
     // The theme still changes when storage is unavailable.
   }
 
-  applyTheme(newTheme);
+  const updateTheme = () => applyTheme(newTheme);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (document.startViewTransition && !reduceMotion) {
+    document.startViewTransition(updateTheme);
+  } else {
+    updateTheme();
+  }
 });
 
 const contactForm = document.querySelector('.contact-form');
@@ -102,6 +115,7 @@ calendar?.addEventListener('load', () => {
 
 calendar?.addEventListener('error', () => {
   clearTimeout(calendarTimeout);
+  calendarStatus.classList.remove('is-loading');
   calendarStatus.classList.remove('hidden');
   calendarStatus.textContent = 'The calendar could not load. Use the link above to open it in a new tab.';
 });

@@ -15,16 +15,16 @@
   --transition: 180ms ease;
 }
 
-html.day-mode {
+html.light-mode {
   color-scheme: light;
 }
 
-html.night-mode {
+html.dark-mode {
   color-scheme: dark;
 }
 
-body.day-mode,
-html.day-mode body {
+body.light-mode,
+html.light-mode body {
   --background: #f7f5fa;
   --surface: #ffffff;
   --surface-subtle: #efebf4;
@@ -47,8 +47,8 @@ html.day-mode body {
   --shadow-hover: 0 0.7rem 1.8rem rgba(46, 25, 61, 0.16);
 }
 
-body.night-mode,
-html.night-mode body {
+body.dark-mode,
+html.dark-mode body {
   --background: #121016;
   --surface: #1d1923;
   --surface-subtle: #28222f;
@@ -116,6 +116,12 @@ html.night-mode body {
 html {
   color-scheme: light dark;
   scroll-behavior: smooth;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 280ms;
+  animation-timing-function: ease-in-out;
 }
 
 body {
