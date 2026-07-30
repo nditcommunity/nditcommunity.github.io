@@ -1,0 +1,80 @@
+/* ---------- TITLE BAR ---------- */
+
+.title {
+  padding: 1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+body.night-mode .title {
+  background: var(--night-banner-gradient);
+  color: var(--white);
+}
+
+body.day-mode .title {
+  background: var(--day-banner-gradient);
+  color: var(--black);
+}
+
+/* ---------- NAVIGATION ---------- */
+
+nav {
+  min-height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.night-mode nav {
+  background-color: var(--almost-black);
+  color: var(--white);
+  border-left: none;
+  border-right: none;
+  box-shadow: var(--night-shadow);
+}
+
+body.day-mode nav {
+  color: var(--black);
+  box-shadow: var(--day-shadow);
+}
+
+.nav-item {
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+}
+
+body.night-mode .nav-item {
+  color: var(--white);
+}
+
+body.day-mode .nav-item {
+  color: var(--black);
+}
+
+.sun-icon,
+.moon-icon {
+  cursor: pointer;
+  font-size: 100% !important;
+  padding-top: 2.5px;
+}
+
+/* ---------- EMBEDS ---------- */
+
+iframe {
+  border: 0;
+  width: 100%;
+  border-radius: 1rem;
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+.day-mode iframe {
+  box-shadow: var(--day-shadow);
+}
+
+.night-mode iframe {
+  filter: invert(1) hue-rotate(180deg);
+  box-shadow: 0px 4px 6px rgba(128, 128, 128, 0.45);
+}

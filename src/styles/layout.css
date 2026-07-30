@@ -1,0 +1,75 @@
+/* ---------- MAIN ---------- */
+
+main {
+  /* Aim for 33–38rem for readability (33rem is approximately 70 characters per line). */
+  max-width: 33rem;
+  margin-inline: auto;
+  margin-bottom: calc(var(--footer-height) + 1.5rem);
+}
+
+main p {
+  line-height: 1.618;
+  margin-bottom: 2em;
+}
+
+main ul {
+  padding-left: 1em;
+}
+
+main ul li {
+  padding-bottom: 1em;
+}
+
+/* ---------- HEADER ---------- */
+
+header p {
+  text-align: center;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header nav {
+  min-height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding-top: 0.2rem;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: var(--footer-height);
+
+  .social-icon {
+    width: 2rem;
+  }
+}
+
+body.night-mode footer {
+  background: var(--night-banner-gradient);
+  color: var(--white);
+}
+
+body.day-mode footer {
+  background: var(--day-banner-gradient);
+  color: var(--black);
+}
