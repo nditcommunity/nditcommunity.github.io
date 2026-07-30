@@ -2,9 +2,11 @@
 
 main {
   /* Aim for 33–38rem for readability (33rem is approximately 70 characters per line). */
+  width: 100%;
   max-width: 33rem;
+  flex: 1;
   margin-inline: auto;
-  margin-bottom: calc(var(--footer-height) + 1.5rem);
+  margin-bottom: 1.5rem;
 }
 
 main p {
@@ -48,10 +50,7 @@ header nav ul {
 /* ---------- FOOTER ---------- */
 
 footer {
-  position: fixed;
-  bottom: 0;
   width: 100%;
-  z-index: 10;
 
   display: flex;
   justify-content: center;

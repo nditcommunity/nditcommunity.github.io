@@ -85,8 +85,11 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
   font-family: var(--font-stack);
-  align-items: center;
   font-size: 100%;
   color: var(--black);
   background-color: var(--white);
