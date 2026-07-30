@@ -159,35 +159,6 @@ main:has(.home) {
   font-weight: 700;
 }
 
-/* ---------- MEDIA ---------- */
-
-main .media-list {
-  margin-top: 2rem;
-  padding-left: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  list-style: none;
-}
-
-main .media-list li {
-  padding: 1.2rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-medium);
-  background: var(--surface);
-  box-shadow: var(--shadow);
-}
-
-.media-list a {
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
-.media-list p {
-  margin: 0.5rem 0 0;
-  color: var(--text-muted);
-}
-
 /* ---------- CODE OF CONDUCT ---------- */
 
 .toc {

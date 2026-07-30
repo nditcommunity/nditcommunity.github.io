@@ -55,6 +55,16 @@
       <li>
         <a
           class='nav-item'
+          href='/media'
+          {% if page.url == '/media/' %}
+            aria-current='page'
+          {% endif %}
+          >Media</a
+        >
+      </li>
+      <li>
+        <a
+          class='nav-item'
           href='/contact'
           {% if page.url == '/contact/' %}
             aria-current='page'
