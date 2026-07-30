@@ -81,3 +81,32 @@ test('pages have unique titles, descriptions, and one primary heading', () => {
     titles.add(title);
   }
 });
+
+test('resource and media data contain complete, unique, tracking-free HTTPS links', () => {
+  const collections = [
+    JSON.parse(read('src/_data/resources.json')),
+    JSON.parse(read('src/_data/media.json')),
+  ];
+  const seenUrls = new Set();
+
+  const visitItems = (items) => {
+    for (const item of items) {
+      assert.equal(typeof item.title, 'string');
+      assert.ok(item.title.trim(), 'An item has an empty title');
+      assert.equal(typeof item.description, 'string');
+      assert.ok(item.description.trim(), `${item.title} has an empty description`);
+      assert.match(item.url, /^https:\/\//, `${item.title} must use HTTPS`);
+      assert.doesNotMatch(item.url, /[?&](utm_[^=]+|fbclid|gclid)=/i, `${item.title} contains tracking data`);
+      assert.ok(!seenUrls.has(item.url), `${item.title} duplicates ${item.url}`);
+      seenUrls.add(item.url);
+    }
+  };
+
+  for (const collection of collections) {
+    for (const section of collection) {
+      assert.ok(section.title?.trim(), 'A section has no title');
+      if (section.items) visitItems(section.items);
+      for (const group of section.groups ?? []) visitItems(group.items);
+    }
+  }
+});

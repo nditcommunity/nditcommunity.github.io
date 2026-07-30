@@ -45,6 +45,8 @@ npm run prettier:check  # Check formatting
 npm run prettier:write  # Apply formatting
 npm run test:structure  # Run fast content and security checks
 npm run test:ui         # Run Playwright browser and accessibility tests
+npm run test:links      # Check generated internal links and fragments
+npm run test:links:external # Check live external links
 npm test                # Run the complete test suite
 npm audit               # Check dependencies for known vulnerabilities
 ```
@@ -60,6 +62,8 @@ npx playwright install chromium
 The test suite includes:
 
 - Structural HTML, metadata, external-link, tracking-parameter, form, and security-header checks
+- Validated Resources and Media data, including required fields and duplicate URLs
+- Generated internal-link and fragment validation
 - Desktop and mobile browser tests
 - Automated Axe accessibility scans
 - Keyboard navigation and skip-link coverage
@@ -90,6 +94,7 @@ for Netlify to apply.
 
 ```text
 src/
+  _data/          Structured Resources and Media content
   _includes/      Shared page sections
   _layouts/       Eleventy layouts
   assets/         Fonts, icons, and images
@@ -99,6 +104,9 @@ src/
 tests/
   structure.test.js
   ui/
+tools/
+  bundle-css.js   Creates one production stylesheet from the split CSS sources
+  check-links.js  Checks generated and external links
 .github/
   workflows/      Reusable pull-request and main-branch checks
 ```
@@ -133,7 +141,7 @@ The repository owners are [@hayleyw7](https://github.com/hayleyw7) and
 
 ## Attribution
 
-Social icons are sourced from [Freepik](https://www.flaticon.com/packs/social-media-86).
+Social brand icons are from [Font Awesome Free](https://fontawesome.com/license/free).
 
 ## License
 

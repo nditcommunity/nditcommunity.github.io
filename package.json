@@ -16,17 +16,19 @@
     "url": "git+https://github.com/nditcommunity/nditcommunity.github.io.git"
   },
   "scripts": {
-    "build": "npx @11ty/eleventy",
+    "build": "npx @11ty/eleventy && node tools/bundle-css.js",
     "clean": "rm -rf _site",
     "debug": "DEBUG=* npx @11ty/eleventy",
     "dev": "npx @11ty/eleventy --serve",
     "dry-run": "npx @11ty/eleventy --dryrun",
-    "build:eleventy:prod": "ELEVENTY_ENV=production eleventy",
+    "build:eleventy:prod": "ELEVENTY_ENV=production eleventy && node tools/bundle-css.js",
     "prettier:write": "prettier --write .",
     "prettier:check": "prettier --check .",
-    "test": "npm run test:structure && npm run test:ui",
+    "test": "npm run build && npm run test:structure && npm run test:links && npm run test:ui",
     "test:structure": "node --test tests/structure.test.js",
-    "test:ui": "playwright test"
+    "test:ui": "playwright test",
+    "test:links": "node tools/check-links.js",
+    "test:links:external": "npm run build && node tools/check-links.js --external"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
