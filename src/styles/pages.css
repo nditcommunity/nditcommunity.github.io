@@ -91,3 +91,49 @@ body.night-mode .join-btn:hover {
   height: 46rem;
   padding: 1rem 0;
 }
+
+/* ---------- RESOURCES ---------- */
+
+.resource-section {
+  margin-bottom: 2rem;
+}
+
+main .resource-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+main .resource-list li {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+
+.resource-list a {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.resource-list p {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+body.day-mode .resource-list li {
+  background: var(--white);
+  box-shadow: var(--day-shadow);
+}
+
+body.night-mode .resource-list li {
+  background: #1f1f1f;
+  box-shadow: var(--night-shadow);
+}
+
+body.day-mode .resource-list a {
+  color: var(--black);
+}
+
+body.night-mode .resource-list a {
+  color: var(--white);
+}
