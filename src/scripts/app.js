@@ -74,7 +74,13 @@ const formSubmit = contactForm?.querySelector('.form-submit');
 let contactFormSubmitted = false;
 let contactFormTimeout;
 
-contactForm?.addEventListener('submit', () => {
+contactForm?.addEventListener('submit', (event) => {
+  if (!navigator.onLine) {
+    event.preventDefault();
+    formStatus.textContent = 'You appear to be offline. Reconnect, then try sending your message again.';
+    return;
+  }
+
   contactFormSubmitted = true;
   formSubmit.disabled = true;
   formStatus.textContent = 'Sending your message…';
@@ -104,9 +110,47 @@ contactFormResponse?.addEventListener('load', () => {
   contactFormSubmitted = false;
 });
 
+contactFormResponse?.addEventListener('error', () => {
+  if (!contactFormSubmitted) {
+    return;
+  }
+
+  clearTimeout(contactFormTimeout);
+  formSubmit.disabled = false;
+  formStatus.textContent = 'Your message could not be sent. Please try again or use the Google Form link.';
+  contactFormSubmitted = false;
+});
+
 const calendar = document.querySelector('.calendar');
 const calendarStatus = document.querySelector('.calendar-status');
 let calendarTimeout;
+
+const showCalendarError = (message) => {
+  clearTimeout(calendarTimeout);
+  calendarStatus.classList.remove('is-loading', 'hidden');
+  calendarStatus.textContent = message;
+};
+
+const startCalendarTimeout = () => {
+  clearTimeout(calendarTimeout);
+  calendarTimeout = setTimeout(() => {
+    if (!calendarStatus.classList.contains('hidden')) {
+      calendarStatus.textContent =
+        'The calendar is taking longer than expected. You can open it in a new tab.';
+    }
+  }, 10000);
+};
+
+const retryCalendar = () => {
+  if (!calendar || calendarStatus.classList.contains('hidden')) {
+    return;
+  }
+
+  calendarStatus.classList.add('is-loading');
+  calendarStatus.textContent = 'Loading calendar…';
+  calendar.src = calendar.src;
+  startCalendarTimeout();
+};
 
 calendar?.addEventListener('load', () => {
   clearTimeout(calendarTimeout);
@@ -114,17 +158,15 @@ calendar?.addEventListener('load', () => {
 });
 
 calendar?.addEventListener('error', () => {
-  clearTimeout(calendarTimeout);
-  calendarStatus.classList.remove('is-loading');
-  calendarStatus.classList.remove('hidden');
-  calendarStatus.textContent = 'The calendar could not load. Use the link above to open it in a new tab.';
+  showCalendarError('The calendar could not load. Use the link above to open it in a new tab.');
 });
 
 if (calendar) {
-  calendarTimeout = setTimeout(() => {
-    if (!calendarStatus.classList.contains('hidden')) {
-      calendarStatus.textContent =
-        'The calendar is taking longer than expected. You can open it in a new tab.';
-    }
-  }, 10000);
+  if (!navigator.onLine) {
+    showCalendarError('You appear to be offline. The calendar will retry when you reconnect.');
+  } else {
+    startCalendarTimeout();
+  }
+
+  window.addEventListener('online', retryCalendar);
 }
