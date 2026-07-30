@@ -106,11 +106,6 @@ main:has(.home) {
   font-weight: 700;
 }
 
-.form-field .optional {
-  color: var(--text-muted);
-  font-weight: 400;
-}
-
 .form-field input,
 .form-field textarea {
   width: 100%;
