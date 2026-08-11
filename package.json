@@ -32,11 +32,11 @@
     "test:production": "node tools/smoke-production.js"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy": "^3.1.6",
     "@axe-core/playwright": "^4.12.1",
     "@playwright/test": "^1.62.1",
-    "@shopify/prettier-plugin-liquid": "^1.4.4",
-    "prettier": "^3.2.5"
+    "@shopify/prettier-plugin-liquid": "^1.11.0",
+    "prettier": "^3.9.6"
   },
   "overrides": {
     "@11ty/recursive-copy": "^5.0.2"
