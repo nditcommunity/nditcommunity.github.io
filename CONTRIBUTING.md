@@ -34,6 +34,8 @@ npm run dev
 
 The development site is available at `http://localhost:8080`.
 
+The latest build from `main` is available on the [staging site](https://ndit-staging.netlify.app).
+
 ## Make a focused change
 
 - Keep the pull request limited to one issue or closely related group of changes.
