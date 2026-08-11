@@ -34,7 +34,7 @@ jobs:
         run: npm test
 
       - name: Upload browser test report
-        if: failure()
+        if: ${{ failure() && hashFiles('playwright-report/**') != '' }}
         uses: actions/upload-artifact@v7
         with:
           name: playwright-report
