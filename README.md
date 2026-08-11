@@ -6,8 +6,6 @@ is a neurodivergent-led community for people working in and around technology.
 The site is a static [Eleventy](https://www.11ty.dev/) project built with Liquid templates, HTML, CSS, and
 client-side JavaScript. Netlify is the canonical hosting and deployment platform.
 
-The latest build from `main` is available on the [staging site](https://ndit-staging.netlify.app).
-
 ## Quick start
 
 ### Requirements
