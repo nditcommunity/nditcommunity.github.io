@@ -120,11 +120,15 @@ Pull requests into `main` and pushes to `main` run formatting, dependency auditi
 full local test suite in GitHub Actions. Failed browser runs upload a Playwright report with traces and
 screenshots. A weekly workflow checks live external links.
 
-Netlify deploys `main` using [`netlify.toml`](netlify.toml):
+Netlify deploys the `main` branch to the [staging site](https://ndit-staging.netlify.app) using
+[`netlify.toml`](netlify.toml):
 
 - Build command: `npm run build:eleventy:prod`
 - Publish directory: `_site`
 - Node.js version: 22.12.0
+
+After a change is merged into `main`, verify it on staging before merging `main` into `production`. Netlify
+then deploys the `production` branch to the [production site](https://nd-in-tech.org).
 
 GitHub Actions validates the site but does not deploy it. Successful deployment notifications trigger a smoke
 test of the production pages, integrations, and HTTP security headers. The site-managed header policy lives in
