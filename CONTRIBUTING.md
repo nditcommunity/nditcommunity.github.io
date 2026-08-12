@@ -34,6 +34,8 @@ npm run dev
 
 The development site is available at `http://localhost:8080`.
 
+The latest build from `main` is available on the [staging site](https://ndit-staging.netlify.app).
+
 ## Make a focused change
 
 - Keep the pull request limited to one issue or closely related group of changes.
@@ -80,4 +82,6 @@ Open the pull request into `main`, complete the template, and link the relevant 
 GitHub Actions checks formatting, dependencies, the production build, internal links, browser behavior, and
 automated accessibility rules. Address failing checks or explain any external failure before requesting review.
 
-Only repository maintainers merge changes into `main`.
+Only repository maintainers merge changes into `main`. After merging, maintainers verify the change on the
+[staging site](https://ndit-staging.netlify.app) before merging `main` into `production` for deployment to the
+[production site](https://nd-in-tech.org).

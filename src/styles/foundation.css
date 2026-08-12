@@ -6,8 +6,9 @@
 /* ---------- DESIGN TOKENS ---------- */
 
 :root {
-  --font-stack: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-stack:
+    'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
   --content-width: 46rem;
   --radius-small: 0.5rem;
   --radius-medium: 0.9rem;
@@ -135,11 +136,8 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text);
-  background: radial-gradient(
-      circle at 15% 15%,
-      color-mix(in srgb, var(--accent) 8%, transparent),
-      transparent 28rem
-    ),
+  background:
+    radial-gradient(circle at 15% 15%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 28rem),
     var(--background);
   transition:
     color var(--transition),
