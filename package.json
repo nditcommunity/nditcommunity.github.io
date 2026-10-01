@@ -33,10 +33,10 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
-    "@axe-core/playwright": "^4.12.1",
-    "@playwright/test": "^1.62.1",
-    "@shopify/prettier-plugin-liquid": "^1.11.0",
-    "prettier": "^3.9.6"
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "@shopify/prettier-plugin-liquid": "^1.11.1",
+    "prettier": "^3.9.9"
   },
   "overrides": {
     "@11ty/recursive-copy": "^5.0.2"
