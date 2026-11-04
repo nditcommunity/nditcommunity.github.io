@@ -1,5 +1,14 @@
 const baseUrl = new URL(process.env.SITE_URL ?? 'https://nd-in-tech.org');
-const routes = ['/', '/about/', '/events/', '/resources/', '/media/', '/contact/', '/code-of-conduct/'];
+const routes = [
+  '/',
+  '/about/',
+  '/events/',
+  '/resources/',
+  '/library/',
+  '/media/',
+  '/contact/',
+  '/code-of-conduct/',
+];
 
 const assert = (condition, message) => {
   if (!condition) throw new Error(message);
