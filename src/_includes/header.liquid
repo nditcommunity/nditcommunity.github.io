@@ -42,8 +42,6 @@
           >Events</a
         >
       </li>
-    </ul>
-    <ul class='nav-secondary'>
       <li>
         <a
           class='nav-item'
@@ -52,6 +50,18 @@
             aria-current='page'
           {% endif %}
           >Resources</a
+        >
+      </li>
+    </ul>
+    <ul class='nav-secondary'>
+      <li>
+        <a
+          class='nav-item'
+          href='/library'
+          {% if page.url == '/library/' %}
+            aria-current='page'
+          {% endif %}
+          >Library</a
         >
       </li>
       <li>

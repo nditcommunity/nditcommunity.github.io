@@ -1,0 +1,16 @@
+---
+layout: base.liquid
+title: library
+description: Tech talks and practical guides created by the Neurodiversity In Tech community
+---
+
+<h1>Library</h1>
+
+<p>Watch our tech talks and explore guides made by the Neurodiversity In Tech community.</p>
+
+{% for section in library %}
+<section class="resource-section">
+  <h2>{{ section.title }}</h2>
+  {% assign list_items = section.items %} {% include 'resource-list' %}
+</section>
+{% endfor %}

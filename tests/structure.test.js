@@ -82,14 +82,13 @@ test('pages have unique titles, descriptions, and one primary heading', () => {
   }
 });
 
-test('resource and media data contain complete, unique, tracking-free HTTPS links', () => {
+test('resource, media, and library data contain complete, tracking-free HTTPS links unique within each page', () => {
   const collections = [
     JSON.parse(read('src/_data/resources.json')),
     JSON.parse(read('src/_data/media.json')),
+    JSON.parse(read('src/_data/library.json')),
   ];
-  const seenUrls = new Set();
-
-  const visitItems = (items) => {
+  const visitItems = (items, seenUrls) => {
     for (const item of items) {
       assert.equal(typeof item.title, 'string');
       assert.ok(item.title.trim(), 'An item has an empty title');
@@ -103,15 +102,79 @@ test('resource and media data contain complete, unique, tracking-free HTTPS link
   };
 
   for (const collection of collections) {
+    const seenUrls = new Set();
     for (const section of collection) {
       assert.ok(section.title?.trim(), 'A section has no title');
-      if (section.items) visitItems(section.items);
-      for (const group of section.groups ?? []) visitItems(group.items);
+      if (section.items) visitItems(section.items, seenUrls);
+      for (const group of section.groups ?? []) visitItems(group.items, seenUrls);
     }
   }
 });
 
-test('Resources and Media share the card-list include', () => {
+test('ND In Tech guides are shared consistently on Resources and Library', () => {
+  const resources = JSON.parse(read('src/_data/resources.json'));
+  const library = JSON.parse(read('src/_data/library.json'));
+  const resourceItems = resources.flatMap((section) => section.groups.flatMap((group) => group.items));
+  const guides = library.find((section) => section.title === 'Guides');
+  const titles = ['ND Job Hunt Playbook: Interviewing', 'Inclusive Work Culture', 'Inclusive Hiring in Tech'];
+
+  assert.ok(guides, 'Library is missing the ND In Tech guides section');
+  assert.deepEqual(
+    guides.items.map((item) => item.title),
+    titles,
+  );
+  for (const guide of guides.items) {
+    assert.deepEqual(
+      guide,
+      resourceItems.find((item) => item.url === guide.url),
+    );
+  }
+});
+
+test('Library owns the talks and guides while Turing videos stay on Media', () => {
+  const library = JSON.parse(read('src/_data/library.json'));
+  const media = JSON.parse(read('src/_data/media.json'));
+  const libraryUrls = library.flatMap((section) => section.items.map((item) => item.url));
+  const mediaUrls = media.flatMap((section) => section.items.map((item) => item.url));
+
+  assert.deepEqual(
+    library.map((section) => section.title),
+    ['Guides', 'ND Tech Talks'],
+  );
+  assert.deepEqual(
+    library.map((section) => section.items.length),
+    [3, 3],
+  );
+  assert.deepEqual(
+    media.map((section) => section.title),
+    ['Interviews & Conversations', 'Features & Mentions'],
+  );
+  assert.deepEqual(
+    media.map((section) => section.items.length),
+    [3, 5],
+  );
+  for (const url of libraryUrls) assert.ok(!mediaUrls.includes(url), `${url} is duplicated on Media`);
+  for (const id of ['0QR8FSouQSs', 'I6ugv7stPFY', 'RJTJGzorIJ8']) {
+    assert.ok(libraryUrls.includes(`https://www.youtube.com/watch?v=${id}`));
+  }
+  for (const id of ['9jWzUhdn5C0', 'EStNdU5JQo4']) {
+    assert.ok(mediaUrls.includes(`https://www.youtube.com/watch?v=${id}`));
+  }
+});
+
+test('Resources, Media, and Library share the card-list include', () => {
   assert.match(read('src/resources.html'), /include 'resource-list'/);
   assert.match(read('src/media.html'), /include 'resource-list'/);
+  assert.match(read('src/library.html'), /include 'resource-list'/);
+});
+
+test('mobile navigation groups contain four controls in the requested order', () => {
+  const header = read('src/_includes/header.liquid');
+  const primary = header.match(/<ul class='nav-primary'>([\s\S]*?)<\/ul>/)?.[1];
+  const secondary = header.match(/<ul class='nav-secondary'>([\s\S]*?)<\/ul>/)?.[1];
+  assert.ok(primary && secondary, 'Both navigation groups must exist');
+  assert.equal((primary.match(/<li>/g) ?? []).length, 4);
+  assert.equal((secondary.match(/<li>/g) ?? []).length, 4);
+  assert.match(primary, /href='\/'[\s\S]*href='\/about'[\s\S]*href='\/events'[\s\S]*href='\/resources'/);
+  assert.match(secondary, /href='\/library'[\s\S]*href='\/media'[\s\S]*href='\/contact'[\s\S]*<button/);
 });
