@@ -59,7 +59,7 @@ test.describe('navigation and responsive layout', () => {
       'aria-current',
       'page',
     );
-    await expect(page.getByRole('heading', { level: 1, name: 'Library' })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 1, name: 'ND In Tech Library' })).toBeVisible();
     await expect(page.getByRole('heading', { level: 2 })).toHaveText([
       'For Workers',
       'For Employers',
