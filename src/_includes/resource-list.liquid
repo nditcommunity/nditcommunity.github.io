@@ -5,7 +5,10 @@
       {% assign source_label = source %}
       {% assign source_kind = 'placeholder' %}
       {% assign source_logo = '' %}
-      {% if item.url contains 'youtube.com' %}
+      {% if item.title == 'Post a Neurodivergent-Friendly Job' %}
+        {% assign source_label = 'Neurodiversity In Tech' %}
+        {% assign source_logo = '/icon.svg' %}
+      {% elsif item.url contains 'youtube.com' %}
         {% if item.title == 'History, Importance, Community' or item.title == 'Showcase Q&A' %}
           {% assign source_label = 'Neurodiversity In Tech' %}
           {% assign source_logo = 'https://nd-in-tech.org/icon.svg' %}
