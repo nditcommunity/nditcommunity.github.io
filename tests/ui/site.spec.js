@@ -8,7 +8,7 @@ const pages = [
   ['/resources/', 'Resources'],
   ['/library/', 'Library'],
   ['/media/', 'Media'],
-  ['/contact/', 'Contact'],
+  ['/contact/', 'Contact ND In Tech'],
   ['/code-of-conduct/', 'Code of Conduct'],
 ];
 
