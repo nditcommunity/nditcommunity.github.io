@@ -24,7 +24,11 @@
         >
           {% if source_kind == 'youtube' %}▶{% elsif source_kind == 'linkedin' %}in{% else %}↗{% endif %}
         </span>
-        <span>{{ source_label }}</span>
+        {% if source_kind == 'youtube' or source_kind == 'linkedin' %}
+          <span class='visually-hidden'>{{ source_label }}</span>
+        {% else %}
+          <span>{{ source_label }}</span>
+        {% endif %}
       </span>
       <a
         href='{{ item.url }}'
