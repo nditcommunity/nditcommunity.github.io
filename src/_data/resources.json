@@ -29,6 +29,11 @@
             "title": "Bjièn",
             "url": "https://www.bjien.be/en/",
             "description": "Neuro-inclusion training, workshops, and resources for building workplaces where everyone can thrive."
+          },
+          {
+            "title": "Neurodiversity @ Work Employer Roundtable",
+            "url": "https://www.disabilityin.org/committees/neurodiversity-roundtable",
+            "description": "A Disability:IN employer network for sharing practices and resources that support neurodivergent employees."
           }
         ]
       }
@@ -87,11 +92,6 @@
             "title": "Jobs for Humanity: Neurodivergent",
             "url": "https://www.jobsforhumanity.com/neurodivergent/",
             "description": "Job opportunities and employment resources for neurodivergent candidates."
-          },
-          {
-            "title": "Neurodiversity Career Connector",
-            "url": "https://ndcc.simplifyhire.com/",
-            "description": "A free platform connecting neurodivergent job seekers with neuroinclusive employers."
           }
         ]
       }
