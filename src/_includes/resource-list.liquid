@@ -11,7 +11,7 @@
       {% elsif item.url contains 'youtube.com' %}
         {% if item.title == 'History, Importance, Community' or item.title == 'Showcase Q&A' %}
           {% assign source_label = 'Turing School of Software & Design' %}
-          {% assign source_logo = 'https://assets.turing.edu/turing-school-mark-256.png' %}
+          {% assign source_logo = 'https://cdn.prod.website-files.com/6181549f60a2245732e2f91b/6193f9ff1e2ea00183765ef1_turing-logo-gray.png' %}
         {% else %}
           {% assign source_label = 'YouTube' %}
           {% assign source_kind = 'youtube' %}
@@ -94,13 +94,11 @@
           </span>
         {% endif %}
         <div class='resource-card-text'>
-          <span class='resource-source'>
-            {% if source_label == item.title or source_label == 'YouTube' or source_label == 'LinkedIn' %}
-              <span class='visually-hidden'>{{ source_label }}</span>
-            {% else %}
+          {% unless source_label == item.title or source_label == 'YouTube' or source_label == 'LinkedIn' %}
+            <span class='resource-source'>
               <span>{{ source_label }}</span>
-            {% endif %}
-          </span>
+            </span>
+          {% endunless %}
           <a
             href='{{ item.url }}'
             target='_blank'

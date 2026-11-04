@@ -235,9 +235,14 @@ test('Resources, Media, and Library share the card-list include', () => {
 
 test('source badges keep a consistent contain-fit alignment box', () => {
   const styles = read('src/styles/pages.css');
+  const resourceList = read('src/_includes/resource-list.liquid');
   assert.match(styles, /\.resource-source\s*\{[\s\S]*min-height: 1\.65rem/);
   assert.match(styles, /\.resource-source-logo\s*\{[\s\S]*flex: 0 0 1\.65rem/);
   assert.match(styles, /\.resource-source-logo\s*\{[\s\S]*object-fit: contain/);
+  assert.match(
+    resourceList,
+    /unless source_label == item\.title or source_label == 'YouTube' or source_label == 'LinkedIn'/,
+  );
 });
 
 test('Library visibly identifies Neurodiversity In Tech on every card', () => {
