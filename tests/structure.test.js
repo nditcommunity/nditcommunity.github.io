@@ -240,6 +240,11 @@ test('source badges keep a consistent contain-fit alignment box', () => {
   assert.match(styles, /\.resource-source-logo\s*\{[\s\S]*object-fit: contain/);
 });
 
+test('Library visibly identifies Neurodiversity In Tech on every card', () => {
+  const library = read('_site/library/index.html');
+  assert.equal((library.match(/class='resource-source'>[\s\S]*?>Neurodiversity In Tech</g) ?? []).length, 6);
+});
+
 test('mobile navigation groups contain four controls in the requested order', () => {
   const header = read('src/_includes/header.liquid');
   const primary = header.match(/<ul class='nav-primary'>([\s\S]*?)<\/ul>/)?.[1];
