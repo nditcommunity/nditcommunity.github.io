@@ -240,6 +240,40 @@ main .resource-list li:hover {
   font-weight: 700;
 }
 
+.resource-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.resource-source-logo {
+  display: inline-grid;
+  width: 1.65rem;
+  height: 1.65rem;
+  place-items: center;
+  padding: 0.25rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  background: var(--surface);
+  color: var(--accent);
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.resource-source-logo--youtube {
+  color: #c00;
+}
+
+.resource-source-logo--linkedin {
+  color: #0a66c2;
+  font-weight: 900;
+}
+
 .resource-list p {
   margin: 0.4rem 0 0;
   color: var(--text-muted);

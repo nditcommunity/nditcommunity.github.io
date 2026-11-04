@@ -1,6 +1,31 @@
 <ul class='resource-list'>
   {% for item in list_items %}
     <li>
+      {% assign source = item.url | split: '/' | slice: 2 | first %}
+      {% assign source_label = source %}
+      {% assign source_kind = 'placeholder' %}
+      {% if item.url contains 'youtube.com' %}
+        {% assign source_label = 'YouTube' %}
+        {% assign source_kind = 'youtube' %}
+      {% elsif item.url contains 'linkedin.com' %}
+        {% assign source_label = 'LinkedIn' %}
+        {% assign source_kind = 'linkedin' %}
+      {% elsif item.url contains 'wikipedia.org' %}
+        {% assign source_label = 'Wikipedia' %}
+      {% elsif item.url contains 'amazon.com' %}
+        {% assign source_label = 'Amazon' %}
+      {% elsif item.url contains 'autistic-techie.com' %}
+        {% assign source_label = 'Autistic Techie' %}
+      {% endif %}
+      <span class='resource-source'>
+        <span
+          class='resource-source-logo resource-source-logo--{{ source_kind }}'
+          aria-hidden='true'
+        >
+          {% if source_kind == 'youtube' %}▶{% elsif source_kind == 'linkedin' %}in{% else %}↗{% endif %}
+        </span>
+        <span>{{ source_label }}</span>
+      </span>
       <a
         href='{{ item.url }}'
         target='_blank'
