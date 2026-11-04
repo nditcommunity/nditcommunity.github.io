@@ -4,3 +4,9 @@
 
 [build.environment]
   NODE_VERSION = "22.12.0"
+
+[[plugins]]
+  package = "./plugins/production-smoke"
+
+  [plugins.inputs]
+    production_site_id = "140dc45d-3327-4fd3-b4c2-4facb8c3c3ea"
