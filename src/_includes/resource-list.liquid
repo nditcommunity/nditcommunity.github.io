@@ -65,6 +65,12 @@
         {% assign source_label = 'ND In Tech' %}
         {% assign source_logo = 'https://nd-in-tech.org/icon.svg' %}
       {% endif %}
+      {% if page.url == '/library/' %}
+        {% assign source_label = 'Neurodiversity In Tech' %}
+        {% unless source_kind == 'youtube' or source_kind == 'linkedin' %}
+          {% assign source_logo = '/icon.svg' %}
+        {% endunless %}
+      {% endif %}
       <div class='resource-card-heading'>
         {% if source_logo != '' %}
           <img
