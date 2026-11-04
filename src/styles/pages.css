@@ -292,12 +292,21 @@ main .resource-list li:hover {
 }
 
 .resource-source-logo--youtube {
-  color: #c00;
+  padding: 0.12rem;
+  background: transparent;
+  color: #ff0000;
 }
 
 .resource-source-logo--linkedin {
-  color: #0a66c2;
-  font-weight: 900;
+  border-radius: 0.2rem;
+  background: #0a66c2;
+  color: #fff;
+}
+
+.resource-source-logo svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .resource-list p {
