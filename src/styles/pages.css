@@ -263,6 +263,7 @@ main .resource-list li:hover {
   color: var(--accent);
   font-size: 0.8rem;
   line-height: 1;
+  object-fit: contain;
 }
 
 .resource-source-logo--youtube {

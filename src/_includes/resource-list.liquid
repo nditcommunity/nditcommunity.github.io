@@ -4,6 +4,7 @@
       {% assign source = item.url | split: '/' | slice: 2 | first %}
       {% assign source_label = source %}
       {% assign source_kind = 'placeholder' %}
+      {% assign source_logo = '' %}
       {% if item.url contains 'youtube.com' %}
         {% assign source_label = 'YouTube' %}
         {% assign source_kind = 'youtube' %}
@@ -12,18 +13,68 @@
         {% assign source_kind = 'linkedin' %}
       {% elsif item.url contains 'wikipedia.org' %}
         {% assign source_label = 'Wikipedia' %}
+        {% assign source_logo = 'https://en.wikipedia.org/static/apple-touch/wikipedia.png' %}
       {% elsif item.url contains 'amazon.com' %}
         {% assign source_label = 'Amazon' %}
       {% elsif item.url contains 'autistic-techie.com' %}
         {% assign source_label = 'Autistic Techie' %}
+        {% assign source_logo = 'https://www.autistic-techie.com/images/small-brain.png' %}
+      {% elsif item.url contains 'neurodiversehackers.com' %}
+        {% assign source_label = 'Neurodiverse Hackers' %}
+        {% assign source_logo = 'https://ndhack.org/images/logo.png' %}
+      {% elsif item.url contains 'cms.illinois.gov' %}
+        {% assign source_label = 'Illinois CMS' %}
+        {% assign source_logo = 'https://cms.illinois.gov/content/dam/soi/en/web/cms/images/dept-central-mgt-srvcs.png' %}
+      {% elsif item.url contains 'unleashyouradhd.com' %}
+        {% assign source_label = 'Unleash Your ADHD' %}
+        {% assign source_logo = 'https://unleashyouradhd.com/favicon.png' %}
+      {% elsif item.url contains 'bjien.be' %}
+        {% assign source_label = 'Bjièn' %}
+        {% assign source_logo = 'https://www.bjien.be/apple-touch-icon.png' %}
+      {% elsif item.url contains 'professionallyneurospicy.com' %}
+        {% assign source_label = 'Professionally Neurospicy' %}
+        {% assign source_logo = 'https://professionallyneurospicy.com/wp-content/uploads/2026/06/cropped-logo_icon-1-192x192.png' %}
+      {% elsif item.url contains 'autisticadvocacy.org' %}
+        {% assign source_label = 'Autistic Self Advocacy Network' %}
+        {% assign source_logo = 'https://autisticadvocacy.org/wp-content/uploads/2021/05/ASAN-site-icon.png' %}
+      {% elsif item.url contains 'mentra.com' %}
+        {% assign source_label = 'Mentra' %}
+        {% assign source_logo = 'https://static.wixstatic.com/media/2a36c2_dd285b81ed434344a6c8477d14da878b~mv2.png' %}
+      {% elsif item.url contains 'diversifytech.com' %}
+        {% assign source_label = 'Diversify Tech' %}
+        {% assign source_logo = 'https://www.diversifytech.com/favicon.ico' %}
+      {% elsif item.url contains 'jobsforhumanity.com' %}
+        {% assign source_label = 'Jobs for Humanity' %}
+        {% assign source_logo = 'https://www.jobsforhumanity.com/neurodivergent/wp-content/uploads/2021/05/cropped-favico-192x192.png' %}
+      {% elsif item.url contains 'ndconnect.app' %}
+        {% assign source_label = 'ND Connect' %}
+        {% assign source_logo = 'https://www.ndconnect.app/_next/static/media/logo_header_new.2b8368dc.png' %}
+      {% elsif item.url contains 'aane.org' %}
+        {% assign source_label = 'Association for Autism and Neurodiversity' %}
+        {% assign source_logo = 'https://aane.org/favicon.ico' %}
+      {% elsif item.url contains 'design-jobs.framer.website' %}
+        {% assign source_label = 'Design Jobs' %}
+        {% assign source_logo = 'https://framerusercontent.com/images/KvzghzntoUciU4X3qITIRKxhkHM.png' %}
+      {% elsif item.url contains 'nd-in-tech.org' %}
+        {% assign source_label = 'ND In Tech' %}
+        {% assign source_logo = 'https://nd-in-tech.org/icon.svg' %}
       {% endif %}
       <span class='resource-source'>
-        <span
-          class='resource-source-logo resource-source-logo--{{ source_kind }}'
-          aria-hidden='true'
-        >
-          {% if source_kind == 'youtube' %}▶{% elsif source_kind == 'linkedin' %}in{% else %}↗{% endif %}
-        </span>
+        {% if source_logo != '' %}
+          <img
+            class='resource-source-logo'
+            src='{{ source_logo }}'
+            alt=''
+            loading='lazy'
+          >
+        {% else %}
+          <span
+            class='resource-source-logo resource-source-logo--{{ source_kind }}'
+            aria-hidden='true'
+          >
+            {% if source_kind == 'youtube' %}▶{% elsif source_kind == 'linkedin' %}in{% else %}↗{% endif %}
+          </span>
+        {% endif %}
         {% if source_kind == 'youtube' or source_kind == 'linkedin' %}
           <span class='visually-hidden'>{{ source_label }}</span>
         {% else %}
