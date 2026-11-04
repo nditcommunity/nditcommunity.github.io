@@ -32,6 +32,71 @@ test('security headers include the expected defenses and required integrations',
   }
 });
 
+test('production smoke workflow remains manual', () => {
+  const workflow = read('.github/workflows/production-smoke.yml');
+  assert.match(workflow, /workflow_dispatch:/);
+  assert.doesNotMatch(workflow, /deployment_status/);
+  assert.match(workflow, /SITE_URL: https:\/\/nd-in-tech\.org/);
+});
+
+test('production smoke plugin only runs for the verified production deploy', () => {
+  const { shouldRun } = require('../plugins/production-smoke/runner');
+  const production = {
+    context: 'production',
+    siteId: 'production-site',
+    productionSiteId: 'production-site',
+    deployUrl: 'https://immutable-deploy.netlify.app',
+  };
+
+  assert.equal(shouldRun(production), true);
+  assert.equal(shouldRun({ ...production, context: 'deploy-preview' }), false);
+  assert.equal(shouldRun({ ...production, siteId: 'staging-site' }), false);
+  assert.equal(shouldRun({ ...production, deployUrl: '' }), false);
+});
+
+test('production smoke plugin executes against the immutable deploy URL and propagates failures', async () => {
+  const { runProductionSmoke, smokeScript } = require('../plugins/production-smoke/runner');
+  const calls = [];
+  const execFile = (command, args, options, callback) => {
+    calls.push({ command, args, options });
+    callback(null, 'ok\n', '');
+  };
+  const environment = {
+    CONTEXT: 'production',
+    SITE_ID: 'production-site',
+    DEPLOY_URL: 'https://immutable-deploy.netlify.app',
+  };
+
+  await runProductionSmoke({ inputs: { production_site_id: 'production-site' }, environment, execFile });
+  assert.equal(calls[0].args[0], smokeScript);
+  assert.equal(calls[0].options.cwd, path.resolve(projectRoot));
+  assert.equal(calls[0].options.env.SITE_URL, environment.DEPLOY_URL);
+
+  await runProductionSmoke({
+    inputs: { production_site_id: 'production-site' },
+    environment: { ...environment, CONTEXT: 'deploy-preview' },
+    execFile,
+  });
+  assert.equal(calls.length, 1);
+
+  await assert.rejects(
+    runProductionSmoke({
+      inputs: { production_site_id: 'production-site' },
+      environment: { ...environment, DEPLOY_URL: '' },
+      execFile,
+    }),
+    /DEPLOY_URL/,
+  );
+  await assert.rejects(
+    runProductionSmoke({
+      inputs: { production_site_id: 'production-site' },
+      environment,
+      execFile: (command, args, options, callback) => callback(new Error('smoke failed')),
+    }),
+    /smoke failed/,
+  );
+});
+
 test('new-tab links protect the opener and do not contain tracking parameters', () => {
   const templates = walk(sourceRoot).filter((file) => /\.(html|liquid)$/.test(file));
 

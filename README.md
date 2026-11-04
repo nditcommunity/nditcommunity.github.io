@@ -130,9 +130,11 @@ Netlify deploys the `main` branch to the [staging site](https://ndit-staging.net
 After a change is merged into `main`, verify it on staging before merging `main` into `production`. Netlify
 then deploys the `production` branch to the [production site](https://nd-in-tech.org).
 
-GitHub Actions validates the site but does not deploy it. Successful deployment notifications trigger a smoke
-test of the production pages, integrations, and HTTP security headers. The site-managed header policy lives in
-[`src/_headers`](src/_headers).
+GitHub Actions validates the site but does not deploy it. A local Netlify build plugin runs the smoke test after a
+successful production deploy, against that deploy's immutable `DEPLOY_URL`, and only when the verified production
+site ID and `CONTEXT=production` match. The check is post-deploy and cannot roll back already-published content.
+The GitHub workflow remains available for manual production checks; it does not retroactively change past PR
+results. The site-managed header policy lives in [`src/_headers`](src/_headers).
 
 ## Contributing
 

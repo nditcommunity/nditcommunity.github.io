@@ -1,0 +1,5 @@
+name: ndit-production-smoke
+inputs:
+  - name: production_site_id
+    description: Verified Netlify site ID for the production deployment.
+    required: true
