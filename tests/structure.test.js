@@ -176,7 +176,7 @@ test('resource, media, and library data contain complete, tracking-free HTTPS li
   }
 });
 
-test('ND In Tech guides are shared consistently on Resources and Library', () => {
+test('ND In Tech guides are owned by Library and not duplicated in Resources', () => {
   const resources = JSON.parse(read('src/_data/resources.json'));
   const library = JSON.parse(read('src/_data/library.json'));
   const resourceItems = resources.flatMap((section) => section.groups.flatMap((group) => group.items));
@@ -189,9 +189,9 @@ test('ND In Tech guides are shared consistently on Resources and Library', () =>
     titles,
   );
   for (const guide of guides.flatMap((section) => section.items)) {
-    assert.deepEqual(
-      guide,
-      resourceItems.find((item) => item.url === guide.url),
+    assert.equal(
+      resourceItems.some((item) => item.url === guide.url),
+      false,
     );
   }
 });
