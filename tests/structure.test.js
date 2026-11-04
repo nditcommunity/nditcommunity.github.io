@@ -233,6 +233,13 @@ test('Resources, Media, and Library share the card-list include', () => {
   assert.match(read('src/library.html'), /include 'resource-list'/);
 });
 
+test('source badges keep a consistent contain-fit alignment box', () => {
+  const styles = read('src/styles/pages.css');
+  assert.match(styles, /\.resource-source\s*\{[\s\S]*min-height: 1\.65rem/);
+  assert.match(styles, /\.resource-source-logo\s*\{[\s\S]*flex: 0 0 1\.65rem/);
+  assert.match(styles, /\.resource-source-logo\s*\{[\s\S]*object-fit: contain/);
+});
+
 test('mobile navigation groups contain four controls in the requested order', () => {
   const header = read('src/_includes/header.liquid');
   const primary = header.match(/<ul class='nav-primary'>([\s\S]*?)<\/ul>/)?.[1];

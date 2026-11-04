@@ -244,6 +244,7 @@ main .resource-list li:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
+  min-height: 1.65rem;
   margin-bottom: 0.35rem;
   color: var(--text-muted);
   font-size: 0.9rem;
@@ -252,8 +253,10 @@ main .resource-list li:hover {
 
 .resource-source-logo {
   display: inline-grid;
+  flex: 0 0 1.65rem;
   width: 1.65rem;
   height: 1.65rem;
+  aspect-ratio: 1;
   place-items: center;
   padding: 0.25rem;
   overflow: hidden;
