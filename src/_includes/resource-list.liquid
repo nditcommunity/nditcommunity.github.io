@@ -92,7 +92,7 @@
         {% endif %}
         <div class='resource-card-text'>
           <span class='resource-source'>
-            {% if source_kind == 'youtube' or source_kind == 'linkedin' %}
+            {% if source_label == item.title or source_kind == 'youtube' or source_kind == 'linkedin' %}
               <span class='visually-hidden'>{{ source_label }}</span>
             {% else %}
               <span>{{ source_label }}</span>
@@ -105,9 +105,9 @@
           >
             {{- item.title -}}
           </a>
+          <p>{{ item.description }}</p>
         </div>
       </div>
-      <p>{{ item.description }}</p>
     </li>
   {% endfor %}
 </ul>
