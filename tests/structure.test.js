@@ -241,7 +241,7 @@ test('source badges keep a consistent contain-fit alignment box', () => {
   assert.match(styles, /\.resource-source-logo\s*\{[\s\S]*object-fit: contain/);
   assert.match(
     resourceList,
-    /unless source_label == item\.title or source_label == 'YouTube' or source_label == 'LinkedIn'/,
+    /unless source_label == item\.title[\s\S]*source_label == 'YouTube'[\s\S]*source_label == 'LinkedIn'/,
   );
 });
 

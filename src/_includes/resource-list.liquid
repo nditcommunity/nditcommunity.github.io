@@ -60,10 +60,10 @@
         {% assign source_logo = 'https://www.ndconnect.app/_next/static/media/logo_header_new.2b8368dc.png' %}
       {% elsif item.url contains 'aane.org' %}
         {% assign source_label = 'Association for Autism and Neurodiversity' %}
-        {% assign source_logo = 'https://aane.org/favicon.ico' %}
+        {% assign source_logo = '/assets/logos/aane.png' %}
       {% elsif item.url contains 'disabilityin.org' %}
         {% assign source_label = 'Disability:IN' %}
-        {% assign source_logo = 'https://www.disabilityin.org/favicon.ico' %}
+        {% assign source_logo = '/assets/logos/disabilityin.png' %}
       {% elsif item.url contains 'design-jobs.framer.website' %}
         {% assign source_label = 'Design Jobs' %}
         {% assign source_logo = 'https://framerusercontent.com/images/KvzghzntoUciU4X3qITIRKxhkHM.png' %}
@@ -94,7 +94,11 @@
           </span>
         {% endif %}
         <div class='resource-card-text'>
-          {% unless source_label == item.title or source_label == 'YouTube' or source_label == 'LinkedIn' %}
+          {% unless source_label == item.title
+            or source_label == 'YouTube'
+            or source_label == 'LinkedIn'
+            or item.title == 'Post a Neurodivergent-Friendly Job'
+          %}
             <span class='resource-source'>
               <span>{{ source_label }}</span>
             </span>

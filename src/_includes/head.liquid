@@ -6,7 +6,12 @@
   >
   <title>
     {%- if title and title != 'Neurodiversity in Tech' -%}
-      {{ title | capitalize }} | Neurodiversity In Tech
+      {%- if title == 'External Resources' -%}
+        {{ title }}
+      {%- else -%}
+        {{ title | capitalize }}
+      {%- endif %}
+      | Neurodiversity In Tech
     {%- else -%}
       Neurodiversity In Tech
     {%- endif -%}

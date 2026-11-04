@@ -198,6 +198,18 @@ main a[target='_blank']:not(.join-btn):not(.embed-link)::after {
 
 .resource-section {
   margin-top: 3rem;
+  scroll-margin-top: 2rem;
+}
+
+.resource-jump-nav {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+}
+
+.resource-jump-nav a {
+  font-weight: 700;
 }
 
 .resource-section > h2 {
