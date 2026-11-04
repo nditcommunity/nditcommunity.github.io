@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Guides",
+    "items": [
+      {
+        "title": "ND Job Hunt Playbook: Interviewing",
+        "url": "https://www.linkedin.com/posts/nditcommunity_neurodiversityintech-thoughtdiversity-interviewtips-activity-7215788366162800642-Fcgt/",
+        "description": "Interview tips for neurodivergent workers exploring new opportunities."
+      },
+      {
+        "title": "Inclusive Work Culture",
+        "url": "https://www.linkedin.com/posts/nditcommunity_neurodiversityintech-inclusiveworkculture-activity-7170491619035533313-mB2F/",
+        "description": "Ways teams can create a more inclusive workplace for neurodivergent professionals."
+      },
+      {
+        "title": "Inclusive Hiring in Tech",
+        "url": "https://www.linkedin.com/posts/nditcommunity_neurodiversityintech-interviewprocess-inclusionmatters-activity-7146683377931202560-XC9E/",
+        "description": "Ideas for making hiring and interview processes more inclusive."
+      }
+    ]
+  },
+  {
+    "title": "ND Tech Talks",
+    "items": [
+      {
+        "title": "My Career Path in Tech",
+        "url": "https://www.youtube.com/watch?v=0QR8FSouQSs",
+        "description": "Freelance software engineer Mihai Todor shares his career journey in technology."
+      },
+      {
+        "title": "Leadership from the Autistic Perspective",
+        "url": "https://www.youtube.com/watch?v=I6ugv7stPFY",
+        "description": "Tech Lead II Shea Belsky discusses autistic perspectives on leadership."
+      },
+      {
+        "title": "Neurodiversity as an Asset in Tech",
+        "url": "https://www.youtube.com/watch?v=RJTJGzorIJ8",
+        "description": "Principal Engineer Adam Compton explores the value of neurodiversity in technology."
+      }
+    ]
+  }
+]

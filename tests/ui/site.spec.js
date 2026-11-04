@@ -6,6 +6,7 @@ const pages = [
   ['/about/', 'About'],
   ['/events/', 'Events'],
   ['/resources/', 'Resources'],
+  ['/library/', 'Library'],
   ['/media/', 'Media'],
   ['/contact/', 'Contact'],
   ['/code-of-conduct/', 'Code of Conduct'],
@@ -49,6 +50,19 @@ test.describe('core pages', () => {
 });
 
 test.describe('navigation and responsive layout', () => {
+  test('Library navigation opens the talks and guides page', async ({ page }) => {
+    await page.goto('/');
+    const navigation = page.getByRole('navigation', { name: 'Primary navigation' });
+    await navigation.getByRole('link', { name: 'Library', exact: true }).click();
+    await expect(page).toHaveURL(/\/library\/?$/);
+    await expect(navigation.getByRole('link', { name: 'Library', exact: true })).toHaveAttribute(
+      'aria-current',
+      'page',
+    );
+    await expect(page.getByRole('heading', { level: 1, name: 'Library' })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['Guides', 'ND Tech Talks']);
+  });
+
   test('keyboard users can skip to the main content', async ({ page }) => {
     await page.goto('/');
     await page.keyboard.press('Tab');
@@ -57,7 +71,7 @@ test.describe('navigation and responsive layout', () => {
     await expect(page.locator('main')).toBeFocused();
   });
 
-  for (const width of [375, 500, 575, 600, 768]) {
+  for (const width of [320, 375, 454, 500, 575, 576, 590, 600, 704, 705, 768]) {
     test(`navigation fits without horizontal overflow at ${width}px`, async ({ page }) => {
       await page.setViewportSize({ width, height: 700 });
       await page.goto('/');
@@ -69,6 +83,41 @@ test.describe('navigation and responsive layout', () => {
 
       expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
       await expect(page.getByRole('button', { name: /Switch to (light|dark) mode/ })).toBeVisible();
+
+      if (width <= 704) {
+        const navigation = page.getByRole('navigation', { name: 'Primary navigation' });
+        const controls = navigation.locator('a, button');
+        await expect(controls).toHaveCount(8);
+        const boxes = await controls.evaluateAll((elements) =>
+          elements.map((element) => {
+            const { x, y, width, height } = element.getBoundingClientRect();
+            return {
+              text: element.textContent.trim(),
+              x,
+              y,
+              width,
+              height,
+              clientWidth: element.clientWidth,
+              scrollWidth: element.scrollWidth,
+              fontStatus: document.fonts.status,
+              fits: element.scrollWidth <= element.clientWidth,
+            };
+          }),
+        );
+        for (const box of boxes) {
+          expect(box.width, JSON.stringify(box)).toBeGreaterThanOrEqual(44);
+          expect(box.height, JSON.stringify(box)).toBeGreaterThanOrEqual(44);
+          expect(box.fits, JSON.stringify(box)).toBe(true);
+        }
+        for (let column = 0; column < 4; column += 1) {
+          expect(Math.abs(boxes[column].y - boxes[0].y)).toBeLessThan(1);
+          expect(Math.abs(boxes[column + 4].y - boxes[4].y)).toBeLessThan(1);
+          const firstCenter = boxes[column].x + boxes[column].width / 2;
+          const secondCenter = boxes[column + 4].x + boxes[column + 4].width / 2;
+          expect(Math.abs(firstCenter - secondCenter)).toBeLessThan(1);
+        }
+        expect(boxes[4].y).toBeGreaterThan(boxes[0].y);
+      }
     });
   }
 
