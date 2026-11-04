@@ -21,6 +21,7 @@
         {% assign source_logo = 'https://en.wikipedia.org/static/apple-touch/wikipedia.png' %}
       {% elsif item.url contains 'amazon.com' %}
         {% assign source_label = 'Amazon' %}
+        {% assign source_logo = 'https://www.amazon.com/favicon.ico' %}
       {% elsif item.url contains 'autistic-techie.com' %}
         {% assign source_label = 'Autistic Techie' %}
         {% assign source_logo = 'https://www.autistic-techie.com/images/small-brain.png' %}
@@ -29,7 +30,7 @@
         {% assign source_logo = 'https://ndhack.org/images/logo.png' %}
       {% elsif item.url contains 'cms.illinois.gov' %}
         {% assign source_label = 'Illinois CMS' %}
-        {% assign source_logo = 'https://cms.illinois.gov/content/dam/soi/en/web/cms/images/dept-central-mgt-srvcs.png' %}
+        {% assign source_logo = '/assets/logos/illinois-cms.png' %}
       {% elsif item.url contains 'unleashyouradhd.com' %}
         {% assign source_label = 'Unleash Your ADHD' %}
         {% assign source_logo = 'https://unleashyouradhd.com/favicon.png' %}
