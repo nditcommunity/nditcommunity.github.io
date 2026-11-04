@@ -180,15 +180,15 @@ test('ND In Tech guides are shared consistently on Resources and Library', () =>
   const resources = JSON.parse(read('src/_data/resources.json'));
   const library = JSON.parse(read('src/_data/library.json'));
   const resourceItems = resources.flatMap((section) => section.groups.flatMap((group) => group.items));
-  const guides = library.find((section) => section.title === 'Guides');
+  const guides = library.filter((section) => ['For Workers', 'For Employers'].includes(section.title));
   const titles = ['ND Job Hunt Playbook: Interviewing', 'Inclusive Work Culture', 'Inclusive Hiring in Tech'];
 
-  assert.ok(guides, 'Library is missing the ND In Tech guides section');
+  assert.equal(guides.length, 2, 'Library is missing an audience guide section');
   assert.deepEqual(
-    guides.items.map((item) => item.title),
+    guides.flatMap((section) => section.items).map((item) => item.title),
     titles,
   );
-  for (const guide of guides.items) {
+  for (const guide of guides.flatMap((section) => section.items)) {
     assert.deepEqual(
       guide,
       resourceItems.find((item) => item.url === guide.url),
@@ -204,11 +204,11 @@ test('Library owns the talks and guides while Turing videos stay on Media', () =
 
   assert.deepEqual(
     library.map((section) => section.title),
-    ['Guides', 'ND Tech Talks'],
+    ['For Workers', 'For Employers', 'ND Tech Talks'],
   );
   assert.deepEqual(
     library.map((section) => section.items.length),
-    [3, 3],
+    [1, 2, 3],
   );
   assert.deepEqual(
     media.map((section) => section.title),

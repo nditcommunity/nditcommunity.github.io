@@ -1,12 +1,17 @@
 [
   {
-    "title": "Guides",
+    "title": "For Workers",
     "items": [
       {
         "title": "ND Job Hunt Playbook: Interviewing",
         "url": "https://www.linkedin.com/posts/nditcommunity_neurodiversityintech-thoughtdiversity-interviewtips-activity-7215788366162800642-Fcgt/",
         "description": "Interview tips for neurodivergent workers exploring new opportunities."
-      },
+      }
+    ]
+  },
+  {
+    "title": "For Employers",
+    "items": [
       {
         "title": "Inclusive Work Culture",
         "url": "https://www.linkedin.com/posts/nditcommunity_neurodiversityintech-inclusiveworkculture-activity-7170491619035533313-mB2F/",

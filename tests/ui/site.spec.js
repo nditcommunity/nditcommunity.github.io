@@ -60,7 +60,11 @@ test.describe('navigation and responsive layout', () => {
       'page',
     );
     await expect(page.getByRole('heading', { level: 1, name: 'Library' })).toBeVisible();
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['Guides', 'ND Tech Talks']);
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText([
+      'For Workers',
+      'For Employers',
+      'ND Tech Talks',
+    ]);
   });
 
   test('keyboard users can skip to the main content', async ({ page }) => {
