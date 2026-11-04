@@ -6,6 +6,13 @@
       {% assign source_kind = 'placeholder' %}
       {% assign source_logo = '' %}
       {% if item.url contains 'youtube.com' %}
+        {% if item.title == 'History, Importance, Community' or item.title == 'Showcase Q&A' %}
+          {% assign source_label = 'Neurodiversity In Tech' %}
+          {% assign source_logo = 'https://nd-in-tech.org/icon.svg' %}
+        {% else %}
+          {% assign source_label = 'YouTube' %}
+          {% assign source_kind = 'youtube' %}
+        {% endif %}
         {% assign source_label = 'YouTube' %}
         {% assign source_kind = 'youtube' %}
       {% elsif item.url contains 'linkedin.com' %}
@@ -59,7 +66,7 @@
         {% assign source_label = 'ND In Tech' %}
         {% assign source_logo = 'https://nd-in-tech.org/icon.svg' %}
       {% endif %}
-      <span class='resource-source'>
+      <div class='resource-card-heading'>
         {% if source_logo != '' %}
           <img
             class='resource-source-logo'
@@ -75,19 +82,23 @@
             {% if source_kind == 'youtube' %}▶{% elsif source_kind == 'linkedin' %}in{% else %}↗{% endif %}
           </span>
         {% endif %}
-        {% if source_kind == 'youtube' or source_kind == 'linkedin' %}
-          <span class='visually-hidden'>{{ source_label }}</span>
-        {% else %}
-          <span>{{ source_label }}</span>
-        {% endif %}
-      </span>
-      <a
-        href='{{ item.url }}'
-        target='_blank'
-        rel='noreferrer'
-      >
-        {{- item.title -}}
-      </a>
+        <div class='resource-card-text'>
+          <span class='resource-source'>
+            {% if source_kind == 'youtube' or source_kind == 'linkedin' %}
+              <span class='visually-hidden'>{{ source_label }}</span>
+            {% else %}
+              <span>{{ source_label }}</span>
+            {% endif %}
+          </span>
+          <a
+            href='{{ item.url }}'
+            target='_blank'
+            rel='noreferrer'
+          >
+            {{- item.title -}}
+          </a>
+        </div>
+      </div>
       <p>{{ item.description }}</p>
     </li>
   {% endfor %}

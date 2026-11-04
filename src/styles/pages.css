@@ -240,8 +240,18 @@ main .resource-list li:hover {
   font-weight: 700;
 }
 
+.resource-card-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.resource-card-text {
+  min-width: 0;
+}
+
 .resource-source {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.45rem;
   min-height: 1.65rem;
