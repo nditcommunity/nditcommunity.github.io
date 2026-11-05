@@ -232,6 +232,10 @@ test('approved Resources descriptions stay exact', () => {
   const bjien = items.find((item) => item.url === 'https://www.bjien.be/en/');
   assert.equal(bjien.title, 'bjien: Unlocking the power of neurodiversity at work');
   assert.equal(
+    items.find((item) => item.url === 'https://www.jobsforhumanity.com/neurodivergent/').title,
+    'Jobs for Humanity: Jobs for the Neurodivergent',
+  );
+  assert.equal(
     bjien.description,
     'Neuro-inclusion training, workshops, and resources from a team founded by autistic ADHDers.',
   );
