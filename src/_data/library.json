@@ -43,5 +43,30 @@
         "description": "Principal Engineer Adam Compton explores the value of neurodiversity in the tech industry."
       }
     ]
+  },
+  {
+    "title": "Talent Spotlights",
+    "items": [
+      {
+        "title": "Talent Spotlight: David Raynor",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7475235166890680320/",
+        "description": "A Talent Spotlight introducing David Raynor, an organization founder who supports connection and community."
+      },
+      {
+        "title": "Talent Spotlight: Mina Raver",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7465521188925050881/",
+        "description": "A Talent Spotlight introducing founder and CEO Mina Raver."
+      },
+      {
+        "title": "Talent Spotlight: Lauren McAuliffe",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7462652792231342080/",
+        "description": "A Talent Spotlight introducing Lauren McAuliffe, a founder, creative director, and neuro-inclusive accessibility specialist."
+      },
+      {
+        "title": "Talent Spotlight: Aurora Sanderson",
+        "url": "https://www.linkedin.com/posts/hayleywitherell_aurora-s-is-going-to-be-a-great-junior-developer-activity-7170484772400558080-8wGK",
+        "description": "The 2024 feature described Aurora S. as a back-end software development student at Turing School planning to enter the job market in September 2024."
+      }
+    ]
   }
 ]

@@ -255,11 +255,11 @@ test('Library owns the talks and guides while Turing videos stay on Media', () =
 
   assert.deepEqual(
     library.map((section) => section.title),
-    ['For Workers', 'For Employers', 'ND Tech Talks'],
+    ['For Workers', 'For Employers', 'ND Tech Talks', 'Talent Spotlights'],
   );
   assert.deepEqual(
     library.map((section) => section.items.length),
-    [1, 2, 3],
+    [1, 2, 3, 4],
   );
   assert.deepEqual(
     media.map((section) => section.title),
@@ -302,6 +302,20 @@ test('Library owns the talks and guides while Turing videos stay on Media', () =
     adamTalk.description,
     'Principal Engineer Adam Compton explores the value of neurodiversity in the tech industry.',
   );
+  const talentSpotlights = library.find((section) => section.title === 'Talent Spotlights');
+  assert.deepEqual(
+    talentSpotlights.items.map((item) => item.title),
+    [
+      'Talent Spotlight: David Raynor',
+      'Talent Spotlight: Mina Raver',
+      'Talent Spotlight: Lauren McAuliffe',
+      'Talent Spotlight: Aurora Sanderson',
+    ],
+  );
+  assert.equal(
+    talentSpotlights.items[3].description,
+    'The 2024 feature described Aurora S. as a back-end software development student at Turing School planning to enter the job market in September 2024.',
+  );
   for (const id of ['9jWzUhdn5C0', 'EStNdU5JQo4']) {
     assert.ok(mediaUrls.includes(`https://www.youtube.com/watch?v=${id}`));
   }
@@ -327,7 +341,7 @@ test('source badges keep a consistent contain-fit alignment box', () => {
 
 test('Library visibly identifies Neurodiversity In Tech on every card', () => {
   const library = read('_site/library/index.html');
-  assert.equal((library.match(/class='resource-source'>[\s\S]*?>Neurodiversity In Tech</g) ?? []).length, 6);
+  assert.equal((library.match(/class='resource-source'>[\s\S]*?>Neurodiversity In Tech</g) ?? []).length, 10);
 });
 
 test('mobile navigation groups contain four controls in the requested order', () => {

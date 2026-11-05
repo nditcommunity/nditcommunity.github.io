@@ -64,6 +64,7 @@ test.describe('navigation and responsive layout', () => {
       'For Workers',
       'For Employers',
       'ND Tech Talks',
+      'Talent Spotlights',
     ]);
   });
 
