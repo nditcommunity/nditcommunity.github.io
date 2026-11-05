@@ -208,6 +208,29 @@ test('ND In Tech guides are owned by Library and not duplicated in Resources', (
   }
 });
 
+test('approved Resources descriptions stay exact', () => {
+  const resources = JSON.parse(read('src/_data/resources.json'));
+  const items = resources.flatMap((section) => section.groups.flatMap((group) => group.items));
+  const descriptions = new Map(items.map((item) => [item.title, item.description]));
+
+  assert.equal(
+    descriptions.get('Autistic Techie'),
+    'A podcast hosted by Shea Belsky about workplace self-advocacy and navigating careers as a neurodivergent professional.',
+  );
+  assert.equal(
+    descriptions.get('Neurodiverse Hackers'),
+    'A neurodivergent-led nonprofit community supporting people in cybersecurity.',
+  );
+  assert.equal(
+    descriptions.get('Professionally Neurospicy'),
+    'A neurodivergent-founded peer-support community for professionals navigating work life unmasked.',
+  );
+  assert.equal(
+    descriptions.get('Bjièn'),
+    'Neuro-inclusion training, workshops, and resources from a team founded by autistic ADHDers.',
+  );
+});
+
 test('Library owns the talks and guides while Turing videos stay on Media', () => {
   const library = JSON.parse(read('src/_data/library.json'));
   const media = JSON.parse(read('src/_data/media.json'));
@@ -232,17 +255,27 @@ test('Library owns the talks and guides while Turing videos stay on Media', () =
     media.map((section) => section.items.length),
     [2, 5],
   );
+  assert.deepEqual(
+    media[1].items.map((item) => item.title),
+    [
+      'Neurodiversity In Tech',
+      'Neurodiverse Hackers: The Cognitive Edge',
+      'Neurodiversity in Tech',
+      'Building an Inclusive Future with Neurodiversity In Tech',
+      '2024 Asian American Employment Plan Report',
+    ],
+  );
   const turingCard = media[0].items.find((item) => item.additional_links?.length);
-  assert.equal(turingCard.title, 'Neurodiversity In Tech: History, Importance, Community');
+  assert.equal(turingCard.title, 'ND In Tech: History, Importance, Community');
   assert.deepEqual(turingCard.additional_links, [
     {
-      title: 'Neurodiversity In Tech: Showcase Q&A',
+      title: 'ND In Tech: Showcase Q&A',
       url: 'https://www.youtube.com/watch?v=EStNdU5JQo4',
     },
   ]);
   assert.equal(
     turingCard.description,
-    "ND In Tech founder Hayley Witherell presents the community's history and joins Turing's executive director, Jeff Casimir, for a Q&A.",
+    "ND In Tech founder and software engineer Hayley Witherell presents the community's history and joins Turing's executive director, Jeff Casimir, for a Q&A.",
   );
   for (const url of libraryUrls) assert.ok(!mediaUrls.includes(url), `${url} is duplicated on Media`);
   for (const id of ['0QR8FSouQSs', 'I6ugv7stPFY', 'RJTJGzorIJ8']) {

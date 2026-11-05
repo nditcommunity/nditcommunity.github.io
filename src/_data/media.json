@@ -3,15 +3,15 @@
     "title": "Interviews & Conversations",
     "items": [
       {
-        "title": "Neurodiversity In Tech: History, Importance, Community",
+        "title": "ND In Tech: History, Importance, Community",
         "url": "https://www.youtube.com/watch?v=9jWzUhdn5C0",
         "additional_links": [
           {
-            "title": "Neurodiversity In Tech: Showcase Q&A",
+            "title": "ND In Tech: Showcase Q&A",
             "url": "https://www.youtube.com/watch?v=EStNdU5JQo4"
           }
         ],
-        "description": "ND In Tech founder Hayley Witherell presents the community's history and joins Turing's executive director, Jeff Casimir, for a Q&A."
+        "description": "ND In Tech founder and software engineer Hayley Witherell presents the community's history and joins Turing's executive director, Jeff Casimir, for a Q&A."
       },
       {
         "title": "Coding Interviews, ADHD, and Staying Focused with Mihai Todor",
@@ -24,6 +24,16 @@
     "title": "Features & Mentions",
     "items": [
       {
+        "title": "Neurodiversity In Tech",
+        "url": "https://en.wikipedia.org/wiki/Neurodiversity_In_Tech",
+        "description": "An overview of the ND In Tech community."
+      },
+      {
+        "title": "Neurodiverse Hackers: The Cognitive Edge",
+        "url": "https://www.amazon.com/dp/B0H8PL7BCT",
+        "description": "Mark Foudy and Charlotte Foudy explore why neurodivergent minds thrive in cybersecurity and mention ND In Tech."
+      },
+      {
         "title": "Neurodiversity in Tech",
         "url": "https://design-jobs.framer.website/neurodiversity-in-tech",
         "description": "A profile of ND In Tech and its community mission."
@@ -34,19 +44,9 @@
         "description": "Charlotte Foudy highlights ND In Tech's community and mission."
       },
       {
-        "title": "Neurodiverse Hackers: The Cognitive Edge",
-        "url": "https://www.amazon.com/dp/B0H8PL7BCT",
-        "description": "Mark Foudy and Charlotte Foudy explore why neurodivergent minds thrive in cybersecurity and mention ND In Tech."
-      },
-      {
         "title": "2024 Asian American Employment Plan Report",
         "url": "https://cms.illinois.gov/content/dam/soi/en/web/cms/personnel/dep/plans/documents/pdfs/asianamericanplan2025.pdf#page=23",
         "description": "Illinois’s 2024 report lists ND In Tech among Slack groups used by the Department of Innovation & Technology for job postings."
-      },
-      {
-        "title": "Neurodiversity In Tech",
-        "url": "https://en.wikipedia.org/wiki/Neurodiversity_In_Tech",
-        "description": "An overview of the ND In Tech community."
       }
     ]
   }
