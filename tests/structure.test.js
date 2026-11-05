@@ -229,10 +229,16 @@ test('approved Resources descriptions stay exact', () => {
     descriptions.get('Professionally Neurospicy'),
     'A neurodivergent-founded peer-support community for professionals navigating work life unmasked.',
   );
+  const bjien = items.find((item) => item.url === 'https://www.bjien.be/en/');
+  assert.equal(bjien.title, 'bjien: Unlocking the power of neurodiversity at work');
   assert.equal(
-    descriptions.get('Bjièn'),
+    bjien.description,
     'Neuro-inclusion training, workshops, and resources from a team founded by autistic ADHDers.',
   );
+  const disabilityin = items.find(
+    (item) => item.url === 'https://www.disabilityin.org/committees/neurodiversity-roundtable',
+  );
+  assert.equal(disabilityin.title, 'Disability:IN Neurodiversity Roundtable');
 });
 
 test('Library owns the talks and guides while Turing videos stay on Media', () => {
