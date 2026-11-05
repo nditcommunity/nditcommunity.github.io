@@ -163,6 +163,18 @@ test('resource, media, and library data contain complete, tracking-free HTTPS li
       assert.doesNotMatch(item.url, /[?&](utm_[^=]+|fbclid|gclid)=/i, `${item.title} contains tracking data`);
       assert.ok(!seenUrls.has(item.url), `${item.title} duplicates ${item.url}`);
       seenUrls.add(item.url);
+      for (const link of item.additional_links ?? []) {
+        assert.equal(typeof link.title, 'string');
+        assert.ok(link.title.trim(), `${item.title} has an empty additional link title`);
+        assert.match(link.url, /^https:\/\//, `${link.title} must use HTTPS`);
+        assert.doesNotMatch(
+          link.url,
+          /[?&](utm_[^=]+|fbclid|gclid)=/i,
+          `${link.title} contains tracking data`,
+        );
+        assert.ok(!seenUrls.has(link.url), `${link.title} duplicates ${link.url}`);
+        seenUrls.add(link.url);
+      }
     }
   };
 
@@ -200,7 +212,9 @@ test('Library owns the talks and guides while Turing videos stay on Media', () =
   const library = JSON.parse(read('src/_data/library.json'));
   const media = JSON.parse(read('src/_data/media.json'));
   const libraryUrls = library.flatMap((section) => section.items.map((item) => item.url));
-  const mediaUrls = media.flatMap((section) => section.items.map((item) => item.url));
+  const mediaUrls = media.flatMap((section) =>
+    section.items.flatMap((item) => [item.url, ...(item.additional_links ?? []).map((link) => link.url)]),
+  );
 
   assert.deepEqual(
     library.map((section) => section.title),
@@ -216,12 +230,31 @@ test('Library owns the talks and guides while Turing videos stay on Media', () =
   );
   assert.deepEqual(
     media.map((section) => section.items.length),
-    [3, 5],
+    [2, 5],
+  );
+  const turingCard = media[0].items.find((item) => item.additional_links?.length);
+  assert.equal(turingCard.title, 'Neurodiversity In Tech: History, Importance, Community');
+  assert.deepEqual(turingCard.additional_links, [
+    {
+      title: 'Neurodiversity In Tech: Showcase Q&A',
+      url: 'https://www.youtube.com/watch?v=EStNdU5JQo4',
+    },
+  ]);
+  assert.equal(
+    turingCard.description,
+    "ND In Tech founder Hayley Witherell presents the community's history and joins Turing's executive director, Jeff Casimir, for a Q&A.",
   );
   for (const url of libraryUrls) assert.ok(!mediaUrls.includes(url), `${url} is duplicated on Media`);
   for (const id of ['0QR8FSouQSs', 'I6ugv7stPFY', 'RJTJGzorIJ8']) {
     assert.ok(libraryUrls.includes(`https://www.youtube.com/watch?v=${id}`));
   }
+  const adamTalk = library
+    .flatMap((section) => section.items)
+    .find((item) => item.title === 'Neurodiversity as an Asset in Tech');
+  assert.equal(
+    adamTalk.description,
+    'Principal Engineer Adam Compton explores the value of neurodiversity in the tech industry.',
+  );
   for (const id of ['9jWzUhdn5C0', 'EStNdU5JQo4']) {
     assert.ok(mediaUrls.includes(`https://www.youtube.com/watch?v=${id}`));
   }

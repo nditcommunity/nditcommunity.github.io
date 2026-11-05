@@ -5,12 +5,13 @@
       {
         "title": "Neurodiversity In Tech: History, Importance, Community",
         "url": "https://www.youtube.com/watch?v=9jWzUhdn5C0",
-        "description": "Hayley Witherell presents the history and importance of the ND In Tech community."
-      },
-      {
-        "title": "Neurodiversity In Tech: Showcase Q&A",
-        "url": "https://www.youtube.com/watch?v=EStNdU5JQo4",
-        "description": "Jeff Casimir, Turing's executive director, interviews ND In Tech founder Hayley Witherell."
+        "additional_links": [
+          {
+            "title": "Neurodiversity In Tech: Showcase Q&A",
+            "url": "https://www.youtube.com/watch?v=EStNdU5JQo4"
+          }
+        ],
+        "description": "ND In Tech founder Hayley Witherell presents the community's history and joins Turing's executive director, Jeff Casimir, for a Q&A."
       },
       {
         "title": "Coding Interviews, ADHD, and Staying Focused with Mihai Todor",

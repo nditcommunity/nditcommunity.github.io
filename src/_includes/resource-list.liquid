@@ -120,13 +120,24 @@
               <span>{{ source_label }}</span>
             </span>
           {% endunless %}
-          <a
-            href='{{ item.url }}'
-            target='_blank'
-            rel='noreferrer'
-          >
-            {{- item.title -}}
-          </a>
+          <div class='resource-card-links'>
+            <a
+              href='{{ item.url }}'
+              target='_blank'
+              rel='noreferrer'
+            >
+              {{- item.title -}}
+            </a>
+            {% for link in item.additional_links %}
+              <a
+                href='{{ link.url }}'
+                target='_blank'
+                rel='noreferrer'
+              >
+                {{- link.title -}}
+              </a>
+            {% endfor %}
+          </div>
           <p>{{ item.description }}</p>
         </div>
       </div>

@@ -262,6 +262,12 @@ main .resource-list li:hover {
   min-width: 0;
 }
 
+.resource-card-links {
+  display: grid;
+  justify-items: start;
+  gap: 0.35rem;
+}
+
 .resource-source {
   display: flex;
   align-items: center;
