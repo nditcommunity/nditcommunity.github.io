@@ -218,6 +218,10 @@ test('approved Resources descriptions stay exact', () => {
     'A podcast hosted by Shea Belsky about workplace self-advocacy and navigating careers as a neurodivergent professional.',
   );
   assert.equal(
+    descriptions.get('Unleash Your ADHD'),
+    'Coaching and practical resources for founders and senior leaders with ADHD, informed by lived experience.',
+  );
+  assert.equal(
     descriptions.get('Neurodiverse Hackers'),
     'A neurodivergent-led nonprofit community supporting people in cybersecurity.',
   );
