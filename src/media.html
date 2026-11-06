@@ -4,12 +4,24 @@ title: media
 description: press releases and other social highlights of Neurodiversity in Tech
 ---
 
-<h1>Media</h1>
+<h1>Media Coverage</h1>
 
-<p>Explore features, conversations, and community highlights from Neurodiversity In Tech.</p>
+<p>Explore features, conversations, and community highlights about ND In Tech.</p>
+
+<nav
+  class="resource-jump-nav"
+  aria-label="Media sections"
+>
+  {% for section in media %}
+  <a href="#{{ section.title | slugify }}">{{ section.title }}</a>
+  {% endfor %}
+</nav>
 
 {% for section in media %}
-<section class="resource-section">
+<section
+  class="resource-section"
+  id="{{ section.title | slugify }}"
+>
   <h2>{{ section.title }}</h2>
   {% assign list_items = section.items %} {% include 'resource-list' %}
 </section>
