@@ -262,10 +262,57 @@ main .resource-list li:hover {
   min-width: 0;
 }
 
+.resource-audience {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
 .resource-card-links {
   display: grid;
   justify-items: start;
   gap: 0.35rem;
+}
+
+.resource-list .resource-card-speaker {
+  margin: 0.55rem 0 0;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.member-quote-list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  list-style: none;
+}
+
+.member-quote-list blockquote {
+  margin: 0;
+}
+
+.member-quote-list blockquote p {
+  margin: 0;
+}
+
+.member-quote-list blockquote footer {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.resource-card-speaker span {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.resource-card-speaker .resource-card-spotlight-date {
+  display: block;
 }
 
 .resource-source {

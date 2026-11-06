@@ -1,7 +1,12 @@
 [
   {
-    "title": "Interviews & Conversations",
+    "title": "Features",
     "items": [
+      {
+        "title": "Neurodiversity In Tech",
+        "url": "https://en.wikipedia.org/wiki/Neurodiversity_In_Tech",
+        "description": "Community overview and organizational background."
+      },
       {
         "title": "ND In Tech: History, Importance, Community",
         "url": "https://www.youtube.com/watch?v=9jWzUhdn5C0",
@@ -11,42 +16,37 @@
             "url": "https://www.youtube.com/watch?v=EStNdU5JQo4"
           }
         ],
-        "description": "ND In Tech founder and software engineer Hayley Witherell presents the community's history and joins Turing's executive director, Jeff Casimir, for a Q&A."
-      },
-      {
-        "title": "Coding Interviews, ADHD, and Staying Focused with Mihai Todor",
-        "url": "https://www.autistic-techie.com/coding-interviews-adhd-and-staying-focused-with-mihai-todor",
-        "description": "Mihai Todor joins Shea Belsky to discuss coding interviews, focus, self-advocacy, and the ND In Tech community."
-      }
-    ]
-  },
-  {
-    "title": "Features & Mentions",
-    "items": [
-      {
-        "title": "Neurodiversity In Tech",
-        "url": "https://en.wikipedia.org/wiki/Neurodiversity_In_Tech",
-        "description": "An overview of the ND In Tech community."
-      },
-      {
-        "title": "Neurodiverse Hackers: The Cognitive Edge",
-        "url": "https://www.amazon.com/dp/B0H8PL7BCT",
-        "description": "Mark Foudy and Charlotte Foudy explore why neurodivergent minds thrive in cybersecurity and mention ND In Tech."
-      },
-      {
-        "title": "Neurodiversity in Tech",
-        "url": "https://design-jobs.framer.website/neurodiversity-in-tech",
-        "description": "A profile of ND In Tech and its community mission."
+        "description": "ND In Tech founder and software engineer Hayley Witherell on community history, followed by a Q&A with Turing executive director Jeff Casimir."
       },
       {
         "title": "Building an Inclusive Future with Neurodiversity In Tech",
         "url": "https://ndhack.org/articles/building-an-inclusive-future",
-        "description": "Charlotte Foudy highlights ND In Tech's community and mission."
+        "description": "AI researcher and Neurodiverse Hackers co-founder Charlotte Foudy on the community mission."
+      },
+      {
+        "title": "Neurodiversity in Tech",
+        "url": "https://design-jobs.framer.website/neurodiversity-in-tech",
+        "description": "Mission and neurodivergent community profile."
+      }
+    ]
+  },
+  {
+    "title": "Mentions",
+    "items": [
+      {
+        "title": "Neurodiverse Hackers: The Cognitive Edge",
+        "url": "https://www.amazon.com/dp/B0H8PL7BCT",
+        "description": "Lists ND In Tech as a resource."
+      },
+      {
+        "title": "Coding Interviews, ADHD, and Staying Focused with Mihai Todor",
+        "url": "https://www.autistic-techie.com/coding-interviews-adhd-and-staying-focused-with-mihai-todor",
+        "description": "Mihai Todor, freelance software engineer, with host and tech lead Shea Belsky on coding interviews, focus, self-advocacy, and ND In Tech."
       },
       {
         "title": "2024 Asian American Employment Plan Report",
         "url": "https://cms.illinois.gov/content/dam/soi/en/web/cms/personnel/dep/plans/documents/pdfs/asianamericanplan2025.pdf#page=23",
-        "description": "Lists ND In Tech among Slack groups used for job postings."
+        "description": "ND In Tech listed among Slack groups used to share job postings."
       }
     ]
   }
