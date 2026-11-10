@@ -1,21 +1,24 @@
 [
   {
-    "title": "Guides",
+    "title": "Official Guides",
     "items": [
       {
         "title": "ND Job Hunt Playbook: Interviewing",
         "url": "https://www.linkedin.com/posts/nditcommunity_neurodiversityintech-thoughtdiversity-interviewtips-activity-7215788366162800642-Fcgt/",
-        "description": "Interview tips for neurodivergent workers exploring new opportunities."
+        "description": "Interview tips for neurodivergent workers exploring new opportunities.",
+        "audience": "For workers"
       },
       {
         "title": "Inclusive Work Culture",
         "url": "https://www.linkedin.com/posts/nditcommunity_neurodiversityintech-inclusiveworkculture-activity-7170491619035533313-mB2F/",
-        "description": "Ways teams can create a more inclusive workplace for neurodivergent professionals."
+        "description": "Ways teams can create a more inclusive workplace for neurodivergent professionals.",
+        "audience": "For employers"
       },
       {
         "title": "Inclusive Hiring in Tech",
         "url": "https://www.linkedin.com/posts/nditcommunity_neurodiversityintech-interviewprocess-inclusionmatters-activity-7146683377931202560-XC9E/",
-        "description": "Ideas for making hiring and interview processes more inclusive."
+        "description": "Ideas for making hiring and interview processes more inclusive.",
+        "audience": "For employers"
       }
     ]
   },
@@ -25,17 +28,84 @@
       {
         "title": "My Career Path in Tech",
         "url": "https://www.youtube.com/watch?v=0QR8FSouQSs",
-        "description": "Freelance software engineer Mihai Todor shares his career journey in technology."
+        "speaker_name": "Mihai Todor",
+        "speaker_role": "Freelance Software Engineer",
+        "description": "Mihai shares his career journey in technology."
       },
       {
         "title": "Leadership from the Autistic Perspective",
         "url": "https://www.youtube.com/watch?v=I6ugv7stPFY",
-        "description": "Tech Lead II Shea Belsky discusses autistic perspectives on leadership."
+        "speaker_name": "Shea Belsky",
+        "speaker_role": "Tech Lead and Autistic Techie podcast host",
+        "description": "Shea discusses autistic perspectives on leadership."
       },
       {
         "title": "Neurodiversity as an Asset in Tech",
         "url": "https://www.youtube.com/watch?v=RJTJGzorIJ8",
-        "description": "Principal Engineer Adam Compton explores the value of neurodiversity in technology."
+        "speaker_name": "Adam Compton",
+        "speaker_role": "Principal Engineer",
+        "description": "Adam explores the value of neurodiversity in the tech industry."
+      }
+    ]
+  },
+  {
+    "title": "Top Talent Spotlights",
+    "items": [
+      {
+        "title": "David Raynor",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7475235166890680320/",
+        "spotlight_role": "Organization Founder",
+        "spotlight_date": "June 2026",
+        "description": "David runs Professionally Neurospicy and has healthcare and community organizing skills."
+      },
+      {
+        "title": "Mina Raver",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7465521188925050881/",
+        "spotlight_role": "Founder & CEO",
+        "spotlight_date": "May 2026",
+        "description": "Mina’s skills span public health, neuroscience, and organizational psychology."
+      },
+      {
+        "title": "Lauren McAuliffe",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7462652792231342080/",
+        "spotlight_role": "Founder & Creative Director",
+        "spotlight_date": "May 2026",
+        "description": "Lauren focuses on inclusive design and accessibility at 7Magnolia."
+      },
+      {
+        "title": "Sarah L. Minor",
+        "url": "https://www.linkedin.com/posts/talentspotlight-neurodiversityintech-ugcPost-7207415617639882752-PxjW/",
+        "spotlight_role": "Marketing & Communications Professional",
+        "spotlight_date": "June 2024",
+        "description": "Sarah brings award-winning work and board experience."
+      },
+      {
+        "title": "Aurora Sanderson",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7169459174446186497/",
+        "spotlight_role": "Software Development Student",
+        "spotlight_date": "March 2024",
+        "description": "Aurora combines technical training with organization and interpersonal skills."
+      },
+      {
+        "title": "Amadaya Michael",
+        "url": "https://www.linkedin.com/posts/talentspotlight-opentowork-neurodiversityintech-ugcPost-7157823813542453248-oE6X/",
+        "spotlight_role": "Full-Stack & QA Engineer",
+        "spotlight_date": "January 2024",
+        "description": "Amadaya graduated with a computer science degree from the University of New Mexico."
+      },
+      {
+        "title": "Amand Milette",
+        "url": "https://www.linkedin.com/posts/talentspotlight-opentowork-neurodiversityintech-ugcPost-7155318824257392640-s4J8/",
+        "spotlight_role": "Support, Data, & QA Specialist",
+        "spotlight_date": "January 2024",
+        "description": "Amand brings a decade of administration and operations experience."
+      },
+      {
+        "title": "Matt Duell",
+        "url": "https://www.linkedin.com/posts/talentspotlight-opentowork-neurodiversityintech-ugcPost-7152740751490080768-NSWc/",
+        "spotlight_role": "Social & Data Scientist",
+        "spotlight_date": "January 2024",
+        "description": "Matt moved from blue-collar work to a doctorate in political science."
       }
     ]
   }

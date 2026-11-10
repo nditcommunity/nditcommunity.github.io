@@ -1,18 +1,66 @@
 ---
 layout: base.liquid
-title: resources
+title: External Resources
 description: Community, learning, and job search resources for neurodivergent technology professionals
 ---
 
-<h1>Resources</h1>
+<h1>External Resources</h1>
 
-<p>Explore ND In Tech guides, communities, learning materials, and job-search tools.</p>
+<p>Explore communities, career support, and tools.</p>
 
-{% for section in resources %}
-<section class="resource-section">
-  <h2>{{ section.title }}</h2>
-  {% for group in section.groups %} {% if group.title %}
-  <h3>{{ group.title }}</h3>
-  {% endif %} {% assign list_items = group.items %} {% include 'resource-list' %} {% endfor %}
+<nav
+  class="resource-jump-nav"
+  aria-label="Resources by category"
+>
+  <a href="#communities">Communities</a>
+  <a href="#learning">Learning</a>
+  <a href="#job-search">Job Search</a>
+  <a href="#advocacy">Advocacy</a>
+  <a href="#for-employers">For Employers</a>
+</nav>
+
+{% assign main_resources = resources | first %} {% assign community_resources = resources[1] %} {% assign
+job_search_resources = resources[2] %} {% assign learning_resources = main_resources.groups[0] %} {% assign
+employer_resources = main_resources.groups[1] %} {% assign community_group = community_resources.groups[0] %}
+{% assign advocacy_group = community_resources.groups[1] %} {% assign job_search_group =
+job_search_resources.groups[0] %}
+
+<section
+  class="resource-section"
+  id="communities"
+>
+  <h2>Communities</h2>
+  {% assign list_items = community_group.items %} {% include 'resource-list' %}
 </section>
-{% endfor %}
+
+<section
+  class="resource-section"
+  id="learning"
+>
+  <h2>Learning</h2>
+  {% assign list_items = learning_resources.items %} {% include 'resource-list' %}
+</section>
+
+<section
+  class="resource-section"
+  id="job-search"
+>
+  <h2>Job Search</h2>
+  {% assign list_items = job_search_group.items %} {% include 'resource-list' %}
+</section>
+
+<section
+  class="resource-section"
+  id="advocacy"
+>
+  <h2>Advocacy</h2>
+  {% assign list_items = advocacy_group.items %} {% include 'resource-list' %}
+</section>
+
+<section
+  class="resource-section"
+  id="for-employers"
+>
+  <h2>For Employers</h2>
+  {% assign list_items = employer_resources.items %} {% include 'resource-list' %}
+</section>

@@ -3,22 +3,17 @@
     "title": "ND In Tech Resources",
     "groups": [
       {
-        "title": "For Workers",
+        "title": "Learning",
         "items": [
-          {
-            "title": "ND Job Hunt Playbook: Interviewing",
-            "url": "https://www.linkedin.com/posts/nditcommunity_neurodiversityintech-thoughtdiversity-interviewtips-activity-7215788366162800642-Fcgt/",
-            "description": "Interview tips for neurodivergent workers exploring new opportunities."
-          },
           {
             "title": "Autistic Techie",
             "url": "https://autistic-techie.com/",
-            "description": "A podcast for neurodivergent professionals focused on workplace self-advocacy and navigating their careers."
+            "description": "An autistic-led podcast hosted by tech lead Shea Belsky about workplace self-advocacy and neurodivergent careers."
           },
           {
             "title": "Unleash Your ADHD",
             "url": "https://unleashyouradhd.com/",
-            "description": "Coaching and practical resources designed to help founders and senior leaders work with their ADHD brains."
+            "description": "Coaching and practical resources for founders and senior leaders with ADHD, informed by lived experience."
           }
         ]
       },
@@ -26,24 +21,14 @@
         "title": "For Employers",
         "items": [
           {
-            "title": "Post a Neurodivergent-Friendly Job",
-            "url": "https://docs.google.com/forms/d/e/1FAIpQLSemKwvdKV5ZN5GKGohwe8L2BQn4jdRC9SFrVUzFZOagRTWTSA/viewform",
-            "description": "Share a job opportunity with the Neurodiversity In Tech community."
-          },
-          {
-            "title": "Inclusive Work Culture",
-            "url": "https://www.linkedin.com/posts/nditcommunity_neurodiversityintech-inclusiveworkculture-activity-7170491619035533313-mB2F/",
-            "description": "Ways teams can create a more inclusive workplace for neurodivergent professionals."
-          },
-          {
-            "title": "Inclusive Hiring in Tech",
-            "url": "https://www.linkedin.com/posts/nditcommunity_neurodiversityintech-interviewprocess-inclusionmatters-activity-7146683377931202560-XC9E/",
-            "description": "Ideas for making hiring and interview processes more inclusive."
-          },
-          {
-            "title": "Bjièn",
+            "title": "Bjièn: Neurodiversity at Work",
             "url": "https://www.bjien.be/en/",
-            "description": "Neuro-inclusion training, workshops, and resources for building workplaces where everyone can thrive."
+            "description": "Neuro-inclusion training, workshops, and resources from a team founded by autistic ADHDers."
+          },
+          {
+            "title": "Disability:IN Neurodiversity Roundtable",
+            "url": "https://www.disabilityin.org/committees/neurodiversity-roundtable",
+            "description": "An employer network for sharing practices and resources that support neurodivergent employees."
           }
         ]
       }
@@ -55,9 +40,9 @@
       {
         "items": [
           {
-            "title": "Neurodiverse Hackers",
-            "url": "https://neurodiversehackers.com/",
-            "description": "A nonprofit community that empowers and supports neurodivergent people in cybersecurity."
+            "title": "Association for Autism and Neurodiversity",
+            "url": "https://aane.org/",
+            "description": "Community, education, and support for autistic and similarly neurodivergent people, their families, and professionals."
           },
           {
             "title": "ND Connect",
@@ -65,19 +50,29 @@
             "description": "A neurodivergent-led community offering peer support, mentorship, events, and virtual body doubling."
           },
           {
+            "title": "Neurodiverse Hackers",
+            "url": "https://ndhack.org/",
+            "description": "A neurodivergent-led nonprofit community supporting people in cybersecurity."
+          },
+          {
             "title": "Professionally Neurospicy",
             "url": "https://professionallyneurospicy.com/",
-            "description": "A peer-support community for neurodivergent professionals navigating work life unmasked."
-          },
+            "description": "A neurodivergent-founded peer-support community for professionals navigating work life unmasked."
+          }
+        ]
+      },
+      {
+        "title": "Advocacy",
+        "items": [
           {
             "title": "Autistic Self Advocacy Network",
             "url": "https://autisticadvocacy.org/",
             "description": "An autistic-led advocacy organization offering resources, policy work, and opportunities to take action."
           },
           {
-            "title": "Association for Autism and Neurodiversity",
-            "url": "https://aane.org/",
-            "description": "Community, education, and support for autistic and similarly neurodivergent people, their families, and professionals."
+            "title": "NeuroClastic",
+            "url": "https://neuroclastic.com/",
+            "description": "An autistic-led nonprofit publishing free, accessible articles and resources by autistic writers."
           }
         ]
       }
@@ -89,24 +84,19 @@
       {
         "items": [
           {
-            "title": "Mentra",
-            "url": "https://www.mentra.com/",
-            "description": "A career network that connects neurodivergent job seekers with inclusive employers."
-          },
-          {
             "title": "Diversify Tech",
             "url": "https://www.diversifytech.com/",
             "description": "Jobs, events, scholarships, and other career opportunities for underrepresented people in tech."
           },
           {
-            "title": "Jobs for Humanity: Neurodivergent",
+            "title": "Jobs for Humanity: Neurodivergent Job Listings",
             "url": "https://www.jobsforhumanity.com/neurodivergent/",
             "description": "Job opportunities and employment resources for neurodivergent candidates."
           },
           {
-            "title": "Neurodiversity Career Connector",
-            "url": "https://ndcc.simplifyhire.com/",
-            "description": "A free platform connecting neurodivergent job seekers with neuroinclusive employers."
+            "title": "Mentra",
+            "url": "https://www.mentra.com/",
+            "description": "A career network that connects neurodivergent job seekers with inclusive employers."
           }
         ]
       }

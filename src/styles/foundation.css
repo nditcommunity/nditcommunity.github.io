@@ -108,6 +108,22 @@ html.dark-mode body {
 
 /* ---------- GLOBAL ---------- */
 
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
 *,
 *::before,
 *::after {
