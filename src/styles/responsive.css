@@ -1,6 +1,10 @@
 /* ---------- TABLET AND MOBILE ---------- */
 
 @media (max-width: 44rem) {
+  .member-quote-list {
+    grid-template-columns: 1fr;
+  }
+
   .site-nav {
     width: 100%;
     min-width: 0;
@@ -45,6 +49,13 @@
   }
 }
 
+@media (min-width: 44.01rem) {
+  .member-quote-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 36rem) {
   main {
     width: min(100% - 2rem, var(--content-width));
@@ -52,7 +63,7 @@
   }
 
   .brand-bar {
-    padding-block: 1.25rem;
+    padding-block: 1.1rem;
   }
 
   .home {
@@ -73,6 +84,22 @@
 
   .toc ul {
     columns: 1;
+  }
+}
+
+/* Keep the Join page compact on short desktop viewports without clipping. */
+@media (min-width: 44.01rem) and (max-height: 48rem) {
+  main:has(.home) {
+    padding-block: clamp(0.75rem, 2vh, 1rem);
+  }
+
+  .home {
+    padding-block: clamp(0.75rem, 3vh, 1.5rem);
+  }
+
+  .tagline {
+    margin-bottom: clamp(0.75rem, 2vh, 1rem);
+    font-size: clamp(1.7rem, 4.5vh, 2.5rem);
   }
 }
 

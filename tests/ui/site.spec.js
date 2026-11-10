@@ -6,9 +6,9 @@ const pages = [
   ['/about/', 'About'],
   ['/events/', 'Events'],
   ['/resources/', 'Resources'],
-  ['/library/', 'Library'],
+  ['/library/', 'Our Library'],
   ['/media/', 'Media'],
-  ['/contact/', 'Contact'],
+  ['/contact/', 'Contact Us'],
   ['/code-of-conduct/', 'Code of Conduct'],
 ];
 
@@ -59,8 +59,63 @@ test.describe('navigation and responsive layout', () => {
       'aria-current',
       'page',
     );
-    await expect(page.getByRole('heading', { level: 1, name: 'Library' })).toBeVisible();
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['Guides', 'ND Tech Talks']);
+    await expect(page.getByRole('heading', { level: 1, name: 'Our Library' })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText([
+      'Official Guides',
+      'ND Tech Talks',
+      'Top Talent Spotlights',
+    ]);
+  });
+
+  test('short desktop screens compact the Join body without changing the page shell', async ({ page }) => {
+    await page.setViewportSize({ width: 1315, height: 900 });
+    await page.goto('/');
+
+    const measureLayout = () =>
+      page.evaluate(() => {
+        const box = (selector) => document.querySelector(selector).getBoundingClientRect();
+        return {
+          header: Math.round(box('.site-header').height),
+          nav: Math.round(box('.site-nav').height),
+          footer: Math.round(box('.site-footer').height),
+          homePadding: parseFloat(getComputedStyle(document.querySelector('.home')).paddingTop),
+          taglineFont: parseFloat(getComputedStyle(document.querySelector('.tagline')).fontSize),
+          pageHeight: document.documentElement.scrollHeight,
+          viewportHeight: innerHeight,
+          homeBottom: box('.home').bottom,
+          footerTop: box('.site-footer').top,
+        };
+      });
+
+    const normal = await measureLayout();
+    await page.setViewportSize({ width: 1315, height: 720 });
+    const short = await measureLayout();
+
+    expect(short.header).toBe(normal.header);
+    expect(short.nav).toBe(normal.nav);
+    expect(short.footer).toBe(normal.footer);
+    expect(short.homePadding).toBeLessThan(normal.homePadding);
+    expect(short.taglineFont).toBeLessThan(normal.taglineFont);
+    expect(short.pageHeight).toBeLessThanOrEqual(short.viewportHeight);
+    expect(short.homeBottom).toBeLessThanOrEqual(short.footerTop);
+
+    await page.setViewportSize({ width: 1315, height: 500 });
+    const veryShort = await measureLayout();
+    expect(veryShort.header).toBe(normal.header);
+    expect(veryShort.nav).toBe(normal.nav);
+    expect(veryShort.footer).toBe(normal.footer);
+    expect(veryShort.pageHeight).toBeLessThanOrEqual(veryShort.viewportHeight);
+    expect(veryShort.homeBottom).toBeLessThanOrEqual(veryShort.footerTop);
+
+    await page.setViewportSize({ width: 390, height: 700 });
+    const mobileNormal = await measureLayout();
+    await page.setViewportSize({ width: 390, height: 500 });
+    const mobileShort = await measureLayout();
+    expect(mobileShort.header).toBe(mobileNormal.header);
+    expect(mobileShort.nav).toBe(mobileNormal.nav);
+    expect(mobileShort.footer).toBe(mobileNormal.footer);
+    expect(mobileShort.homePadding).toBe(mobileNormal.homePadding);
+    expect(mobileShort.taglineFont).toBe(mobileNormal.taglineFont);
   });
 
   test('keyboard users can skip to the main content', async ({ page }) => {

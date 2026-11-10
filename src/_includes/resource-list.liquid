@@ -1,14 +1,163 @@
 <ul class='resource-list'>
   {% for item in list_items %}
     <li>
-      <a
-        href='{{ item.url }}'
-        target='_blank'
-        rel='noreferrer'
-      >
-        {{- item.title -}}
-      </a>
-      <p>{{ item.description }}</p>
+      {% assign source = item.url | split: '/' | slice: 2 | first %}
+      {% assign source_label = source %}
+      {% assign source_kind = 'placeholder' %}
+      {% assign source_logo = '' %}
+      {% if item.url contains 'youtube.com' %}
+        {% if item.url contains '9jWzUhdn5C0' or item.url contains 'EStNdU5JQo4' %}
+          {% assign source_label = 'Turing School of Software & Design' %}
+          {% assign source_logo = '/assets/logos/turing.png' %}
+        {% else %}
+          {% assign source_label = 'YouTube' %}
+          {% assign source_kind = 'youtube' %}
+        {% endif %}
+      {% elsif item.url contains 'linkedin.com' %}
+        {% assign source_label = 'LinkedIn' %}
+        {% assign source_kind = 'linkedin' %}
+      {% elsif item.url contains 'wikipedia.org' %}
+        {% assign source_label = 'Wikipedia' %}
+        {% assign source_logo = '/assets/logos/wikipedia.ico' %}
+      {% elsif item.url contains 'amazon.com' %}
+        {% assign source_label = 'by Mark Foudy & Charlotte Foudy' %}
+        {% assign source_logo = '/assets/logos/amazon.ico' %}
+      {% elsif item.url contains 'autistic-techie.com' %}
+        {% assign source_label = 'Autistic Techie' %}
+        {% assign source_logo = '/assets/logos/autistic-techie.png' %}
+      {% elsif item.url contains 'ndhack.org' %}
+        {% assign source_label = 'Neurodiverse Hackers' %}
+        {% assign source_logo = '/assets/logos/neurodiverse-hackers.webp' %}
+      {% elsif item.url contains 'cms.illinois.gov' %}
+        {% assign source_label = 'Illinois CMS' %}
+        {% assign source_logo = '/assets/logos/illinois-cms.png' %}
+      {% elsif item.url contains 'unleashyouradhd.com' %}
+        {% assign source_label = 'Unleash Your ADHD' %}
+        {% assign source_logo = '/assets/logos/unleash-your-adhd.png' %}
+      {% elsif item.url contains 'bjien.be' %}
+        {% assign source_label = 'Bjièn' %}
+        {% assign source_logo = '/assets/logos/bjien.png' %}
+      {% elsif item.url contains 'professionallyneurospicy.com' %}
+        {% assign source_label = 'Professionally Neurospicy' %}
+        {% assign source_logo = '/assets/logos/professionally-neurospicy.png' %}
+      {% elsif item.url contains 'autisticadvocacy.org' %}
+        {% assign source_label = 'Autistic Self Advocacy Network' %}
+        {% assign source_logo = '/assets/logos/asan.png' %}
+      {% elsif item.url contains 'neuroclastic.com' %}
+        {% assign source_label = 'NeuroClastic' %}
+        {% assign source_logo = '/assets/logos/neuroclastic.png' %}
+      {% elsif item.url contains 'mentra.com' %}
+        {% assign source_label = 'Mentra' %}
+        {% assign source_logo = '/assets/logos/mentra.png' %}
+      {% elsif item.url contains 'diversifytech.com' %}
+        {% assign source_label = 'Diversify Tech' %}
+        {% assign source_logo = '/assets/logos/diversify-tech.png' %}
+      {% elsif item.url contains 'jobsforhumanity.com' %}
+        {% assign source_label = 'Jobs for Humanity' %}
+        {% assign source_logo = '/assets/logos/jobs-for-humanity.png' %}
+      {% elsif item.url contains 'ndconnect.app' %}
+        {% assign source_label = 'ND Connect' %}
+        {% assign source_logo = '/assets/logos/nd-connect.jpg' %}
+      {% elsif item.url contains 'aane.org' %}
+        {% assign source_label = 'Association for Autism and Neurodiversity' %}
+        {% assign source_logo = '/assets/logos/aane-mark.png' %}
+      {% elsif item.url contains 'disabilityin.org' %}
+        {% assign source_label = 'Disability:IN' %}
+        {% assign source_logo = '/assets/logos/disabilityin.png' %}
+      {% elsif item.url contains 'design-jobs.framer.website' %}
+        {% assign source_label = 'Design Jobs' %}
+        {% assign source_logo = '/assets/logos/design-jobs.png' %}
+      {% elsif item.url contains 'nd-in-tech.org' %}
+        {% assign source_label = 'ND In Tech' %}
+        {% assign source_logo = '/assets/logos/nd-in-tech.svg' %}
+      {% endif %}
+      {% if page.url == '/library/' %}
+        {% assign source_label = 'Neurodiversity In Tech' %}
+        {% unless source_kind == 'youtube' or source_kind == 'linkedin' %}
+          {% assign source_logo = '/icon.svg' %}
+        {% endunless %}
+      {% endif %}
+      <div class='resource-card-heading'>
+        {% if source_logo != '' %}
+          <img
+            class='resource-source-logo'
+            src='{{ source_logo }}'
+            alt=''
+            loading='lazy'
+          >
+        {% else %}
+          <span
+            class='resource-source-logo resource-source-logo--{{ source_kind }}'
+            aria-hidden='true'
+          >
+            {% if source_kind == 'youtube' %}
+              <svg viewBox='0 0 24 24'>
+                <path
+                  d='M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8z'
+                  fill='currentColor'
+                ></path>
+                <path d='m9.6 15.8 6.4-3.8-6.4-3.8z' fill='#fff'></path>
+              </svg>
+            {% elsif source_kind == 'linkedin' %}
+              <svg viewBox='0 0 24 24'>
+                <path
+                  d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.602 0 4.268 2.37 4.268 5.456v6.285zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.553V9h3.566v11.452z'
+                  fill='currentColor'
+                ></path>
+              </svg>
+            {% else -%}
+              ↗
+            {%- endif %}
+          </span>
+        {% endif %}
+        <div class='resource-card-text'>
+          {% if item.audience -%}
+            <span class='resource-audience'>{{ item.audience }}</span>
+          {%- endif %}
+          {% unless source_label == item.title
+            or source_label == 'YouTube'
+            or source_label == 'LinkedIn'
+            or page.url == '/library/'
+            or item.url contains 'disabilityin.org'
+            or item.url contains 'bjien.be'
+            or item.url contains 'jobsforhumanity.com'
+          %}
+            <span class='resource-source'>
+              <span>{{ source_label }}</span>
+            </span>
+          {% endunless %}
+          <div class='resource-card-links'>
+            <a
+              href='{{ item.url }}'
+              target='_blank'
+              rel='noreferrer'
+            >
+              {{- item.title -}}
+            </a>
+            {% for link in item.additional_links %}
+              <a
+                href='{{ link.url }}'
+                target='_blank'
+                rel='noreferrer'
+              >
+                {{- link.title -}}
+              </a>
+            {% endfor %}
+          </div>
+          {% if item.spotlight_role and item.spotlight_date %}
+            <p class='resource-card-speaker'>
+              <strong>{{ item.spotlight_role }}</strong>
+            </p>
+          {% elsif item.speaker_name and item.speaker_role %}
+            <p class='resource-card-speaker'>
+              <strong>{{ item.speaker_name }}</strong><span> · {{ item.speaker_role }}</span>
+            </p>
+          {% endif %}
+          {% unless item.description == blank %}
+            <p>{{ item.description }}</p>
+          {% endunless %}
+        </div>
+      </div>
     </li>
   {% endfor %}
 </ul>

@@ -26,10 +26,23 @@ main li {
   border-bottom: 1px solid var(--border);
   background: var(--surface);
   box-shadow: 0 0.2rem 1rem rgba(25, 15, 32, 0.08);
+  view-transition-name: site-header;
+}
+
+::view-transition-group(site-header) {
+  animation: none;
+}
+
+::view-transition-old(site-header) {
+  display: none;
+}
+
+::view-transition-new(site-header) {
+  animation: none;
 }
 
 .brand-bar {
-  padding: clamp(1.4rem, 4vw, 2.4rem) 1rem;
+  padding: clamp(1.25rem, 3.25vw, 2.1rem) 1rem;
   display: flex;
   justify-content: center;
   background: linear-gradient(120deg, var(--header-start), var(--header-end));

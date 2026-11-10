@@ -1,14 +1,6 @@
-# Summary
-
 ## Description
 
 Describe what changed and why.
-
-## Related issue
-
-Closes #
-
-Remove this section if the pull request does not have a related issue.
 
 ## Type of change
 
